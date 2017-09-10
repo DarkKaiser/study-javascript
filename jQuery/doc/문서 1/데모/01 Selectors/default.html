@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(
+            function(){
+                $("#song").css("border", "solid 1px silver");
+                $("a[href^='mailto:']").css("background", "lightblue");
+                $("input[type='button']").css("background", "yellow");
+
+                $("div ~ b").css("background", "#efefef");
+                $("div > b").css("border", "1px");
+            });
+    </script>
+    <style type="text/css">
+        * { font-size:12px; font-family:돋움 }
+    </style>
+</head>
+<body>
+    <div>
+        <span><a href="http://taeyo.net">taeyo.net</a></span>
+        <br />
+        <a href="mailto:taeyo@A.net">태오의 메일주소</a>
+        <p>
+            <input type="button" value="클릭~" />
+            <input type="checkbox" />
+            <input type="radio" />
+        </p>
+        
+        <div id="song">요즘 노래방에서 부르는 노래 목록입니다</div><br />
+        <b>노라조</b>
+        <span>수퍼맨</span><br />
+        <b>이적</b>
+        <span>다행이다</span><br />
+        <b>현진영</b>
+        <span>Break me down</span>        
+    </div>
+</body>
+</html>

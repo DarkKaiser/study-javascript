@@ -1,0 +1,30 @@
+<html>
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function() {
+              $("#Photo img").attr("src1", function() {
+                  return this.src;
+                })
+                .mouseout(function() {
+                    this.src = $(this).attr("src1");
+                })
+                .mouseover(function() {
+                    this.src = $(this).attr("src2");
+                })
+                .dblclick(function() {
+                    $(this).hide();
+                });
+          });
+    </script>
+</head>
+<body>
+   
+  <div id="Photo">
+    <img id="img1" src="resource/°è´ÜÆøÆ÷ º½.jpg" src2="resource/547.jpg" />
+    <img id="Img2" src="resource/image.gif" src2="resource/°è´ÜÆøÆ÷ º½.jpg" />
+    <img id="Img3" src="resource/547.jpg" src2="resource/image.gif" />
+  </div>  
+</body>
+</html>

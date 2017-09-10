@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="script.js"></script>
+  <script>
+    $(document).ready(function(){
+       $('#trigger1').click(function() {
+        var param = $("#frm").serialize();
+        jQuery.get("test2.html"
+                   ,param
+                   ,function (data){
+                    alert(data.RESULT);
+                   }
+                    , "json"
+        );
+      });
+       
+    $('#trigger2').click(function() {
+        var param = $("#frm").serialize();
+        jQuery.post("test2.html"
+                   ,param
+                   ,function (data){
+                    alert(data.RESULT);
+                   }
+                    , "json"
+        );
+      });
+       
+      $('#trigger3').click(function() {
+        var param = $("#frm").serialize();
+        jQuery.getJSON("test2.html"
+                   ,param
+                   ,function (data){
+                    alert(data.RESULT);
+                   }
+        );
+      });
+       
+      $('#trigger4').click(function(data) {
+        jQuery.getScript("script.js"
+                   ,function (){
+                    helloWorld(); //script.js를 동적으로 불러와서 script.js안에 있는 helloWorld를 실행
+                   }
+        );
+      });
+       
+       $('#trigger5').click(function(data) {
+          var param = $("#frm").serialize();
+        $("#result").load("test2.html", param, function(data){alert(data)});
+      });
+       
+    });
+  </script>
+</head>
+<body>
+  <form id="frm">
+      <div><input type="text" name="a" value="1" id="a" /></div>
+      <div><input type="text" name="b" value="2" id="b" /></div>
+      <div><input type="hidden" name="c" value="3" id="c" /></div>
+      <div id="result">.load result</div>
+  </form>
+  <input type="button" id="trigger1" value=".get()"/>
+  <input type="button" id="trigger2" value=".post()"/>
+  <input type="button" id="trigger3" value=".getJSON()"/>
+  <input type="button" id="trigger4" value=".getScript()"/>
+  <input type="button" id="trigger5" value=".load()"/>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+  <head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script>
+          $(document).ready(function() {
+
+              $("div").eq(0).addClass("lightblue");
+
+              $("div").filter(":odd")
+                .eq(0).css("background", "orange")
+                .end()
+                .eq(1).css("background", "blue")
+                .end()
+                .css("color", "red");
+
+              var $myDiv = $("div").eq(5);
+              if ($myDiv.is("div")) $myDiv.css("border", "4px solid yellow");
+              if ($myDiv.is(".orange, .blue, .lightblue")) $myDiv.text("Ä®¶ó");
+          });
+    </script>
+    <style>
+      div { width:60px; height:60px; margin:10px; float:left; 
+           border:2px solid blue  ; }
+      .blue { bac  kground:blue; }
+      .lightblue { background:lightblue; }
+      .orange { background:orange; }
+    </style>
+  </head>
+<body>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <div>d</div>
+  <div>e</div>
+  <div class="orange">f</div>
+  <div>g</div>
+</body>
+</html>

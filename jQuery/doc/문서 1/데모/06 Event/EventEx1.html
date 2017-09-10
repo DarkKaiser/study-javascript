@@ -1,0 +1,27 @@
+<html>
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function() {
+              $("#MyBtn").bind("click",
+                               { name: "홍길동", gender: "남" },
+                               function(e) {
+                                  alert(e.data.name + " / " + e.data.gender);
+                          });
+
+              $("#MtSnow").one("click", function() {
+                  alert("이미지는 클릭하지 마세요. 두 번 말하지 않습니다");
+              });
+          });          
+    </script>
+</head>
+<body>
+   
+  <div id="Mt">
+    <img id="MtSnow" src="resource/547.jpg" />
+  </div>
+  <input type="button" id="MyBtn" value="내 버튼" />
+  
+</body>
+</html>

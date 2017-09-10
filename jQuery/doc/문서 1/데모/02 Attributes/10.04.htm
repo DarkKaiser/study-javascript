@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>10.4 전용 링크를 사용하여 모든 Checkbox 요소들을 활성/비활성화 하기</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function() {
+            $('fieldset .selectAll').click(function(event) {
+                //event.preventDefault();
+                $(this).siblings('input:checkbox').attr('checked', 'checked');
+            });
+            
+            $('fieldset .deselectAll').click(function(event) {
+                //event.preventDefault();
+                $(this).siblings('input:checkbox').removeAttr('checked');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>10.4 전용 링크를 사용하여 모든 Checkbox 요소들을 활성/비활성화 하기</h1>
+    <fieldset>
+        <legend>Reasons to be happy</legend><a class="selectAll" href="#">Select All</a>
+        <a class="deselectAll" href="#">Deselect All</a>
+        <input name="reasons" id="iwokeup" type="checkbox" value="iwokeup" />
+        <label for="iwokeup">I woke up</label>
+        <input name="reasons" id="health" type="checkbox" value="health" />
+        <label for="health">My health</label>
+        <input name="reasons" id="family" type="checkbox" value="family" />
+        <label for="family">My family</label>
+        <input name="reasons" id="sunshine" type="checkbox" value="sunshine" />
+        <label for="sunshine">The sun is shining</label>
+    </fieldset>
+</body>
+</html>

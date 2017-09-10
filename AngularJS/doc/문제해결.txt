@@ -1,0 +1,6 @@
+# grunt를 실행했는데 
+Fatal error: Unable to find local grunt.
+이딴식으로 나오면 " npm install " 을 한번 실행해주자.
+grunt 0.4 부터 contrib 의존 node_module들이 프로젝트 하위로 들어가는거 같은데... 
+없어서 그렇다. 실제로 npm install을 실행해보면     
+node_modules이 생성되고 안에 머머가 생기는걸 확인 할 수 있다

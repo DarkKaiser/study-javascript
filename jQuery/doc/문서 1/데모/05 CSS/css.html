@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+			$("#DoIt").click(function() {
+			   var result = "";
+			   $("input:checked")
+				  .each(function(i) {
+					 result += $(this).next().text() + ",";
+					 $(this).next().css('background', 'red');
+				   });
+
+			   $("#result").text(result);
+			});
+});
+    </script>
+</head>
+<body>
+    <p>
+        스포츠 : <input id="c1" type="checkbox" /><label for="c1">농구</label>
+        <input id="c2" type="checkbox" /><label for="c2">배구</label>
+        <input id="c3" type="checkbox" /><label for="c3">축구</label>
+        <input id="c4" type="checkbox" /><label for="c4">야구</label>
+    </p>
+<p>
+        <input id="DoIt" type="button" value="선택" />
+</p>
+    <p>
+        당신이 선택하신 스포츠는 <span id="result"></span> 입니다.
+    </p>
+</body>
+</html>

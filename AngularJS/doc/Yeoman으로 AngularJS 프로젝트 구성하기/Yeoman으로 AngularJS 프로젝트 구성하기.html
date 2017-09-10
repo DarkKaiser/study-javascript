@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.hans.or.kr/2014/02/yeoman-angularjs.html -->
+<html class="no-js js" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/cb=gapi.loaded_1" async=""></script><script src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/cb=gapi.loaded_0" async=""></script><script id="facebook-jssdk" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/all.js"></script><script id="twitter-wjs" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/widgets.js"></script><script type="text/javascript" async="" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/plusone.js" gapi_processed="true"></script><script type="text/javascript">(function() { var b=window,f="chrome",g="tick",k="jstiming";(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{b.console.timeStamp("CSI/"+a)}catch(h){}};this[g]("start",null,a)}var a;b.performance&&(a=b.performance.timing);var n=a?new d(a.responseStart):new d;b.jstiming={Timer:d,load:n};if(a){var c=a.navigationStart,h=a.responseStart;0<c&&h>=c&&(b[k].srt=h-c)}if(a){var e=b[k].load;0<c&&h>=c&&(e[g]("_wtsrt",void 0,c),e[g]("wtsrt_","_wtsrt",h),e[g]("tbsd_","wtsrt_"))}try{a=null,
+b[f]&&b[f].csi&&(a=Math.floor(b[f].csi().pageT),e&&0<c&&(e[g]("_tbnd",void 0,b[f].csi().startE),e[g]("tbnd_","_tbnd",c))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,e&&0<c&&(e[g]("_tbnd",void 0,b.external.startE),e[g]("tbnd_","_tbnd",c))),a&&(b[k].pt=a)}catch(p){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[k].load[g]("aft")};var l=!1;function m(){l||(l=!0,b[k].load[g]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",m,!1):b.attachEvent("onscroll",m);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://www.hans.or.kr/favicon.ico" rel="icon" type="image/x-icon">
+<link href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/Yeoman으로 AngularJS 프로젝트 구성하기.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Hans&#39; Web App - Atom" href="http://www.hans.or.kr/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Hans&#39; Web App - RSS" href="http://www.hans.or.kr/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Hans&#39; Web App - Atom" href="http://www.blogger.com/feeds/4774759491710423963/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Hans&#39; Web App - Atom" href="http://www.hans.or.kr/feeds/9079310749472275755/comments/default">
+<link href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/yeoman.PNG" rel="image_src">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<title>Yeoman으로 AngularJS 프로젝트 구성하기 - Hans' Web App</title>
+<!-- deskripsi dan keyword -->
+<!-- TODO : hans Favicon 추가 -->
+<link href="http://4.bp.blogspot.com/-Aw-CMh7b4jY/Um0gbh8z2aI/AAAAAAAASgA/4hraWBfBSOQ/s1600/favicon1.ico" rel="icon" type="image/gif">
+<link type="text/css" rel="stylesheet" href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/728935430-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:      Aware Turquoise
+Date:      19 Jan 2013
+Updated by: satankMKR/Makmur
+URL1: http://www.ivythemes.com
+URL2: http://mkr-site.blogspot.com
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Side where text starts in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="Side where text ends in blog language"
+type="automatic" default="right">
+*/
+#navbar-iframe,#Navbar1{display:none!important}
+header,nav,section,aside,article,footer{display:block}
+*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+/* Use this with templates/template-twocol.html */
+body,.body-fauxcolumn-outer{background:#F8F8F8;margin:0;padding:0;color:#333333;font:x-small Georgia Serif;font-size
+/* */:/**/
+small;font-size:/**/
+small;text-align:center}
+a,a.thumbx img,#related-postsx strong,ul#rdpostxxx h5{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
+a:link{color:#00C29B;text-decoration:none}
+a:visited{color:#79B8AB;text-decoration:none}
+a:hover{color:#0C0C0C;text-decoration:underline}
+a img{border-width:0}
+#NoScript{background:none repeat scroll 0% 0% rgb(255,255,255);text-align:center;padding:5px 0;border-top:2px solid #0073B4;border-bottom:2px solid #0073B4;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;opacity:0.9}
+#NoScript h6{font-size:24px;color:rgb(102,102,102);position:absolute;top:50%;width:100%;text-align:center;margin-left:-30px;margin-top:-18px}
+/* Header
+-----------------------------------------------
+*/
+#header-wrapper{margin:0;padding:0;width:400px;float:left}
+#header{color:#1F1F1F;margin:0}
+#header h1.title,#header p.title{margin:0;padding:25px 20px 0;line-height:1.2em;text-transform:uppercase;font-size:250%}
+#header a{color:#141414;text-decoration:none}
+#header a:hover{color:#00C29B}
+#header .description{margin:0;padding:0 20px 15px;line-height:1.4em}
+#header img{margin-left:auto;margin-right:auto}
+/* Navigation
+----------------------------------------------- */
+#nav{float:left;margin:30px 0 0 0}
+#nav ul{height:30px;margin:0;padding:0}
+#nav li{list-style:none;display:inline-block;zoom:1;float:left;margin:0;padding:0;position:relative}
+#nav li a{display:block;line-height:30px;text-decoration:none;padding:0 15px;color:#535353}
+#nav li a:hover{color:black}
+#nav ul.submenux{position:absolute;z-index:30;width:130px;top:100%;height:auto;background:white;border:1px solid #E6E6E6;display:none}
+#nav li:hover ul.submenux{display:block}
+#nav ul.submenux li{width:100%}
+#nav li.dgnsub a{padding:0 19px 0 15px}
+#nav ul.submenux a{padding:0 15px}
+#nav ul.submenux a:hover{background:#F3F3F3}
+#nav li.dgnsub::after{content:"";width:0;height:0;border-width:3px 4px;border-style:solid;border-color:#4E4E4E transparent transparent transparent;position:absolute;top:45%;right:3px}
+/* Outer-Wrapper   TODO : hans remark
+-----------------------------------------------
+#outer-wrapper{width:1100px;margin:0 auto;padding:0;text-align:left;position:relative;font:normal normal 12px Verdana,Geneva,sans-serif;}*/
+#outer-wrapper{width:1200px;margin:0 auto;padding:0;text-align:left;position:relative;font:normal normal 15px Malgun Gothic,AppleGotihc,dotum,Verdana,Geneva,sans-serif;}
+#main-wrapper{width:80%;padding:0;float:left;word-wrap:break-word;/* fix for long text breaking sidebar float in IE */
+overflow:hidden;/* fix for long non-text content breaking IE sidebar float */}
+#sidebar-wrapper{width:20%;float:right;word-wrap:break-word;/* fix for long text breaking sidebar float in IE */
+overflow:hidden;/* fix for long non-text content breaking IE sidebar float */}
+#sidebar-wrapper h2,#footer-wrapper h2{color:#797979;border-bottom:1px solid #D8D8D8;padding:5px 0;font-size:100%;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 10px;font-family:Verdana,Geneva,sans-serif}
+#sidebar-wrapper .widget-content,#footer-wrapper .widget-content{padding:0;margin:0}
+/* Headings TODO : hans
+----------------------------------------------- */
+h1,h2,h3,h4,h5,h6,#header p.title{font-family:Malgun Gothic,AppleGotihc, Georgia,Times,"Times New Roman",serif;font-weight:normal;margin:0}
+/* Posts
+-----------------------------------------------
+*/
+.date-header{margin:1.5em 0 .5em;display:none}
+.post{margin:.5em 0 1.5em;padding-bottom:1.5em}
+.post h1.post-title,.post h2.post-title{margin:.25em 0 0;padding:0 0 4px;font-size:100%;font-weight:bold;line-height:1.5em;color:#0C0C0C}
+.post h1.post-title a,.post h1 a:visited,.post h1 strong,.post h2.post-title a,.post h2 a:visited,.post h2 strong{display:block;text-decoration:none;color:#0C0C0C}
+.post h1.post-title strong,.post h1.post-title a:hover,.post h2.post-title strong,.post h2.post-title a:hover{color:#00C29B}
+.post .post-title{margin-bottom:15px}
+.post-body{margin:0 0 .05em;line-height:1.6em}
+.post-body blockquote{line-height:1.6em;position:relative;font-family:Georgia,serif;font-size:11px;font-style:italic;padding:0.25em 35px}
+.post-body blockquote::before{display:block;content:"\201C";font-size:60px;position:absolute;left:0;top:15px}
+.post-footer{margin:.75em 0;color:#999999;text-transform:uppercase;letter-spacing:.1em;font:normal normal 78% Cuprum;line-height:1.4em}
+.comment-link{margin-left:.6em}
+.tr-caption-container img{border:none;padding:0}
+.post blockquote{margin:1em 5px}
+.post blockquote p{margin:.75em 0}
+/* Comments
+----------------------------------------------- */
+#comments h4{font-size:18px;padding:3px 0;text-transform:capitalize;border-top:1px solid #D8D8D8}
+#comments-block{margin:1em 0 1.5em;line-height:1.6em}
+#comments-block .comment-author{margin:.5em 0}
+#comments-block .comment-body{margin:.25em 0 0}
+#comments-block .comment-footer{margin:-.25em 0 2em;line-height:1.4em;text-transform:uppercase;letter-spacing:.1em}
+#comments-block .comment-body p{margin:0 0 .75em}
+.deleted-comment{font-style:italic;color:gray}
+.comments .comments-content .datetime{float:right;margin:0 0 0 0}
+.comments .avatar-image-container{width:45px;max-width:45px;max-height:45px;height:45px;padding:3px;background:#1B1B1B;position:relative;overflow:visible}
+.comments .avatar-image-container img{max-width:100%;width:100%;height:100%}
+.comments .inline-thread .avatar-image-container{width:36px;height:35px}
+.comments .avatar-image-container::after{content:"";width:0;height:0;border-width:5px 5px;border-style:solid;border-color:#252525 #252525 transparent transparent;position:absolute;top:100%;right:0;z-index:2}
+.comments .inline-thread .avatar-image-container::after{border-width:3px 3px}
+.comments .comments-content .icon.blog-author{position:absolute;width:39px;height:39px;background-image:url(http://4.bp.blogspot.com/-9DARem3Hu3Y/UTE2SZXvFnI/AAAAAAAAAw8/mxrT22Qp014/s000/author_turquoise.png);background-position:0 0;background-repeat:no-repeat;left:-59px;top:0}
+.comments .comments-content .inline-thread .icon.blog-author{left:-62px;top:-10px}
+.comments .comments-content .inline-thread .comment:first-child,.comments .comments-content .inline-thread .comment,.comments .comments-content .inline-thread .comment:last-child{padding:10px;margin:0;background:#F0F0F0}
+.comments .comment-block{margin:0 0 0 53px}
+.comments .inline-thread .comment-block{margin:0 0 0 45px}
+#blog-pager-newer-link{float:left}
+#blog-pager-older-link{float:right}
+#blog-pager{text-align:center;width:100%}
+.feed-links{display:none}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar{color:#666666;line-height:1.5em}
+.sidebar ul,.footer ul{list-style:none;margin:0 0 0;padding:0 0 0}
+.sidebar li,.footer li{margin:0;padding-top:0;padding-right:0;padding-bottom:.25em;padding-left:15px;line-height:1.5em}
+.sidebar .widget,.main .widget,.footer .widget{margin:0 0 1.5em;padding:0 0 1.5em}
+.main .Blog{border-bottom-width:0}
+/* Profile
+----------------------------------------------- */
+.profile-img{float:left;margin-top:0;margin-right:5px;margin-bottom:5px;margin-left:0;padding:4px}
+.profile-data{margin:0;text-transform:uppercase;letter-spacing:.1em;color:#999999;font-weight:bold;line-height:1.6em}
+.profile-datablock{margin:.5em 0 .5em}
+.profile-textblock{margin:0.5em 0;line-height:1.6em}
+.profile-link{font:normal normal 78% Cuprum;text-transform:uppercase;letter-spacing:.1em}
+/* Footer
+----------------------------------------------- */
+#footer{width:auto;clear:both;margin:0 auto;color:white;background-color:black;text-align:center;display:block}
+img{max-width:100%;height:auto;width:auto\9}
+#bungkusside{overflow:hidden}
+#bungkusside .widget1{width:33.3%;float:left;}
+#footer-wrapper{text-align:center;font:normal normal 11px Verdana,Geneva,sans-serif;background:#1F1F1F;color:white;padding:3px 0}
+#isifooternya{width:960px;margin:10px auto 0;text-align:left;overflow:hidden;}
+#isifooternya .footer-wrap{width:32.3%;float:left}
+#footx2{margin:0 1.5%}
+#footer-wrapper h2{color:white;border:0}
+#isifooternya ul.rcomnetspy img,#isifooternya ul.rcentpostxx img{border:1px solid #252525}
+::selection{background:#00C29B;color:#fff;text-shadow:none}
+::-moz-selection{background:#00C29B;color:#fff;text-shadow:none}
+#headisi{height:120px;border-bottom:1px solid #E4E4E4;margin:0 0 15px 0;position:relative;}
+ul#tabslect,ul#tabslect li{list-style:none;padding:0;margin:0;overflow:hidden}
+.clickfooter{width:30px;height:30px;background:#1F1F1F;float:right;position:absolute;right:10px;bottom:-18px;border-radius:9999px;cursor:pointer}
+.clickfooter span{position:absolute;width:70px;left:-14px;color:#999;bottom:2px;font-size:8px;display:none}
+.clickfooter.active span,.clickfooter:hover span{display:block}
+.clickfooter::after{content:"";width:0;height:0;border-width:5px 5px;border-style:solid;border-color:transparent transparent white transparent;position:absolute;top:5px;right:10px}
+.clickfooter.active::after{border-color:white transparent transparent transparent;top:10px}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_BG_MASK{background-color:#97D6DB}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_BG_MASK_TRANSPARENT{opacity:.5}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_SCALED_IMAGE_IMG{outline:1px solid #0E919C}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_SCALED_IMAGE_IMG:hover{opacity:1}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_FILMSTRIP{background-color:#56C5C5;background-color:rgba(22, 135, 145, 0.18)}
+.CSS_LIGHTBOX .CSS_LIGHTBOX_INDEX_INFO{color:#353535}
+
+--></style>
+<style type="text/css">
+  .hans-block{
+  -webkit-border-radius: 2;
+  -moz-border-radius: 2;
+  border-radius: 2px;
+  font-family: Malgun Gothic,AppleGotihc;
+  color: #ffffff;
+  font-size: 16px;
+  background: #b2b2b2;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  }
+
+  .gist-meta {
+     display:none;
+  }
+
+ .btnPlnkr {
+  -webkit-border-radius: 1;
+  -moz-border-radius: 1;
+  border-radius: 1px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 18px;
+  background: #c2c2c2;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  width:160px;
+  height:30px;
+  float:right;
+  }
+
+  .btnPlnkr:hover {
+  background: #ababab;
+  text-decoration: none;
+  }
+
+
+#main-wrapper{padding:0 25px 0 0}
+#bungkusside .widget1{width:100%;float:none}
+.post-footer{display:none}
+#searchnya{float:right;padding:0 0}
+#ajax-search-form{position:relative;font:normal normal 11px Arial,Sans-Serif}
+#ajax-search-form input{border:1px solid #CCC;background-color:white;color:#6F6F6F;margin:0 0;padding:5px 8px;line-height:15px;height:23px;font-size:10px;border-top-color:#999;width:160px;float:left}
+#ajax-search-form input[type="submit"]{width:24px;height:23px;text-indent:-9999px;background-color:#0C0C0C;background-image:url(http://3.bp.blogspot.com/-iLZfEMhr6Yo/UTE2Sh0stxI/AAAAAAAAAxE/cN_qO44NRrk/s000/search-button.png);background-repeat:no-repeat;background-position:50% 50%;border:none;float:left;color:white;font-weight:bold;border-radius:0 2px 2px 0;cursor:pointer}
+#ajax-search-form input[type="submit"]:hover{background-color:#00C29B}
+#search-result{border:1px solid #F3F3F3;background-color:white;padding:8px 10px;margin:2px 0;width:280px;height:auto;position:absolute;top:27px;right:0;z-index:99;-webkit-box-shadow:0 1px 3px rgba(112,112,112,0.3);-moz-box-shadow:0 1px 3px rgba(112,112,112,0.3);box-shadow:0 1px 3px rgba(112,112,112,0.3);display:none}
+#search-result *{margin:0 0 0 0;padding:0 0 0 0}
+#search-result h4,#search-result strong{display:block;margin:0 30px 10px 0}
+#search-result ol{list-style:none;overflow:hidden;height:450px}
+#search-result ol:hover{overflow:auto}
+#search-result ol a:hover{text-decoration:underline}
+#search-result .close{display:block;position:absolute;top:4px;font-size:18px;right:10px;line-height:normal;color:black;text-decoration:none}
+#search-result li{padding:5px 0;border-bottom:1px solid #CFCBCB}
+#search-result li:last-child{border-bottom:0}
+#search-result strong{color:#B75252}
+#search-result span{float:left;display:block;margin:0 5px 0 0}
+#search-result b{margin:0 0 3px 0;display:block}
+#search-result img{padding:2px;border:1px solid #D5D5D5;border-radius:2px;display:block}
+#topsearchnicon{float:right;margin:5px 0 0}
+#rightnav{float:left}
+a.soicon{display:inline-block;float:left;margin-right:10px;text-decoration:none;height:24px;text-indent:-9999px;width:24px;line-height:24px;background-image:url(http://1.bp.blogspot.com/-D4YyY0xV8CU/Umz2ohd6ETI/AAAAAAAASes/B6BaQP51D70/s1600/sicon_1.png);background-position:0 -6px;background-repeat:no-repeat;-webkit-transition:color .4s ease-in-out;-moz-transition:color .4s ease-in-out;-o-transition:color .4s ease-in-out;-ms-transition:color .4s ease-in-out;transition:color .4s ease-in-out}
+a.facebookx{background-position:-26px -204px}
+a.facebookx:hover{background-position:-22px 2px}
+a.twitterx{background-position:-2px -204px}
+a.twitterx:hover{background-position:2px 2px}
+a.googlex{background-position:-49px -204px}
+a.googlex:hover{background-position:-45px 2px}
+a.youtubex{background-position:-188px -178px}
+a.youtubex:hover{background-position:-183px -29px}
+a.deliciousx{background-position:-116px -152px}
+a.deliciousx:hover{background-position:-114px -58px}
+a.rssx{background-position:-94px -204px}
+a.rssx:hover{background-position:-91px 2px}
+#sidebar-wrapper a{color:#000;text-decoration:none}
+#sidebar-wrapper a:hover{color:#00C29B}
+.Label .list-label-widget-content li{padding:4px 5px;margin:0 2px 2px 0;float:left;background:#EEE}
+ul#tabslect li{width:33.3%;float:left;text-align:center}
+ul#tabslect a{display:block;line-height:30px}
+ul#tabslect li.selected a,ul#tabslect a:hover{background-color:#F0F0F0}
+#sidebartengah h2{position:absolute;left:-9999px}
+ul.rcomnetspy,ul.rcomnetspy li,ul.rcentpostxx,ul.rcentpostxx li{padding:0;margin:0;list-style:none;overflow:hidden}
+ul.rcomnetspy li,ul.rcentpostxx li{padding:5px 0}
+ul.rcomnetspy .kmtimg,ul.rcentpostxx .thumbp{float:left;margin:0 5px 5px 0}
+ul.rcomnetspy img,ul.rcentpostxx img{border:1px solid #E2E2E2}
+ul.rcomnetspy .ketkomt a,ul.rcomnetspy .ketkomt span{display:block}
+ul.rcomnetspy .ketkomt span,ul.rcentpostxx .datex{font-size:8px}
+ul.rcomnetspy p,ul.rcentpostxx .contxisi{margin:5px 0 0}
+ul.rcentpostxx h4{font-size:12px}
+ul.rcentpostxx .dt{padding:0 5px 0 0;margin:0 5px 0 0;border-right:1px solid #969696}
+#isifooternya .Label .list-label-widget-content li{background:#464646;color:#C7C7C7}
+#isifooternya .Label .list-label-widget-content li a{color:white}
+.loadnya,.loadnyaxx,.loadingxx{width:100%;-khtml-opacity:0.5;-moz-opacity:0.5;opacity:0.5;-ms-filter:"progid:DXImageTransform.Microsoft. Alpha(Opacity=50)";filter:alpha(opacity=50);min-height:30px;display:block;text-indent:-9999px;background:transparent url(http://3.bp.blogspot.com/-2d5HI7ZbJGI/UTE2Te1CSrI/AAAAAAAAAxU/uLPwxKhOcm4/s000/horizontal-loading.gif) no-repeat 50% 50%}
+#footer-wrapper a:hover{color:#ECECEC}
+.selectnav{display:none}
+.comment-form{max-width:100%}
+.comment-form h4#comment-post-message{border:0}
+@media only screen and (min-width:768px) and (max-width:960px){
+  #outer-wrapper,#isifooternya{width:754px}
+}
+@media only screen and (max-width:767px){
+  #outer-wrapper,#isifooternya{width:445px}
+#main-wrapper,#sidebar-wrapper,#isifooternya .footer-wrap{width:100%;float:none;margin:0 0}
+#menuxaw{display:none}
+.selectnav{display:block;width:90%;margin:0 auto}
+#header-wrapper{width:100%;text-align:center;float:none}
+#topsearchnicon{float:none;width:90%;margin:0 auto}
+#headisi{height:160px}
+#nav{float:none;margin:40px 0 0 0}
+}
+@media only screen and (max-width:479px){
+  #outer-wrapper,#isifooternya{width:310px}
+#rightnav,#searchnya,a.soicon{float:none}
+#headisi{height:190px}
+a.soicon{margin:0 5px}
+#rightnav{text-align:center;margin:5px 0 10px}
+#searchnya{width:184px;margin:0 auto}
+#nav{margin:45px 0 0 0}
+#search-result{right:-50px}
+.kreditx{font-size:8px}
+#footer-wrapper{min-height:20px}
+}
+</style>
+<style type="text/css">
+.post h1.post-title{float:right;width:88%;font-size:220%;margin:0 0 10px;font-weight:normal}
+.post{overflow:hidden;margin:0;padding:0;border-bottom:1px solid #D8D8D8}
+.infox{float:left;text-align:right;width:10%;line-height:20px;color:#383838;font-size:9px}
+.infox a{color:#383838;text-decoration:none}
+.infox a:hover{color:#00C29B;text-decoration:none}
+.post-body{float:right;width:88%}
+.breadcrumbs{font-size:9px;color:#7C7C7C;margin:0 0 15px}
+.d-header{padding:3px 5px;background:#1B1B1B;color:white;margin:0 0 15px;position:relative}
+.d-header::after{content:"";width:0;height:0;border-width:5px 5px;border-style:solid;border-color:#252525 #252525 transparent transparent;position:absolute;top:100%;right:0}
+a.commentx-link{display:block}
+.timestamp-link{display:none}
+.tglinfoxx{overflow:hidden;line-height:10px;padding:5px}
+.tglinfoxx .halfx{width:50%;display:block;float:left}
+.tglinfoxx .tglx{font-size:22px;height:30px;line-height:30px;padding:0;text-align:center}
+.tglinfoxx .blnnyax,.tglinfoxx .thunxx{display:block;text-align:left}
+.tglinfoxx div.halfx{margin:5px 0 0;color:#BDBDBD}
+.pager-isi a,.pager-isi .linkgrey{width:50%;display:block;float:left;padding:10px 0;font-size:120%;text-decoration:none}
+.pager-isi h6{color:#575757;font-size:105%;font-weight:bold}
+a.blog-pager-newer-link{background-image:url(http://1.bp.blogspot.com/-QbKGXgt9W_Q/UTE2T6OYKuI/AAAAAAAAAxc/wKQXRz85SJ8/s000/small-left.png);background-repeat:no-repeat;background-position:2% center;padding-left:3.5%;text-align:left}
+a.blog-pager-older-link{background-image:url(http://3.bp.blogspot.com/-UY5fv8f3NjQ/UTE2UZQWiUI/AAAAAAAAAxk/KNPS7BYX-I0/s000/small-right.png);background-repeat:no-repeat;background-position:98% center;padding-right:3.5%;text-align:right}
+.pager-isi .linkgrey.left{padding-left:3.5%;text-align:left}
+.pager-isi .linkgrey.right{padding-right:3.5%;text-align:right}
+#blog-pager{margin:0}
+ul#social-ikonzs li{float:left;position:relative;list-style:none}
+#social-ikonzs a{width:19px;height:20px;display:block;margin:0 3px;background-image:url(http://1.bp.blogspot.com/-xmX00xzDG3Q/UTE2UzWvEaI/AAAAAAAAAxs/52YdtYcBMoo/s000/sprite%25252Bimages.png);background-position:0 0;background-repeat:no-repeat}
+ul#social-ikonzs li.facebookx a{background-position:-19px 0}
+ul#social-ikonzs li.twitterx a{background-position:-116px 0}
+ul#social-ikonzs li.googlex a{background-position:-39px 0}
+ul#social-ikonzs li.stumbleuponx a{background-position:-97px 0}
+ul#social-ikonzs li.diggx a{background-position:0 0}
+ul#social-ikonzs li.deliciousx a{background-position:-136px 0}
+ul#social-ikonzs li.linkedinx a{background-position:-58px 0}
+ul#social-ikonzs li.redditx a{background-position:-78px 0}
+ul#social-ikonzs li.technoratix a{background-position:-155px 0}
+#social-ikonzs strong{display:block;width:auto;padding:4px 7px;position:absolute;background-color:#00C29B;color:white;left:200%;bottom:40px;-webkit-transition:all 0.3s ease 0s;-o-transition:all 0.3s ease 0s;transition:all 0.3s ease 0s;-moz-transition:all 0.3s ease 0s;-khtml-opacity:0;-moz-opacity:0;opacity:0;visibility:hidden}
+#social-ikonzs li:hover strong{left:20%;-khtml-opacity:1;-moz-opacity:1;opacity:1;visibility:visible}
+.ikonz-social{height:30px;padding:0;margin:0;float:left;width:100%}
+.ikonz-social span{float:left;font-size:150%;padding:0 5px;line-height:32px;display:none;height:32px;margin-right:5px}
+ul#social-ikonzs{float:left;margin:0;padding:5px 5px;position:relative}
+#related-postsx h4{margin:0;font-size:18px;padding:3px 0;border-top:1px solid #D8D8D8}
+#related-postsx ul,#related-postsx li{list-style:none;padding:0;margin:0;overflow:hidden;position:relative}
+#related-postsx li{width:16%;height:130px;padding:5px;float:left}
+#related-postsx .gmbrrltd,#related-postsx img{display:block;width:100%;height:100%}
+#related-postsx strong{display:block;position:absolute;top:5px;left:5px;padding:5px;z-index:2;width:127px;height:120px}
+#related-postsx ul:hover strong{background:#1B1B1B;background:rgba(0,0,0,0.75)}
+#related-postsx li:hover strong{background:#3F3F3F;background:rgba(0,0,0,0.40)}
+#related-postsx a{color:white}
+#related-postsx .dt{position:absolute;bottom:15px;left:10px;color:white;z-index:3}
+#related-postsx .jkmt a{display:block;position:absolute;padding:3px 4px;bottom:15px;font-size:8px;right:10px;background:#3D3D3D;border-radius:2px 2px 0 2px;z-index:3}
+#related-postsx .jkmt a::after{content:"";width:0;height:0;border-width:2px 2px;border-style:solid;border-color:#3D3D3D #3D3D3D transparent transparent;position:absolute;top:100%;right:0}
+@media only screen and (min-width:768px) and (max-width:960px){
+  #main-wrapper{width:64%;padding:0 15px 0 0}
+#sidebar-wrapper{width:36%}
+.infox,.post h1.post-title,.post-body{float:none;width:100%}
+.infox{text-align:left;margin:0 0 10px}
+.tglinfoxx,.post-labels{display:none}
+.timestamp-link{display:block}
+.d-header{padding:0;float:left;background:transparent;color:#111;margin:0 5px 0 0}
+.d-header::after{border-color:transparent transparent}
+.post-author.vcard{float:left;margin:0 5px 0 0}
+#related-postsx li{width:33.3%}
+#related-postsx strong{width:146px}
+}
+@media only screen and (max-width:767px){
+  #main-wrapper{padding:0 0}
+.infox,.post h1.post-title,.post-body{float:none;width:100%}
+.infox{text-align:left;margin:0 0 10px}
+.tglinfoxx,.post-labels{display:none}
+.timestamp-link{display:block}
+.d-header{padding:0;float:left;background:transparent;color:#111;margin:0 5px 0 0}
+.d-header::after{border-color:transparent transparent}
+.post-author.vcard{float:left;margin:0 5px 0 0}
+#related-postsx li{width:33.3%}
+#related-postsx strong{width:139px}
+}
+@media only screen and (max-width:479px){
+  #related-postsx li{width:50%}
+#related-postsx strong{width:145px}
+}
+</style>
+<script src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/jquery.min.js" type="text/javascript"></script>
+<script src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+// SelectNav.js (v. 0.1)
+// Converts your <ul>/<ol> navigation into a dropdown list for small screens
+// https://github.com/lukaszfiszer/selectnav.js
+
+window.selectnav=function(){return function(p,q){var a,h=function(b){var c;b||(b=window.event);b.target?c=b.target:b.srcElement&&(c=b.srcElement);3===c.nodeType&&(c=c.parentNode);c.value&&(window.location.href=c.value)},k=function(b){b=b.nodeName.toLowerCase();return"ul"===b||"ol"===b},l=function(b){for(var c=1;document.getElementById("selectnav"+c);c++);return b?"selectnav"+c:"selectnav"+(c-1)},n=function(b){g++;var c=b.children.length,a="",d="",f=g-1;if(c){if(f){for(;f--;)d+=r;d+=" "}for(f=0;f<
+c;f++){var e=b.children[f].children[0];if("undefined"!==typeof e){var h=e.innerText||e.textContent,i="";j&&(i=-1!==e.className.search(j)||-1!==e.parentElement.className.search(j)?m:"");s&&!i&&(i=e.href===document.URL?m:"");a+='<option value="'+e.href+'" '+i+">"+d+h+"</option>";t&&(e=b.children[f].children[1])&&k(e)&&(a+=n(e))}}1===g&&o&&(a='<option value="">'+o+"</option>"+a);1===g&&(a='<select class="selectnav" id="'+l(!0)+'">'+a+"</select>");g--;return a}};if((a=document.getElementById(p))&&k(a)){document.documentElement.className+=
+" js";var d=q||{},j=d.activeclass||"active",s="boolean"===typeof d.autoselect?d.autoselect:!0,t="boolean"===typeof d.nested?d.nested:!0,r=d.indent||"\u2192",o=d.label||"- Navigation -",g=0,m=" selected ";a.insertAdjacentHTML("afterend",n(a));a=document.getElementById(l());a.addEventListener&&a.addEventListener("change",h);a.attachEvent&&a.attachEvent("onchange",h)}}}();
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+//   jQuery carouFredSel 6.1.0
+//   caroufredsel.frebsite.nl
+//   Copyright (c) 2012 Fred Heusschen
+//   www.frebsite.nl
+//   Dual licensed under the MIT and GPL licenses.
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(C($){8($.1r.1v){G}$.1r.6s=$.1r.1v=C(u,w){8(1k.R==0){17(I,\'6t 57 6u 1j "\'+1k.4p+\'".\');G 1k}8(1k.R>1){G 1k.1W(C(){$(1k).1v(u,w)})}E y=1k,$13=1k[0],59=K;8(y.1m(\'5a\')){59=y.1Q(\'3p\',\'4q\');y.S(\'3p\',[\'4r\',I])}y.5b=C(o,a,b){o=3T($13,o);o.D=6v($13,o.D);o.1M=6w($13,o.1M);o.M=6x($13,o.M);o.V=5c($13,o.V);o.Z=5c($13,o.Z);o.1a=6y($13,o.1a);o.1q=6z($13,o.1q);o.1h=6A($13,o.1h);8(a){34=$.1N(I,{},$.1r.1v.5d,o)}7=$.1N(I,{},$.1r.1v.5d,o);7.d=6B(7);z.2b=(7.2b==\'4s\'||7.2b==\'1n\')?\'Z\':\'V\';E c=y.14(),2n=5e($1s,7,\'N\');8(3q(7.23)){7.23=\'7T\'+F.3U}7.3V=5f(7,2n);7.D=6C(7.D,7,c,b);7[7.d[\'N\']]=6D(7[7.d[\'N\']],7,c);7[7.d[\'1d\']]=6E(7[7.d[\'1d\']],7,c);8(7.2o){8(!3W(7[7.d[\'N\']])){7[7.d[\'N\']]=\'2J%\'}}8(3W(7[7.d[\'N\']])){z.6F=I;z.4t=7[7.d[\'N\']];7[7.d[\'N\']]=4u(2n,z.4t);8(!7.D.L){7.D.T.1c=I}}8(7.2o){7.1R=K;7.1i=[0,0,0,0];7.1A=K;7.D.T.1c=K}O{8(!7.D.L){7=6G(7,2n)}8(!7[7.d[\'N\']]){8(!7.D.T.1c&&11(7.D[7.d[\'N\']])&&7.D.1t==\'*\'){7[7.d[\'N\']]=7.D.L*7.D[7.d[\'N\']];7.1A=K}O{7[7.d[\'N\']]=\'1c\'}}8(1E(7.1A)){7.1A=(11(7[7.d[\'N\']]))?\'5g\':K}8(7.D.T.1c){7.D.L=35(c,7,0)}}8(7.D.1t!=\'*\'&&!7.D.T.1c){7.D.T.4v=7.D.L;7.D.L=3X(c,7,0)}7.D.L=2z(7.D.L,7,7.D.T.2c,$13);7.D.T.1Z=7.D.L;8(7.2o){8(!7.D.T.36){7.D.T.36=7.D.L}8(!7.D.T.1X){7.D.T.1X=7.D.L}7=5h(7,c,2n)}O{7.1i=6H(7.1i);8(7.1A==\'3r\'){7.1A=\'1n\'}O 8(7.1A==\'5i\'){7.1A=\'3a\'}1B(7.1A){Q\'5g\':Q\'1n\':Q\'3a\':8(7[7.d[\'N\']]!=\'1c\'){7=5j(7,c);7.1R=I}16;2A:7.1A=K;7.1R=(7.1i[0]==0&&7.1i[1]==0&&7.1i[2]==0&&7.1i[3]==0)?K:I;16}}8(!11(7.1M.1F)){7.1M.1F=6I}8(1E(7.1M.D)){7.1M.D=(7.2o||7.D.T.1c||7.D.1t!=\'*\')?\'L\':7.D.L}7.M=$.1N(I,{},7.1M,7.M);7.V=$.1N(I,{},7.1M,7.V);7.Z=$.1N(I,{},7.1M,7.Z);7.1a=$.1N(I,{},7.1M,7.1a);7.M=6J($13,7.M);7.V=5k($13,7.V);7.Z=5k($13,7.Z);7.1a=6K($13,7.1a);7.1q=6L($13,7.1q);7.1h=6M($13,7.1h);8(7.2p){7.2p=5l(7.2p)}8(7.M.5m){7.M.4w=7.M.5m;2K(\'M.5m\',\'M.4w\')}8(7.M.5n){7.M.4x=7.M.5n;2K(\'M.5n\',\'M.4x\')}8(7.M.5o){7.M.4y=7.M.5o;2K(\'M.5o\',\'M.4y\')}8(7.M.5p){7.M.2L=7.M.5p;2K(\'M.5p\',\'M.2L\')}};y.6N=C(){y.1m(\'5a\',I);E a=y.14(),3Y=5q(y,[\'6O\',\'6P\',\'3s\',\'3r\',\'3a\',\'5i\',\'1n\',\'3Z\',\'N\',\'1d\',\'6Q\',\'1S\',\'5r\',\'6R\']),5s=\'7U\';1B(3Y.3s){Q\'6S\':Q\'7V\':5s=3Y.3s;16}$1s.X(3Y).X({\'7W\':\'3t\',\'3s\':5s});y.1m(\'5t\',3Y).X({\'6O\':\'1n\',\'6P\':\'41\',\'3s\':\'6S\',\'3r\':0,\'3a\':\'M\',\'5i\':\'M\',\'1n\':0,\'6Q\':0,\'1S\':0,\'5r\':0,\'6R\':0});4z(a,7);5u(a,7);8(7.2o){5v(7,a)}};y.6T=C(){y.5w();y.12(H(\'5x\',F),C(e,a){e.1f();8(!z.2d){8(7.M.W){7.M.W.3b(2B(\'4A\',F))}}z.2d=I;8(7.M.1G){7.M.1G=K;y.S(H(\'3c\',F),a)}G I});y.12(H(\'5y\',F),C(e){e.1f();8(z.25){42(U)}G I});y.12(H(\'3c\',F),C(e,a,b){e.1f();1u=3u(1u);8(a&&z.25){U.2d=I;E c=2q()-U.2M;U.1F-=c;8(U.3v){U.3v.1F-=c}8(U.3w){U.3w.1F-=c}42(U,K)}8(!z.26&&!z.25){8(b){1u.3x+=2q()-1u.2M}}8(!z.26){8(7.M.W){7.M.W.3b(2B(\'6U\',F))}}z.26=I;8(7.M.4x){E d=7.M.2L-1u.3x,3d=2J-1H.2C(d*2J/7.M.2L);7.M.4x.1g($13,3d,d)}G I});y.12(H(\'1G\',F),C(e,b,c,d){e.1f();1u=3u(1u);E v=[b,c,d],t=[\'2N\',\'27\',\'3e\'],a=3f(v,t);b=a[0];c=a[1];d=a[2];8(b!=\'V\'&&b!=\'Z\'){b=z.2b}8(!11(c)){c=0}8(!1l(d)){d=K}8(d){z.2d=K;7.M.1G=I}8(!7.M.1G){e.2e();G 17(F,\'3y 4A: 2r 3g.\')}8(z.26){8(7.M.W){7.M.W.2O(2B(\'4A\',F));7.M.W.2O(2B(\'6U\',F))}}z.26=K;1u.2M=2q();E f=7.M.2L+c;43=f-1u.3x;3d=2J-1H.2C(43*2J/f);8(7.M.1e){1u.1e=7X(C(){E a=2q()-1u.2M+1u.3x,3d=1H.2C(a*2J/f);7.M.1e.4B.1g(7.M.1e.2s[0],3d)},7.M.1e.5z)}1u.M=7Y(C(){8(7.M.1e){7.M.1e.4B.1g(7.M.1e.2s[0],2J)}8(7.M.4y){7.M.4y.1g($13,3d,43)}8(z.25){y.S(H(\'1G\',F),b)}O{y.S(H(b,F),7.M)}},43);8(7.M.4w){7.M.4w.1g($13,3d,43)}G I});y.12(H(\'3h\',F),C(e){e.1f();8(U.2d){U.2d=K;z.26=K;z.25=I;U.2M=2q();2P(U)}O{y.S(H(\'1G\',F))}G I});y.12(H(\'V\',F)+\' \'+H(\'Z\',F),C(e,b,f,g,h){e.1f();8(z.2d||y.2f(\':3t\')){e.2e();G 17(F,\'3y 4A 7Z 3t: 2r 3g.\')}E i=(11(7.D.4C))?7.D.4C:7.D.L+1;8(i>J.P){e.2e();G 17(F,\'2r 6V D (\'+J.P+\' P, \'+i+\' 6W): 2r 3g.\')}E v=[b,f,g,h],t=[\'2g\',\'27/2N\',\'C\',\'3e\'],a=3f(v,t);b=a[0];f=a[1];g=a[2];h=a[3];E k=e.5A.18(F.3z.44.R);8(!1I(b)){b={}}8(1o(g)){b.3i=g}8(1l(h)){b.2Q=h}b=$.1N(I,{},7[k],b);8(b.5B&&!b.5B.1g($13,k)){e.2e();G 17(F,\'80 "5B" 81 K.\')}8(!11(f)){8(7.D.1t!=\'*\'){f=\'L\'}O{E m=[f,b.D,7[k].D];1j(E a=0,l=m.R;a<l;a++){8(11(m[a])||m[a]==\'6X\'||m[a]==\'L\'){f=m[a];16}}}1B(f){Q\'6X\':e.2e();G y.1Q(H(k+\'82\',F),[b,g]);16;Q\'L\':8(!7.D.T.1c&&7.D.1t==\'*\'){f=7.D.L}16}}8(U.2d){y.S(H(\'3h\',F));y.S(H(\'2Q\',F),[k,[b,f,g]]);e.2e();G 17(F,\'3y 83 3g.\')}8(b.1F>0){8(z.25){8(b.2Q){8(b.2Q==\'2R\'){2h=[]}8(b.2Q!=\'Y\'||2h.R==0){y.S(H(\'2Q\',F),[k,[b,f,g]])}}e.2e();G 17(F,\'3y 84 3g.\')}}1u.3x=0;y.S(H(\'6Y\'+k,F),[b,f]);8(7.2p){E s=7.2p,c=[b,f];1j(E j=0,l=s.R;j<l;j++){E d=k;8(!s[j][2]){d=(d==\'V\')?\'Z\':\'V\'}8(!s[j][1]){c[0]=s[j][0].1Q(\'3p\',[\'4D\',d])}c[1]=f+s[j][3];s[j][0].S(\'3p\',[\'6Y\'+d,c])}}G I});y.12(H(\'85\',F),C(e,b,c){e.1f();E d=y.14();8(!7.1T){8(J.Y==0){8(7.3A){y.S(H(\'Z\',F),J.P-1)}G e.2e()}}1U(d,7);8(!11(c)){8(7.D.T.1c){c=4E(d,7,J.P-1)}O 8(7.D.1t!=\'*\'){E f=(11(b.D))?b.D:5C(y,7);c=6Z(d,7,J.P-1,f)}O{c=7.D.L}c=4F(c,7,b.D,$13)}8(!7.1T){8(J.P-c<J.Y){c=J.P-J.Y}}7.D.T.1Z=7.D.L;8(7.D.T.1c){E g=2z(35(d,7,J.P-c),7,7.D.T.2c,$13);8(7.D.L+c<=g&&c<J.P){c++;g=2z(35(d,7,J.P-c),7,7.D.T.2c,$13)}7.D.L=g}O 8(7.D.1t!=\'*\'){E g=3X(d,7,J.P-c);7.D.L=2z(g,7,7.D.T.2c,$13)}1U(d,7,I);8(c==0){e.2e();G 17(F,\'0 D 45 1M: 2r 3g.\')}17(F,\'70 \'+c+\' D 5D.\');J.Y+=c;2i(J.Y>=J.P){J.Y-=J.P}8(!7.1T){8(J.Y==0&&b.4G){b.4G.1g($13,\'V\')}8(!7.3A){3B(7,J.Y,F)}}y.14().18(J.P-c,J.P).86(y);8(J.P<7.D.L+c){y.14().18(0,(7.D.L+c)-J.P).4H(I).46(y)}E d=y.14(),3j=71(d,7,c),2j=72(d,7),1Y=d.1O(c-1),20=3j.2R(),2t=2j.2R();1U(d,7);E h=0,2D=0;8(7.1A){E p=4I(2j,7);h=p[0];2D=p[1]}E i=(h<0)?7.1i[7.d[3]]:0;E j=K,2S=$();8(7.D.L<c){2S=d.18(7.D.T.1Z,c);8(b.1V==\'73\'){E k=7.D[7.d[\'N\']];j=2S;1Y=2t;5E(j);7.D[7.d[\'N\']]=\'1c\'}}E l=K,3C=2T(d.18(0,c),7,\'N\'),2k=4J(4K(2j,7,I),7,!7.1R),3D=0,28={},4L={},2u={},2U={},4M={},2V={},5F={},2W=5G(b,7,c,3C);1B(b.1V){Q\'1J\':Q\'1J-1w\':3D=2T(d.18(0,7.D.L),7,\'N\');16}8(j){7.D[7.d[\'N\']]=k}1U(d,7,I);8(2D>=0){1U(20,7,7.1i[7.d[1]])}8(h>=0){1U(1Y,7,7.1i[7.d[3]])}8(7.1A){7.1i[7.d[1]]=2D;7.1i[7.d[3]]=h}2V[7.d[\'1n\']]=-(3C-i);5F[7.d[\'1n\']]=-(3D-i);4L[7.d[\'1n\']]=2k[7.d[\'N\']];E m=C(){},1P=C(){},1C=C(){},3E=C(){},2E=C(){},5H=C(){},1D=C(){},3F=C(){},1x=C(){},1y=C(){},1K=C(){};1B(b.1V){Q\'3k\':Q\'1J\':Q\'1J-1w\':Q\'21\':Q\'21-1w\':l=y.4H(I).46($1s);16}1B(b.1V){Q\'3k\':Q\'21\':Q\'21-1w\':l.14().18(0,c).2v();l.14().18(7.D.T.1Z).2v();16;Q\'1J\':Q\'1J-1w\':l.14().18(7.D.L).2v();l.X(5F);16}y.X(2V);U=47(2W,b.2l);28[7.d[\'1n\']]=(7.1R)?7.1i[7.d[3]]:0;8(7[7.d[\'N\']]==\'1c\'||7[7.d[\'1d\']]==\'1c\'){m=C(){$1s.X(2k)};1P=C(){U.19.1b([$1s,2k])}}8(7.1R){8(2t.4N(1Y).R){2u[7.d[\'1S\']]=1Y.1m(\'29\');8(h<0){1Y.X(2u)}O{1D=C(){1Y.X(2u)};3F=C(){U.19.1b([1Y,2u])}}}1B(b.1V){Q\'1J\':Q\'1J-1w\':l.14().1O(c-1).X(2u);16}8(2t.4N(20).R){2U[7.d[\'1S\']]=20.1m(\'29\');1C=C(){20.X(2U)};3E=C(){U.19.1b([20,2U])}}8(2D>=0){4M[7.d[\'1S\']]=2t.1m(\'29\')+7.1i[7.d[1]];2E=C(){2t.X(4M)};5H=C(){U.19.1b([2t,4M])}}}1K=C(){y.X(28)};E n=7.D.L+c-J.P;1y=C(){8(n>0){y.14().18(J.P).2v();3j=$(y.14().18(J.P-(7.D.L-n)).3G().74(y.14().18(0,n).3G()))}5I(j);8(7.1R){E a=y.14().1O(7.D.L+c-1);a.X(7.d[\'1S\'],a.1m(\'29\'))}};E o=5J(3j,2S,2j,c,\'V\',2W,2k);1x=C(){5K(y,l,b);z.25=K;2a.3i=48($13,b,\'3i\',o,2a);2h=5L(y,2h,F);8(!z.26){y.S(H(\'1G\',F))}};z.25=I;1u=3u(1u);2a.3H=48($13,b,\'3H\',o,2a);1B(b.1V){Q\'41\':y.X(28);m();1C();2E();1D();1K();1y();1x();16;Q\'1w\':U.19.1b([y,{\'1L\':0},C(){m();1C();2E();1D();1K();1y();U=47(2W,b.2l);U.19.1b([y,{\'1L\':1},1x]);2P(U)}]);16;Q\'3k\':y.X({\'1L\':0});U.19.1b([l,{\'1L\':0}]);U.19.1b([y,{\'1L\':1},1x]);1P();1C();2E();1D();1K();1y();16;Q\'1J\':U.19.1b([l,28,C(){1C();2E();1D();1K();1y();1x()}]);1P();16;Q\'1J-1w\':U.19.1b([y,{\'1L\':0}]);U.19.1b([l,28,C(){y.X({\'1L\':1});1C();2E();1D();1K();1y();1x()}]);1P();16;Q\'21\':U.19.1b([l,4L,1x]);1P();1C();2E();1D();1K();1y();16;Q\'21-1w\':y.X({\'1L\':0});U.19.1b([y,{\'1L\':1}]);U.19.1b([l,4L,1x]);1P();1C();2E();1D();1K();1y();16;2A:U.19.1b([y,28,C(){1y();1x()}]);1P();3E();5H();3F();16}2P(U);5M(7.23,y,F);y.S(H(\'3I\',F),[K,2k]);G I});y.12(H(\'87\',F),C(e,c,d){e.1f();E f=y.14();8(!7.1T){8(J.Y==7.D.L){8(7.3A){y.S(H(\'V\',F),J.P-1)}G e.2e()}}1U(f,7);8(!11(d)){8(7.D.1t!=\'*\'){E g=(11(c.D))?c.D:5C(y,7);d=75(f,7,0,g)}O{d=7.D.L}d=4F(d,7,c.D,$13)}E h=(J.Y==0)?J.P:J.Y;8(!7.1T){8(7.D.T.1c){E i=35(f,7,d),g=4E(f,7,h-1)}O{E i=7.D.L,g=7.D.L}8(d+i>h){d=h-g}}7.D.T.1Z=7.D.L;8(7.D.T.1c){E i=2z(5N(f,7,d,h),7,7.D.T.2c,$13);2i(7.D.L-d>=i&&d<J.P){d++;i=2z(5N(f,7,d,h),7,7.D.T.2c,$13)}7.D.L=i}O 8(7.D.1t!=\'*\'){E i=3X(f,7,d);7.D.L=2z(i,7,7.D.T.2c,$13)}1U(f,7,I);8(d==0){e.2e();G 17(F,\'0 D 45 1M: 2r 3g.\')}17(F,\'70 \'+d+\' D 76.\');J.Y-=d;2i(J.Y<0){J.Y+=J.P}8(!7.1T){8(J.Y==7.D.L&&c.4G){c.4G.1g($13,\'Z\')}8(!7.3A){3B(7,J.Y,F)}}8(J.P<7.D.L+d){y.14().18(0,(7.D.L+d)-J.P).4H(I).46(y)}E f=y.14(),3j=77(f,7),2j=78(f,7,d),1Y=f.1O(d-1),20=3j.2R(),2t=2j.2R();1U(f,7);E j=0,2D=0;8(7.1A){E p=4I(2j,7);j=p[0];2D=p[1]}E k=K,2S=$();8(7.D.T.1Z<d){2S=f.18(7.D.T.1Z,d);8(c.1V==\'73\'){E l=7.D[7.d[\'N\']];k=2S;1Y=20;5E(k);7.D[7.d[\'N\']]=\'1c\'}}E m=K,3C=2T(f.18(0,d),7,\'N\'),2k=4J(4K(2j,7,I),7,!7.1R),3D=0,28={},4O={},2u={},2U={},2V={},2W=5G(c,7,d,3C);1B(c.1V){Q\'21\':Q\'21-1w\':3D=2T(f.18(0,7.D.T.1Z),7,\'N\');16}8(k){7.D[7.d[\'N\']]=l}8(7.1A){8(7.1i[7.d[1]]<0){7.1i[7.d[1]]=0}}1U(f,7,I);1U(20,7,7.1i[7.d[1]]);8(7.1A){7.1i[7.d[1]]=2D;7.1i[7.d[3]]=j}2V[7.d[\'1n\']]=(7.1R)?7.1i[7.d[3]]:0;E n=C(){},1P=C(){},1C=C(){},3E=C(){},1D=C(){},3F=C(){},1x=C(){},1y=C(){},1K=C(){};1B(c.1V){Q\'3k\':Q\'1J\':Q\'1J-1w\':Q\'21\':Q\'21-1w\':m=y.4H(I).46($1s);m.14().18(7.D.T.1Z).2v();16}1B(c.1V){Q\'3k\':Q\'1J\':Q\'1J-1w\':y.X(\'3Z\',1);m.X(\'3Z\',0);16}U=47(2W,c.2l);28[7.d[\'1n\']]=-3C;4O[7.d[\'1n\']]=-3D;8(j<0){28[7.d[\'1n\']]+=j}8(7[7.d[\'N\']]==\'1c\'||7[7.d[\'1d\']]==\'1c\'){n=C(){$1s.X(2k)};1P=C(){U.19.1b([$1s,2k])}}8(7.1R){E o=2t.1m(\'29\');8(2D>=0){o+=7.1i[7.d[1]]}2t.X(7.d[\'1S\'],o);8(1Y.4N(20).R){2U[7.d[\'1S\']]=20.1m(\'29\')}1C=C(){20.X(2U)};3E=C(){U.19.1b([20,2U])};E q=1Y.1m(\'29\');8(j>0){q+=7.1i[7.d[3]]}2u[7.d[\'1S\']]=q;1D=C(){1Y.X(2u)};3F=C(){U.19.1b([1Y,2u])}}1K=C(){y.X(2V)};E r=7.D.L+d-J.P;1y=C(){8(r>0){y.14().18(J.P).2v()}E a=y.14().18(0,d).46(y).2R();8(r>0){2j=3J(f,7)}5I(k);8(7.1R){8(J.P<7.D.L+d){E b=y.14().1O(7.D.L-1);b.X(7.d[\'1S\'],b.1m(\'29\')+7.1i[7.d[3]])}a.X(7.d[\'1S\'],a.1m(\'29\'))}};E s=5J(3j,2S,2j,d,\'Z\',2W,2k);1x=C(){y.X(\'3Z\',y.1m(\'5t\').3Z);5K(y,m,c);z.25=K;2a.3i=48($13,c,\'3i\',s,2a);2h=5L(y,2h,F);8(!z.26){y.S(H(\'1G\',F))}};z.25=I;1u=3u(1u);2a.3H=48($13,c,\'3H\',s,2a);1B(c.1V){Q\'41\':y.X(28);n();1C();1D();1K();1y();1x();16;Q\'1w\':U.19.1b([y,{\'1L\':0},C(){n();1C();1D();1K();1y();U=47(2W,c.2l);U.19.1b([y,{\'1L\':1},1x]);2P(U)}]);16;Q\'3k\':y.X({\'1L\':0});U.19.1b([m,{\'1L\':0}]);U.19.1b([y,{\'1L\':1},1x]);1P();1C();1D();1K();1y();16;Q\'1J\':y.X(7.d[\'1n\'],$1s[7.d[\'N\']]());U.19.1b([y,2V,1x]);1P();1C();1D();1y();16;Q\'1J-1w\':y.X(7.d[\'1n\'],$1s[7.d[\'N\']]());U.19.1b([m,{\'1L\':0}]);U.19.1b([y,2V,1x]);1P();1C();1D();1y();16;Q\'21\':U.19.1b([m,4O,1x]);1P();1C();1D();1K();1y();16;Q\'21-1w\':y.X({\'1L\':0});U.19.1b([y,{\'1L\':1}]);U.19.1b([m,4O,1x]);1P();1C();1D();1K();1y();16;2A:U.19.1b([y,28,C(){1K();1y();1x()}]);1P();3E();3F();16}2P(U);5M(7.23,y,F);y.S(H(\'3I\',F),[K,2k]);G I});y.12(H(\'3l\',F),C(e,b,c,d,f,g,h){e.1f();E v=[b,c,d,f,g,h],t=[\'2N/27/2g\',\'27\',\'3e\',\'2g\',\'2N\',\'C\'],a=3f(v,t);f=a[3];g=a[4];h=a[5];b=3K(a[0],a[1],a[2],J,y);8(b==0){G K}8(!1I(f)){f=K}8(g!=\'V\'&&g!=\'Z\'){8(7.1T){g=(b<=J.P/2)?\'Z\':\'V\'}O{g=(J.Y==0||J.Y>b)?\'Z\':\'V\'}}8(g==\'V\'){b=J.P-b}y.S(H(g,F),[f,b,h]);G I});y.12(H(\'88\',F),C(e,a,b){e.1f();E c=y.1Q(H(\'4a\',F));G y.1Q(H(\'5O\',F),[c-1,a,\'V\',b])});y.12(H(\'89\',F),C(e,a,b){e.1f();E c=y.1Q(H(\'4a\',F));G y.1Q(H(\'5O\',F),[c+1,a,\'Z\',b])});y.12(H(\'5O\',F),C(e,a,b,c,d){e.1f();8(!11(a)){a=y.1Q(H(\'4a\',F))}E f=7.1a.D||7.D.L,1X=1H.2C(J.P/f)-1;8(a<0){a=1X}8(a>1X){a=0}G y.1Q(H(\'3l\',F),[a*f,0,I,b,c,d])});y.12(H(\'79\',F),C(e,s){e.1f();8(s){s=3K(s,0,I,J,y)}O{s=0}s+=J.Y;8(s!=0){8(J.P>0){2i(s>J.P){s-=J.P}}y.8a(y.14().18(s,J.P))}G I});y.12(H(\'2p\',F),C(e,s){e.1f();8(s){s=5l(s)}O 8(7.2p){s=7.2p}O{G 17(F,\'6t 8b 45 2p.\')}E n=y.1Q(H(\'4q\',F)),x=I;1j(E j=0,l=s.R;j<l;j++){8(!s[j][0].1Q(H(\'3l\',F),[n,s[j][3],I])){x=K}}G x});y.12(H(\'2Q\',F),C(e,a,b){e.1f();8(1o(a)){a.1g($13,2h)}O 8(2X(a)){2h=a}O 8(!1E(a)){2h.1b([a,b])}G 2h});y.12(H(\'8c\',F),C(e,b,c,d,f){e.1f();E v=[b,c,d,f],t=[\'2N/2g\',\'2N/27/2g\',\'3e\',\'27\'],a=3f(v,t);b=a[0];c=a[1];d=a[2];f=a[3];8(1I(b)&&!2w(b)){b=$(b)}O 8(1p(b)){b=$(b)}8(!2w(b)||b.R==0){G 17(F,\'2r a 5P 2g.\')}8(1E(c)){c=\'4b\'}4z(b,7);5u(b,7);E g=c,4c=\'4c\';8(c==\'4b\'){8(d){8(J.Y==0){c=J.P-1;4c=\'7a\'}O{c=J.Y;J.Y+=b.R}8(c<0){c=0}}O{c=J.P-1;4c=\'7a\'}}O{c=3K(c,f,d,J,y)}E h=y.14().1O(c);8(h.R){h[4c](b)}O{17(F,\'8d 8e-3s 4N 6u! 8f 8g 45 3L 4b.\');y.7b(b)}8(g!=\'4b\'&&!d){8(c<J.Y){J.Y+=b.R}}J.P=y.14().R;8(J.Y>=J.P){J.Y-=J.P}y.S(H(\'4P\',F));y.S(H(\'5Q\',F));G I});y.12(H(\'7c\',F),C(e,c,d,f){e.1f();E v=[c,d,f],t=[\'2N/27/2g\',\'3e\',\'27\'],a=3f(v,t);c=a[0];d=a[1];f=a[2];E g=K;8(c 2Y $&&c.R>1){h=$();c.1W(C(i,a){E b=y.S(H(\'7c\',F),[$(1k),d,f]);8(b)h=h.8h(b)});G h}8(1E(c)||c==\'4b\'){h=y.14().2R()}O{c=3K(c,f,d,J,y);E h=y.14().1O(c);8(h.R){8(c<J.Y)J.Y-=h.R}}8(h&&h.R){h.8i();J.P=y.14().R;y.S(H(\'4P\',F))}G h});y.12(H(\'3H\',F)+\' \'+H(\'3i\',F),C(e,a){e.1f();E b=e.5A.18(F.3z.44.R);8(2X(a)){2a[b]=a}8(1o(a)){2a[b].1b(a)}G 2a[b]});y.12(H(\'4q\',F),C(e,a){e.1f();8(J.Y==0){E b=0}O{E b=J.P-J.Y}8(1o(a)){a.1g($13,b)}G b});y.12(H(\'4a\',F),C(e,a){e.1f();E b=7.1a.D||7.D.L,1X=1H.2C(J.P/b-1),2m;8(J.Y==0){2m=0}O 8(J.Y<J.P%b){2m=0}O 8(J.Y==b&&!7.1T){2m=1X}O{2m=1H.7d((J.P-J.Y)/b)}8(2m<0){2m=0}8(2m>1X){2m=1X}8(1o(a)){a.1g($13,2m)}G 2m});y.12(H(\'8j\',F),C(e,a){e.1f();E b=3J(y.14(),7);8(1o(a)){a.1g($13,b)}G b});y.12(H(\'18\',F),C(e,f,l,b){e.1f();8(J.P==0){G K}E v=[f,l,b],t=[\'27\',\'27\',\'C\'],a=3f(v,t);f=(11(a[0]))?a[0]:0;l=(11(a[1]))?a[1]:J.P;b=a[2];f+=J.Y;l+=J.Y;8(D.P>0){2i(f>J.P){f-=J.P}2i(l>J.P){l-=J.P}2i(f<0){f+=J.P}2i(l<0){l+=J.P}}E c=y.14(),$i;8(l>f){$i=c.18(f,l)}O{$i=$(c.18(f,J.P).3G().74(c.18(0,l).3G()))}8(1o(b)){b.1g($13,$i)}G $i});y.12(H(\'26\',F)+\' \'+H(\'2d\',F)+\' \'+H(\'25\',F),C(e,a){e.1f();E b=e.5A.18(F.3z.44.R),5R=z[b];8(1o(a)){a.1g($13,5R)}G 5R});y.12(H(\'4D\',F),C(e,a,b,c){e.1f();E d=K;8(1o(a)){a.1g($13,7)}O 8(1I(a)){34=$.1N(I,{},34,a);8(b!==K)d=I;O 7=$.1N(I,{},7,a)}O 8(!1E(a)){8(1o(b)){E f=4Q(\'7.\'+a);8(1E(f)){f=\'\'}b.1g($13,f)}O 8(!1E(b)){8(2Z c!==\'3e\')c=I;4Q(\'34.\'+a+\' = b\');8(c!==K)d=I;O 4Q(\'7.\'+a+\' = b\')}O{G 4Q(\'7.\'+a)}}8(d){1U(y.14(),7);y.5b(34);y.5S();E g=4R(y,7);y.S(H(\'3I\',F),[I,g])}G 7});y.12(H(\'5Q\',F),C(e,a,b){e.1f();8(1E(a)){a=$(\'8k\')}O 8(1p(a)){a=$(a)}8(!2w(a)||a.R==0){G 17(F,\'2r a 5P 2g.\')}8(!1p(b)){b=\'a.6s\'}a.8l(b).1W(C(){E h=1k.7e||\'\';8(h.R>0&&y.14().7f($(h))!=-1){$(1k).22(\'5T\').5T(C(e){e.2F();y.S(H(\'3l\',F),h)})}});G I});y.12(H(\'3I\',F),C(e,b,c){e.1f();8(!7.1a.1z){G}E d=7.1a.D||7.D.L,4S=1H.2C(J.P/d);8(b){8(7.1a.3M){7.1a.1z.14().2v();7.1a.1z.1W(C(){1j(E a=0;a<4S;a++){E i=y.14().1O(3K(a*d,0,I,J,y));$(1k).7b(7.1a.3M.1g(i[0],a+1))}})}7.1a.1z.1W(C(){$(1k).14().22(7.1a.3N).1W(C(a){$(1k).12(7.1a.3N,C(e){e.2F();y.S(H(\'3l\',F),[a*d,-7.1a.4T,I,7.1a])})})})}E f=y.1Q(H(\'4a\',F))+7.1a.4T;8(f>=4S){f=0}8(f<0){f=4S-1}7.1a.1z.1W(C(){$(1k).14().2O(2B(\'7g\',F)).1O(f).3b(2B(\'7g\',F))});G I});y.12(H(\'4P\',F),C(e){E a=7.D.L,2G=y.14(),2n=5e($1s,7,\'N\');J.P=2G.R;8(z.4t){7.3V=2n;7[7.d[\'N\']]=4u(2n,z.4t)}O{7.3V=5f(7,2n)}8(7.2o){7.D.N=7.D.3O.N;7.D.1d=7.D.3O.1d;7=5h(7,2G,2n);a=7.D.L;5v(7,2G)}O 8(7.D.T.1c){a=35(2G,7,0)}O 8(7.D.1t!=\'*\'){a=3X(2G,7,0)}8(!7.1T&&J.Y!=0&&a>J.Y){8(7.D.T.1c){E b=4E(2G,7,J.Y)-J.Y}O 8(7.D.1t!=\'*\'){E b=7h(2G,7,J.Y)-J.Y}O{E b=7.D.L-J.Y}17(F,\'8m 8n-1T: 8o \'+b+\' D 5D.\');y.S(H(\'V\',F),b)}7.D.L=2z(a,7,7.D.T.2c,$13);7.D.T.1Z=7.D.L;7=5j(7,2G);E c=4R(y,7);y.S(H(\'3I\',F),[I,c]);4U(7,J.P,F);3B(7,J.Y,F);G c});y.12(H(\'4r\',F),C(e,a){e.1f();1u=3u(1u);y.1m(\'5a\',K);y.S(H(\'5y\',F));8(a){y.S(H(\'79\',F))}1U(y.14(),7);8(7.2o){y.14().1W(C(){$(1k).X($(1k).1m(\'7i\'))})}y.X(y.1m(\'5t\'));y.5w();y.5U();$1s.8p(y);G I});y.12(H(\'17\',F),C(e){17(F,\'3y N: \'+7.N);17(F,\'3y 1d: \'+7.1d);17(F,\'7j 8q: \'+7.D.N);17(F,\'7j 8r: \'+7.D.1d);17(F,\'4d 4e D L: \'+7.D.L);8(7.M.1G){17(F,\'4d 4e D 5V 8s: \'+7.M.D)}8(7.V.W){17(F,\'4d 4e D 5V 5D: \'+7.V.D)}8(7.Z.W){17(F,\'4d 4e D 5V 76: \'+7.Z.D)}G F.17});y.12(\'3p\',C(e,n,o){e.1f();G y.1Q(H(n,F),o)})};y.5w=C(){y.22(H(\'\',F));y.22(H(\'\',F,K));y.22(\'3p\')};y.5S=C(){y.5U();4U(7,J.P,F);3B(7,J.Y,F);8(7.M.2H){E b=3P(7.M.2H);$1s.12(H(\'4V\',F,K),C(){y.S(H(\'3c\',F),b)}).12(H(\'4W\',F,K),C(){y.S(H(\'3h\',F))})}8(7.M.W){7.M.W.12(H(7.M.3N,F,K),C(e){e.2F();E a=K,b=2x;8(z.26){a=\'1G\'}O 8(7.M.4X){a=\'3c\';b=3P(7.M.4X)}8(a){y.S(H(a,F),b)}})}8(7.V.W){7.V.W.12(H(7.V.3N,F,K),C(e){e.2F();y.S(H(\'V\',F))});8(7.V.2H){E b=3P(7.V.2H);7.V.W.12(H(\'4V\',F,K),C(){y.S(H(\'3c\',F),b)}).12(H(\'4W\',F,K),C(){y.S(H(\'3h\',F))})}}8(7.Z.W){7.Z.W.12(H(7.Z.3N,F,K),C(e){e.2F();y.S(H(\'Z\',F))});8(7.Z.2H){E b=3P(7.Z.2H);7.Z.W.12(H(\'4V\',F,K),C(){y.S(H(\'3c\',F),b)}).12(H(\'4W\',F,K),C(){y.S(H(\'3h\',F))})}}8(7.1a.1z){8(7.1a.2H){E b=3P(7.1a.2H);7.1a.1z.12(H(\'4V\',F,K),C(){y.S(H(\'3c\',F),b)}).12(H(\'4W\',F,K),C(){y.S(H(\'3h\',F))})}}8(7.V.31||7.Z.31){$(4f).12(H(\'7k\',F,K,I,I),C(e){E k=e.7l;8(k==7.Z.31){e.2F();y.S(H(\'Z\',F))}8(k==7.V.31){e.2F();y.S(H(\'V\',F))}})}8(7.1a.4Y){$(4f).12(H(\'7k\',F,K,I,I),C(e){E k=e.7l;8(k>=49&&k<58){k=(k-49)*7.D.L;8(k<=J.P){e.2F();y.S(H(\'3l\',F),[k,0,I,7.1a])}}})}8(7.V.4Z||7.Z.4Z){2K(\'3L 4g-7m\',\'3L 8t-7m\');8($.1r.4g){E c=(7.V.4Z)?C(){y.S(H(\'V\',F))}:2x,4h=(7.Z.4Z)?C(){y.S(H(\'Z\',F))}:2x;8(4h||4h){8(!z.4g){z.4g=I;E d={\'8u\':30,\'8v\':30,\'8w\':I};1B(7.2b){Q\'4s\':Q\'5W\':d.8x=c;d.8y=4h;16;2A:d.8z=4h;d.8A=c}$1s.4g(d)}}}}8($.1r.1q){E f=\'8B\'8C 3m;8((f&&7.1q.4i)||(!f&&7.1q.5X)){E g=$.1N(I,{},7.V,7.1q),7n=$.1N(I,{},7.Z,7.1q),5Y=C(){y.S(H(\'V\',F),[g])},5Z=C(){y.S(H(\'Z\',F),[7n])};1B(7.2b){Q\'4s\':Q\'5W\':7.1q.2I.8D=5Z;7.1q.2I.8E=5Y;16;2A:7.1q.2I.8F=5Z;7.1q.2I.8G=5Y}8(z.1q){y.1q(\'4r\')}$1s.1q(7.1q.2I);$1s.X(\'7o\',\'8H\');z.1q=I}}8($.1r.1h){8(7.V.1h){2K(\'7p V.1h 7q\',\'3L 1h 4D 2g\');7.V.1h=2x;7.1h={D:61(7.V.1h)}}8(7.Z.1h){2K(\'7p Z.1h 7q\',\'3L 1h 4D 2g\');7.Z.1h=2x;7.1h={D:61(7.Z.1h)}}8(7.1h){E h=$.1N(I,{},7.V,7.1h),7r=$.1N(I,{},7.Z,7.1h);8(z.1h){$1s.22(H(\'1h\',F,K))}$1s.12(H(\'1h\',F,K),C(e,a){e.2F();8(a>0){y.S(H(\'V\',F),[h])}O{y.S(H(\'Z\',F),[7r])}});z.1h=I}}8(7.M.1G){y.S(H(\'1G\',F),7.M.62)}8(z.6F){E i=C(e){y.S(H(\'5y\',F));8(7.M.63&&!z.26){y.S(H(\'1G\',F))}1U(y.14(),7);y.S(H(\'4P\',F))};E j=$(3m),4j=2x;8($.64&&F.65==\'64\'){4j=$.64(8I,i)}O 8($.51&&F.65==\'51\'){4j=$.51(8J,i)}O{E l=0,66=0;4j=C(){E a=j.N(),68=j.1d();8(a!=l||68!=66){i();l=a;66=68}}}j.12(H(\'8K\',F,K,I,I),4j)}};y.5U=C(){E a=H(\'\',F),3Q=H(\'\',F,K);69=H(\'\',F,K,I,I);$(4f).22(69);$(3m).22(69);$1s.22(3Q);8(7.M.W){7.M.W.22(3Q)}8(7.V.W){7.V.W.22(3Q)}8(7.Z.W){7.Z.W.22(3Q)}8(7.1a.1z){7.1a.1z.22(3Q);8(7.1a.3M){7.1a.1z.14().2v()}}8(z.1q){y.1q(\'4r\');$1s.X(\'7o\',\'2A\');z.1q=K}8(z.1h){z.1h=K}4U(7,\'4k\',F);3B(7,\'2O\',F)};8(1l(w)){w={\'17\':w}}E z={\'2b\':\'Z\',\'26\':I,\'25\':K,\'2d\':K,\'1h\':K,\'1q\':K},J={\'P\':y.14().R,\'Y\':0},1u={\'M\':2x,\'1e\':2x,\'2M\':2q(),\'3x\':0},U={\'2d\':K,\'1F\':0,\'2M\':0,\'2l\':\'\',\'19\':[]},2a={\'3H\':[],\'3i\':[]},2h=[],F=$.1N(I,{},$.1r.1v.7s,w),7={},34=$.1N(I,{},u),$1s=y.8L(\'<\'+F.6a.57+\' 8M="\'+F.6a.7t+\'" />\').6b();F.4p=y.4p;F.3U=$.1r.1v.3U++;y.5b(34,I,59);y.6N();y.6T();y.5S();8(2X(7.D.3n)){E A=7.D.3n}O{E A=[];8(7.D.3n!=0){A.1b(7.D.3n)}}8(7.23){A.8N(4l(7u(7.23),10))}8(A.R>0){1j(E a=0,l=A.R;a<l;a++){E s=A[a];8(s==0){6c}8(s===I){s=3m.8O.7e;8(s.R<1){6c}}O 8(s===\'7v\'){s=1H.4m(1H.7v()*J.P)}8(y.1Q(H(\'3l\',F),[s,0,I,{1V:\'41\'}])){16}}}E B=4R(y,7),7w=3J(y.14(),7);8(7.7x){7.7x.1g($13,{\'N\':B.N,\'1d\':B.1d,\'D\':7w})}y.S(H(\'3I\',F),[I,B]);y.S(H(\'5Q\',F));8(F.17){y.S(H(\'17\',F))}G y};$.1r.1v.3U=1;$.1r.1v.5d={\'2p\':K,\'3A\':I,\'1T\':I,\'2o\':K,\'2b\':\'1n\',\'D\':{\'3n\':0},\'1M\':{\'2l\':\'8P\',\'1F\':6I,\'2H\':K,\'3N\':\'5T\',\'2Q\':K}};$.1r.1v.7s={\'17\':K,\'65\':\'51\',\'3z\':{\'44\':\'\',\'7y\':\'8Q\'},\'6a\':{\'57\':\'8R\',\'7t\':\'8S\'},\'6d\':{}};$.1r.1v.7z=C(a){G\'<a 8T="#"><7A>\'+a+\'</7A></a>\'};$.1r.1v.7B=C(a){$(1k).X(\'N\',a+\'%\')};$.1r.1v.23={3G:C(n){n+=\'=\';E b=4f.23.3R(\';\');1j(E a=0,l=b.R;a<l;a++){E c=b[a];2i(c.8U(0)==\' \'){c=c.18(1)}8(c.3S(n)==0){G c.18(n.R)}}G 0},6e:C(n,v,d){E e="";8(d){E a=6f 7C();a.8V(a.2q()+(d*24*60*60*8W));e="; 8X="+a.8Y()}4f.23=n+\'=\'+v+e+\'; 8Z=/\'},2v:C(n){$.1r.1v.23.6e(n,"",-1)}};C 47(d,e){G{19:[],1F:d,90:d,2l:e,2M:2q()}}C 2P(s){8(1I(s.3v)){2P(s.3v)}1j(E a=0,l=s.19.R;a<l;a++){E b=s.19[a];8(!b){6c}8(b[3]){b[0].5x()}b[0].91(b[1],{92:b[2],1F:s.1F,2l:s.2l})}8(1I(s.3w)){2P(s.3w)}}C 42(s,c){8(!1l(c)){c=I}8(1I(s.3v)){42(s.3v,c)}1j(E a=0,l=s.19.R;a<l;a++){E b=s.19[a];b[0].5x(I);8(c){b[0].X(b[1]);8(1o(b[2])){b[2]()}}}8(1I(s.3w)){42(s.3w,c)}}C 5K(a,b,o){8(b){b.2v()}1B(o.1V){Q\'1w\':Q\'3k\':Q\'1J-1w\':Q\'21-1w\':a.X(\'1t\',\'\');16}}C 48(d,o,b,a,c){8(o[b]){o[b].1g(d,a)}8(c[b].R){1j(E i=0,l=c[b].R;i<l;i++){c[b][i].1g(d,a)}}G[]}C 5L(a,q,c){8(q.R){a.S(H(q[0][0],c),q[0][1]);q.93()}G q}C 5E(b){b.1W(C(){E a=$(1k);a.1m(\'7D\',a.2f(\':3t\')).4k()})}C 5I(b){8(b){b.1W(C(){E a=$(1k);8(!a.1m(\'7D\')){a.4n()}})}}C 3u(t){8(t.M){94(t.M)}8(t.1e){95(t.1e)}G t}C 5J(a,b,c,d,e,f,g){G{\'N\':g.N,\'1d\':g.1d,\'D\':{\'1Z\':a,\'96\':b,\'L\':c,\'6f\':c},\'1M\':{\'D\':d,\'2b\':e,\'1F\':f}}}C 5G(a,o,b,c){E d=a.1F;8(a.1V==\'41\'){G 0}8(d==\'M\'){d=o.1M.1F/o.1M.D*b}O 8(d<10){d=c/d}8(d<1){G 0}8(a.1V==\'1w\'){d=d/2}G 1H.7d(d)}C 4U(o,t,c){E a=(11(o.D.4C))?o.D.4C:o.D.L+1;8(t==\'4n\'||t==\'4k\'){E f=t}O 8(a>t){17(c,\'2r 6V D (\'+t+\' P, \'+a+\' 6W): 97 98.\');E f=\'4k\'}O{E f=\'4n\'}E s=(f==\'4n\')?\'2O\':\'3b\',h=2B(\'3t\',c);8(o.M.W){o.M.W[f]()[s](h)}8(o.V.W){o.V.W[f]()[s](h)}8(o.Z.W){o.Z.W[f]()[s](h)}8(o.1a.1z){o.1a.1z[f]()[s](h)}}C 3B(o,f,c){8(o.1T||o.3A)G;E a=(f==\'2O\'||f==\'3b\')?f:K,52=2B(\'99\',c);8(o.M.W&&a){o.M.W[a](52)}8(o.V.W){E b=a||(f==0)?\'3b\':\'2O\';o.V.W[b](52)}8(o.Z.W){E b=a||(f==o.D.L)?\'3b\':\'2O\';o.Z.W[b](52)}}C 3T(a,b){8(1o(b)){b=b.1g(a)}O 8(1E(b)){b={}}G b}C 6v(a,b){b=3T(a,b);8(11(b)){b={\'L\':b}}O 8(b==\'1c\'){b={\'L\':b,\'N\':b,\'1d\':b}}O 8(!1I(b)){b={}}G b}C 6w(a,b){b=3T(a,b);8(11(b)){8(b<=50){b={\'D\':b}}O{b={\'1F\':b}}}O 8(1p(b)){b={\'2l\':b}}O 8(!1I(b)){b={}}G b}C 53(a,b){b=3T(a,b);8(1p(b)){E c=6g(b);8(c==-1){b=$(b)}O{b=c}}G b}C 6x(a,b){b=53(a,b);8(2w(b)){b={\'W\':b}}O 8(1l(b)){b={\'1G\':b}}O 8(11(b)){b={\'2L\':b}}8(b.1e){8(1p(b.1e)||2w(b.1e)){b.1e={\'2s\':b.1e}}}G b}C 6J(a,b){8(1o(b.W)){b.W=b.W.1g(a)}8(1p(b.W)){b.W=$(b.W)}8(!1l(b.1G)){b.1G=I}8(!11(b.62)){b.62=0}8(1E(b.4X)){b.4X=I}8(!1l(b.63)){b.63=I}8(!11(b.2L)){b.2L=(b.1F<10)?9a:b.1F*5}8(b.1e){8(1o(b.1e.2s)){b.1e.2s=b.1e.2s.1g(a)}8(1p(b.1e.2s)){b.1e.2s=$(b.1e.2s)}8(b.1e.2s){8(!1o(b.1e.4B)){b.1e.4B=$.1r.1v.7B}8(!11(b.1e.5z)){b.1e.5z=50}}O{b.1e=K}}G b}C 5c(a,b){b=53(a,b);8(2w(b)){b={\'W\':b}}O 8(11(b)){b={\'31\':b}}G b}C 5k(a,b){8(1o(b.W)){b.W=b.W.1g(a)}8(1p(b.W)){b.W=$(b.W)}8(1p(b.31)){b.31=6g(b.31)}G b}C 6y(a,b){b=53(a,b);8(2w(b)){b={\'1z\':b}}O 8(1l(b)){b={\'4Y\':b}}G b}C 6K(a,b){8(1o(b.1z)){b.1z=b.1z.1g(a)}8(1p(b.1z)){b.1z=$(b.1z)}8(!11(b.D)){b.D=K}8(!1l(b.4Y)){b.4Y=K}8(!1o(b.3M)&&!54(b.3M)){b.3M=$.1r.1v.7z}8(!11(b.4T)){b.4T=0}G b}C 6z(a,b){8(1o(b)){b=b.1g(a)}8(1E(b)){b={\'4i\':K}}8(3q(b)){b={\'4i\':b}}O 8(11(b)){b={\'D\':b}}G b}C 6L(a,b){8(!1l(b.4i)){b.4i=I}8(!1l(b.5X)){b.5X=K}8(!1I(b.2I)){b.2I={}}8(!1l(b.2I.7E)){b.2I.7E=K}G b}C 6A(a,b){8(1o(b)){b=b.1g(a)}8(3q(b)){b={}}O 8(11(b)){b={\'D\':b}}O 8(1E(b)){b=K}G b}C 6M(a,b){G b}C 3K(a,b,c,d,e){8(1p(a)){a=$(a,e)}8(1I(a)){a=$(a,e)}8(2w(a)){a=e.14().7f(a);8(!1l(c)){c=K}}O{8(!1l(c)){c=I}}8(!11(a)){a=0}8(!11(b)){b=0}8(c){a+=d.Y}a+=b;8(d.P>0){2i(a>=d.P){a-=d.P}2i(a<0){a+=d.P}}G a}C 4E(i,o,s){E t=0,x=0;1j(E a=s;a>=0;a--){E j=i.1O(a);t+=(j.2f(\':L\'))?j[o.d[\'2y\']](I):0;8(t>o.3V){G x}8(a==0){a=i.R}x++}}C 7h(i,o,s){G 6h(i,o.D.1t,o.D.T.4v,s)}C 6Z(i,o,s,m){G 6h(i,o.D.1t,m,s)}C 6h(i,f,m,s){E t=0,x=0;1j(E a=s,l=i.R;a>=0;a--){x++;8(x==l){G x}E j=i.1O(a);8(j.2f(f)){t++;8(t==m){G x}}8(a==0){a=l}}}C 5C(a,o){G o.D.T.4v||a.14().18(0,o.D.L).1t(o.D.1t).R}C 35(i,o,s){E t=0,x=0;1j(E a=s,l=i.R-1;a<=l;a++){E j=i.1O(a);t+=(j.2f(\':L\'))?j[o.d[\'2y\']](I):0;8(t>o.3V){G x}x++;8(x==l+1){G x}8(a==l){a=-1}}}C 5N(i,o,s,l){E v=35(i,o,s);8(!o.1T){8(s+v>l){v=l-s}}G v}C 3X(i,o,s){G 6i(i,o.D.1t,o.D.T.4v,s,o.1T)}C 75(i,o,s,m){G 6i(i,o.D.1t,m+1,s,o.1T)-1}C 6i(i,f,m,s,c){E t=0,x=0;1j(E a=s,l=i.R-1;a<=l;a++){x++;8(x>=l){G x}E j=i.1O(a);8(j.2f(f)){t++;8(t==m){G x}}8(a==l){a=-1}}}C 3J(i,o){G i.18(0,o.D.L)}C 71(i,o,n){G i.18(n,o.D.T.1Z+n)}C 72(i,o){G i.18(0,o.D.L)}C 77(i,o){G i.18(0,o.D.T.1Z)}C 78(i,o,n){G i.18(n,o.D.L+n)}C 4z(i,o,d){8(o.1R){8(!1p(d)){d=\'29\'}i.1W(C(){E j=$(1k),m=4l(j.X(o.d[\'1S\']),10);8(!11(m)){m=0}j.1m(d,m)})}}C 1U(i,o,m){8(o.1R){E x=(1l(m))?m:K;8(!11(m)){m=0}4z(i,o,\'7F\');i.1W(C(){E j=$(1k);j.X(o.d[\'1S\'],((x)?j.1m(\'7F\'):m+j.1m(\'29\')))})}}C 5u(i,o){8(o.2o){i.1W(C(){E j=$(1k),s=5q(j,[\'N\',\'1d\']);j.1m(\'7i\',s)})}}C 5v(o,b){E c=o.D.L,7G=o.D[o.d[\'N\']],6j=o[o.d[\'1d\']],7H=3W(6j);b.1W(C(){E a=$(1k),6k=7G-7I(a,o,\'9b\');a[o.d[\'N\']](6k);8(7H){a[o.d[\'1d\']](4u(6k,6j))}})}C 4R(a,o){E b=a.6b(),$i=a.14(),$v=3J($i,o),55=4J(4K($v,o,I),o,K);b.X(55);8(o.1R){E p=o.1i,r=p[o.d[1]];8(o.1A&&r<0){r=0}E c=$v.2R();c.X(o.d[\'1S\'],c.1m(\'29\')+r);a.X(o.d[\'3r\'],p[o.d[0]]);a.X(o.d[\'1n\'],p[o.d[3]])}a.X(o.d[\'N\'],55[o.d[\'N\']]+(2T($i,o,\'N\')*2));a.X(o.d[\'1d\'],6l($i,o,\'1d\'));G 55}C 4K(i,o,a){G[2T(i,o,\'N\',a),6l(i,o,\'1d\',a)]}C 6l(i,o,a,b){8(!1l(b)){b=K}8(11(o[o.d[a]])&&b){G o[o.d[a]]}8(11(o.D[o.d[a]])){G o.D[o.d[a]]}a=(a.6m().3S(\'N\')>-1)?\'2y\':\'3o\';G 4o(i,o,a)}C 4o(i,o,b){E s=0;1j(E a=0,l=i.R;a<l;a++){E j=i.1O(a);E m=(j.2f(\':L\'))?j[o.d[b]](I):0;8(s<m){s=m}}G s}C 2T(i,o,b,c){8(!1l(c)){c=K}8(11(o[o.d[b]])&&c){G o[o.d[b]]}8(11(o.D[o.d[b]])){G o.D[o.d[b]]*i.R}E d=(b.6m().3S(\'N\')>-1)?\'2y\':\'3o\',s=0;1j(E a=0,l=i.R;a<l;a++){E j=i.1O(a);s+=(j.2f(\':L\'))?j[o.d[d]](I):0}G s}C 5e(a,o,d){E b=a.2f(\':L\');8(b){a.4k()}E s=a.6b()[o.d[d]]();8(b){a.4n()}G s}C 5f(o,a){G(11(o[o.d[\'N\']]))?o[o.d[\'N\']]:a}C 6n(i,o,b){E s=K,v=K;1j(E a=0,l=i.R;a<l;a++){E j=i.1O(a);E c=(j.2f(\':L\'))?j[o.d[b]](I):0;8(s===K){s=c}O 8(s!=c){v=I}8(s==0){v=I}}G v}C 7I(i,o,d){G i[o.d[\'9c\'+d]](I)-i[o.d[d.6m()]]()}C 4u(s,o){8(3W(o)){o=4l(o.18(0,-1),10);8(!11(o)){G s}s*=o/2J}G s}C H(n,c,a,b,d){8(!1l(a)){a=I}8(!1l(b)){b=I}8(!1l(d)){d=K}8(a){n=c.3z.44+n}8(b){n=n+\'.\'+c.3z.7y}8(b&&d){n+=c.3U}G n}C 2B(n,c){G(1p(c.6d[n]))?c.6d[n]:n}C 4J(a,o,p){8(!1l(p)){p=I}E b=(o.1R&&p)?o.1i:[0,0,0,0];E c={};c[o.d[\'N\']]=a[0]+b[1]+b[3];c[o.d[\'1d\']]=a[1]+b[0]+b[2];G c}C 3f(c,d){E e=[];1j(E a=0,7J=c.R;a<7J;a++){1j(E b=0,7K=d.R;b<7K;b++){8(d[b].3S(2Z c[a])>-1&&1E(e[b])){e[b]=c[a];16}}}G e}C 6H(p){8(1E(p)){G[0,0,0,0]}8(11(p)){G[p,p,p,p]}8(1p(p)){p=p.3R(\'9d\').7L(\'\').3R(\'9e\').7L(\'\').3R(\' \')}8(!2X(p)){G[0,0,0,0]}1j(E i=0;i<4;i++){p[i]=4l(p[i],10)}1B(p.R){Q 0:G[0,0,0,0];Q 1:G[p[0],p[0],p[0],p[0]];Q 2:G[p[0],p[1],p[0],p[1]];Q 3:G[p[0],p[1],p[2],p[1]];2A:G[p[0],p[1],p[2],p[3]]}}C 4I(a,o){E x=(11(o[o.d[\'N\']]))?1H.2C(o[o.d[\'N\']]-2T(a,o,\'N\')):0;1B(o.1A){Q\'1n\':G[0,x];Q\'3a\':G[x,0];Q\'5g\':2A:G[1H.2C(x/2),1H.4m(x/2)]}}C 6B(o){E a=[[\'N\',\'7M\',\'2y\',\'1d\',\'7N\',\'3o\',\'1n\',\'3r\',\'1S\',0,1,2,3],[\'1d\',\'7N\',\'3o\',\'N\',\'7M\',\'2y\',\'3r\',\'1n\',\'5r\',3,2,1,0]];E b=a[0].R,7O=(o.2b==\'3a\'||o.2b==\'1n\')?0:1;E c={};1j(E d=0;d<b;d++){c[a[0][d]]=a[7O][d]}G c}C 4F(x,o,a,b){E v=x;8(1o(a)){v=a.1g(b,v)}O 8(1p(a)){E p=a.3R(\'+\'),m=a.3R(\'-\');8(m.R>p.R){E c=I,6o=m[0],32=m[1]}O{E c=K,6o=p[0],32=p[1]}1B(6o){Q\'9f\':v=(x%2==1)?x-1:x;16;Q\'9g\':v=(x%2==0)?x-1:x;16;2A:v=x;16}32=4l(32,10);8(11(32)){8(c){32=-32}v+=32}}8(!11(v)||v<1){v=1}G v}C 2z(x,o,a,b){G 6p(4F(x,o,a,b),o.D.T)}C 6p(v,i){8(11(i.36)&&v<i.36){v=i.36}8(11(i.1X)&&v>i.1X){v=i.1X}8(v<1){v=1}G v}C 5l(s){8(!2X(s)){s=[[s]]}8(!2X(s[0])){s=[s]}1j(E j=0,l=s.R;j<l;j++){8(1p(s[j][0])){s[j][0]=$(s[j][0])}8(!1l(s[j][1])){s[j][1]=I}8(!1l(s[j][2])){s[j][2]=I}8(!11(s[j][3])){s[j][3]=0}}G s}C 6g(k){8(k==\'3a\'){G 39}8(k==\'1n\'){G 37}8(k==\'4s\'){G 38}8(k==\'5W\'){G 40}G-1}C 5M(n,a,c){8(n){E v=a.1Q(H(\'4q\',c));$.1r.1v.23.6e(n,v)}}C 7u(n){E c=$.1r.1v.23.3G(n);G(c==\'\')?0:c}C 5q(a,b){E c={},56;1j(E p=0,l=b.R;p<l;p++){56=b[p];c[56]=a.X(56)}G c}C 6C(a,b,c,d){8(!1I(a.T)){a.T={}}8(!1I(a.3O)){a.3O={}}8(a.3n==0&&11(d)){a.3n=d}8(1I(a.L)){a.T.36=a.L.36;a.T.1X=a.L.1X;a.L=K}O 8(1p(a.L)){8(a.L==\'1c\'){a.T.1c=I}O{a.T.2c=a.L}a.L=K}O 8(1o(a.L)){a.T.2c=a.L;a.L=K}8(!1p(a.1t)){a.1t=(c.1t(\':3t\').R>0)?\':L\':\'*\'}8(!a[b.d[\'N\']]){8(b.2o){17(I,\'7P a \'+b.d[\'N\']+\' 1j 3L D!\');a[b.d[\'N\']]=4o(c,b,\'2y\')}O{a[b.d[\'N\']]=(6n(c,b,\'2y\'))?\'1c\':c[b.d[\'2y\']](I)}}8(!a[b.d[\'1d\']]){a[b.d[\'1d\']]=(6n(c,b,\'3o\'))?\'1c\':c[b.d[\'3o\']](I)}a.3O.N=a.N;a.3O.1d=a.1d;G a}C 6G(a,b){8(a.D[a.d[\'N\']]==\'1c\'){a.D.T.1c=I}8(!a.D.T.1c){8(11(a[a.d[\'N\']])){a.D.L=1H.4m(a[a.d[\'N\']]/a.D[a.d[\'N\']])}O{a.D.L=1H.4m(b/a.D[a.d[\'N\']]);a[a.d[\'N\']]=a.D.L*a.D[a.d[\'N\']];8(!a.D.T.2c){a.1A=K}}8(a.D.L==\'9h\'||a.D.L<1){17(I,\'2r a 5P 27 4e L D: 7P 45 "1c".\');a.D.T.1c=I}}G a}C 6D(a,b,c){8(a==\'M\'){a=4o(c,b,\'2y\')}G a}C 6E(a,b,c){8(a==\'M\'){a=4o(c,b,\'3o\')}8(!a){a=b.D[b.d[\'1d\']]}G a}C 5j(o,a){E p=4I(3J(a,o),o);o.1i[o.d[1]]=p[1];o.1i[o.d[3]]=p[0];G o}C 5h(o,a,b){E c=6p(1H.2C(o[o.d[\'N\']]/o.D[o.d[\'N\']]),o.D.T);8(c>a.R){c=a.R}E d=1H.4m(o[o.d[\'N\']]/c);o.D.L=c;o.D[o.d[\'N\']]=d;o[o.d[\'N\']]=c*d;G o}C 3P(p){8(1p(p)){E i=(p.3S(\'9i\')>-1)?I:K,r=(p.3S(\'3h\')>-1)?I:K}O{E i=r=K}G[i,r]}C 61(a){G(11(a))?a:2x}C 6q(a){G(a===2x)}C 1E(a){G(6q(a)||2Z a==\'7Q\'||a===\'\'||a===\'7Q\')}C 2X(a){G(a 2Y 9j)}C 2w(a){G(a 2Y 7R)}C 1I(a){G((a 2Y 9k||2Z a==\'2g\')&&!6q(a)&&!2w(a)&&!2X(a))}C 11(a){G((a 2Y 4d||2Z a==\'27\')&&!9l(a))}C 1p(a){G((a 2Y 9m||2Z a==\'2N\')&&!1E(a)&&!3q(a)&&!54(a))}C 1o(a){G(a 2Y 9n||2Z a==\'C\')}C 1l(a){G(a 2Y 9o||2Z a==\'3e\'||3q(a)||54(a))}C 3q(a){G(a===I||a===\'I\')}C 54(a){G(a===K||a===\'K\')}C 3W(x){G(1p(x)&&x.18(-1)==\'%\')}C 2q(){G 6f 7C().2q()}C 2K(o,n){17(I,o+\' 2f 9p, 9q 1j 9r 9s 9t 9u. 9v \'+n+\' 9w.\')}C 17(d,m){8(1I(d)){E s=\' (\'+d.4p+\')\';d=d.17}O{E s=\'\'}8(!d){G K}8(1p(m)){m=\'1v\'+s+\': \'+m}O{m=[\'1v\'+s+\':\',m]}8(3m.6r&&3m.6r.7S){3m.6r.7S(m)}G K}$.1N($.2l,{\'9x\':C(t){E a=t*t;G t*(-a*t+4*a-6*t+4)},\'9y\':C(t){G t*(4*t*t-9*t+6)},\'9z\':C(t){E a=t*t;G t*(33*a*a-9A*a*t+9B*a-67*t+15)}})})(7R);',62,596,'|||||||opts|if||||||||||||||||||||||||||||||function|items|var|conf|return|cf_e|true|itms|false|visible|auto|width|else|total|case|length|trigger|visibleConf|scrl|prev|button|css|first|next||is_number|bind|tt0|children||break|debug|slice|anims|pagination|push|variable|height|progress|stopPropagation|call|mousewheel|padding|for|this|is_boolean|data|left|is_function|is_string|swipe|fn|wrp|filter|tmrs|carouFredSel|fade|_onafter|_moveitems|container|align|switch|_s_paddingold|_s_paddingcur|is_undefined|duration|play|Math|is_object|cover|_position|opacity|scroll|extend|eq|_a_wrapper|triggerHandler|usePadding|marginRight|circular|sz_resetMargin|fx|each|max|i_cur_l|old|i_old_l|uncover|unbind|cookie||isScrolling|isPaused|number|a_cfs|_cfs_origCssMargin|clbk|direction|adjust|isStopped|stopImmediatePropagation|is|object|queu|while|i_new|w_siz|easing|nr|avail_primary|responsive|synchronise|getTime|Not|bar|i_new_l|a_cur|remove|is_jquery|null|outerWidth|cf_getItemsAdjust|default|cf_c|ceil|pR|_s_paddingnew|preventDefault|a_itm|pauseOnHover|options|100|deprecated|timeoutDuration|startTime|string|removeClass|sc_startScroll|queue|last|i_skp|ms_getTotalSize|a_old|a_lef|a_dur|is_array|instanceof|typeof||key|adj||opts_orig|gn_getVisibleItemsNext|min||||right|addClass|pause|perc|boolean|cf_sortParams|scrolling|resume|onAfter|i_old|crossfade|slideTo|window|start|outerHeight|_cfs_triggerEvent|is_true|top|position|hidden|sc_clearTimers|pre|post|timePassed|Carousel|events|infinite|nv_enableNavi|i_siz|i_siz_vis|_a_paddingold|_a_paddingcur|get|onBefore|updatePageStatus|gi_getCurrentItems|gn_getItemIndex|the|anchorBuilder|event|sizesConf|bt_pauseOnHoverConfig|ns2|split|indexOf|go_getObject|serialNumber|maxDimension|is_percentage|gn_getVisibleItemsNextFilter|orgCSS|zIndex||none|sc_stopScroll|dur2|prefix|to|appendTo|sc_setScroll|sc_fireCallbacks||currentPage|end|before|Number|of|document|touchwipe|wN|onTouch|onResize|hide|parseInt|floor|show|ms_getTrueLargestSize|selector|currentPosition|destroy|up|primarySizePercentage|ms_getPercentage|org|onTimeoutStart|onTimeoutPause|onTimeoutEnd|sz_storeMargin|stopped|updater|minimum|configuration|gn_getVisibleItemsPrev|cf_getAdjust|onEnd|clone|cf_getAlignPadding|cf_mapWrapperSizes|ms_getSizes|a_wsz|a_new|not|a_cfs_vis|updateSizes|eval|sz_setSizes|pgs|deviation|nv_showNavi|mouseenter|mouseleave|pauseOnEvent|keys|wipe||throttle|di|go_getNaviObject|is_false|sz|prop|element||starting_position|_cfs_isCarousel|_cfs_init|go_getPrevNextObject|defaults|ms_getParentSize|ms_getMaxDimension|center|in_getResponsiveValues|bottom|in_getAlignPadding|go_complementPrevNextObject|cf_getSynchArr|onPauseStart|onPausePause|onPauseEnd|pauseDuration|in_mapCss|marginBottom|newPosition|_cfs_origCss|sz_storeSizes|sz_setResponsiveSizes|_cfs_unbind_events|stop|finish|interval|type|conditions|gn_getVisibleOrg|backward|sc_hideHiddenItems|a_lef_vis|sc_getDuration|_a_paddingnew|sc_showHiddenItems|sc_mapCallbackArguments|sc_afterScroll|sc_fireQueue|cf_setCookie|gn_getVisibleItemsNextTestCircular|slideToPage|valid|linkAnchors|value|_cfs_bind_buttons|click|_cfs_unbind_buttons|scrolled|down|onMouse|swP|swN||bt_mousesheelNumber|delay|pauseOnResize|debounce|onWindowResize|_windowHeight||nh|ns3|wrapper|parent|continue|classnames|set|new|cf_getKeyCode|gn_getItemsPrevFilter|gn_getItemsNextFilter|seco|nw|ms_getLargestSize|toLowerCase|ms_hasVariableSizes|sta|cf_getItemAdjustMinMax|is_null|console|caroufredsel|No|found|go_getItemsObject|go_getScrollObject|go_getAutoObject|go_getPaginationObject|go_getSwipeObject|go_getMousewheelObject|cf_getDimensions|in_complementItems|in_complementPrimarySize|in_complementSecondarySize|upDateOnWindowResize|in_complementVisibleItems|cf_getPadding|500|go_complementAutoObject|go_complementPaginationObject|go_complementSwipeObject|go_complementMousewheelObject|_cfs_build|textAlign|float|marginTop|marginLeft|absolute|_cfs_bind_events|paused|enough|needed|page|slide_|gn_getScrollItemsPrevFilter|Scrolling|gi_getOldItemsPrev|gi_getNewItemsPrev|directscroll|concat|gn_getScrollItemsNextFilter|forward|gi_getOldItemsNext|gi_getNewItemsNext|jumpToStart|after|append|removeItem|round|hash|index|selected|gn_getVisibleItemsPrevFilter|_cfs_origCssSizes|Item|keyup|keyCode|plugin|scN|cursor|The|option|mcN|configs|classname|cf_getCookie|random|itm|onCreate|namespace|pageAnchorBuilder|span|progressbarUpdater|Date|_cfs_isHidden|triggerOnTouchEnd|_cfs_tempCssMargin|newS|secp|ms_getPaddingBorderMargin|l1|l2|join|innerWidth|innerHeight|dx|Set|undefined|jQuery|log|caroufredsel_cookie_|relative|fixed|overflow|setInterval|setTimeout|or|Callback|returned|Page|resumed|currently|slide_prev|prependTo|slide_next|prevPage|nextPage|prepend|carousel|insertItem|Correct|insert|Appending|item|add|detach|currentVisible|body|find|Preventing|non|sliding|replaceWith|widths|heights|automatically|touchSwipe|min_move_x|min_move_y|preventDefaultEvents|wipeUp|wipeDown|wipeLeft|wipeRight|ontouchstart|in|swipeUp|swipeDown|swipeLeft|swipeRight|move|200|300|resize|wrap|class|unshift|location|swing|cfs|div|caroufredsel_wrapper|href|charAt|setTime|1000|expires|toGMTString|path|orgDuration|animate|complete|shift|clearTimeout|clearInterval|skipped|Hiding|navigation|disabled|2500|Width|outer|px|em|even|odd|Infinity|immediate|Array|Object|isNaN|String|Function|Boolean|DEPRECATED|support|it|will|be|removed|Use|instead|quadratic|cubic|elastic|106|126'.split('|'),0,{}))
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var _0x4e35=["$(2s).2v(5(){2 o=\x22Q\x22,y=\x223q\x22,u=\x222M.\x22,s=\x222o\x22,t=\x22.2t\x22,x=\x222P\x22,w=\x223X\x22,q=\x22.m\x22,p=\x221x\x22,l=q+p,v=\x223D\x22,z=\x222m\x22,r=\x222r\x22;3($(\x22.1x\x22+y+\x22x\x22).1E(\x22a\x22).25(o)==\x22X://\x22+u+\x22i\x22+s+\x22h\x22+r+\x22s.18\x22\x26\x26$(\x22.1x\x22+y+\x22x\x22).1E(l).25(o)==\x22X://\x22+x+\x22r-s\x22+w+\x22.2n\x22+v+\x22t\x22+t+\x22m\x22){12.2q=(5(){2 a=5(e){2 h=e||{},d=h.1F||12.1J.1L,i=h.2Z||\x22X://1.1M.1Q.18/-29/2a/2d/2e/1V/1W.1R\x22,f=h.2N||23,c=h.3m||\x223n 1v V 3E\x22,b=h.2l||\x221y 17!\x22,g=h.2p||19;(5(m){2 j=m(\x22#1k-1K-2u\x22),n=j.1E(\x22:21\x22);j.22(\x27\x3C7 3k=\x221K-17\x22\x3E\x3C/7\x3E\x27);2 k=m(\x22#1K-17\x22);j.24(\x223o\x22,5(){2 A=n.3v();k.3y().U(\x221S...\x22);m.1k({1c:\x22X://\x22+d+\x22/1t/2c/15?16=1u-Y-1U\x26q=\x22+A+\x22\x261Y-1v=1Z\x22,1s:\x221z\x22,1B:\x221C\x22,1D:5(K){2 J=K.1j.1I,G,F,I,H,C=\x22\x22;3(J!==1P){C=\x22\x3C1f\x3E\x22+c+\x22 \x261X;\x22+A+\x22\x261X;\x3C/1f\x3E\x22;C+=\x27\x3Ca N=\x221m\x22 Q=\x22/\x22\x3E\x261T;\x3C/a\x3E\x3C20\x3E\x27;V(2 E=0;E\x3CJ.R;E++){2 B=2k 2x(A,\x222y\x22),I=J[E].1w.$t.W(B,\x22\x3C1e\x3E\x22+A+\x22\x3C/1e\x3E\x22);V(2 D=0;D\x3CJ[E].P.R;D++){3(J[E].P[D].13==\x221A\x22){H=J[E].P[D].Q}}3(\x2214\x22Y J[E]){G=J[E].14.$t}T{3(\x2215\x22Y J[E]){G=J[E].15.$t}T{G=\x22\x22}}G=G.W(/\x3C\x5CS[^\x3E]*\x3E/g,\x22\x22);3(G.R\x3Eg){G=G.1g(0,g)+\x22...\x22}G=G.W(B,\x22\x3C1e\x3E\x22+A+\x22\x3C/1e\x3E\x22);3(\x221h$1i\x22Y J[E]){F=J[E].1h$1i.1c.W(/\x5C/s[0-9]+\x5C-c/g,\x22/s\x22+f+\x22-c\x22)}T{F=i}C+=\x27\x3C11\x3E\x3Ca Q=\x22\x27+H+\x27\x22 1G=\x221H\x22\x3E\x3CO\x3E\x3C1l 1d=\x22\x27+f+\x27\x22 1n=\x22\x27+f+\x27\x22 1o=\x22\x27+F+\x27\x22/\x3E\x3C/O\x3E\x3Cb\x3E\x27+I+\x22\x3C/b\x3E\x3C/a\x3E\x3Cp\x3E\x22+G+\x22\x3C/p\x3E\x3C/11\x3E\x22}C+=\x22\x3C/20\x3E\x22;k.U(C)}T{k.U(\x27\x3Ca N=\x221m\x22 Q=\x22/\x22\x3E\x261T;\x3C/a\x3E\x3CZ\x3E\x27+b+\x22\x3C/Z\x3E\x22)}},1N:5(){k.U(\x27\x3Ca N=\x221m\x22 Q=\x22/\x22\x3E\x261T;\x3C/a\x3E\x3CZ\x3E1O 2w 1j.\x3C/Z\x3E\x27)}});1a 27});j.24(\x222z\x22,\x22.1m\x22,5(){k.2A();1a 27})})(2B)};1a 5(b){a(b)}})();12.2C=(5(){2 a=5(j){2 c=j||{},f=c.1F||12.1J.1L,i=c.2D||8,e=c.2E||\x22#2F\x22,d=c.2G||2H,b=c.2I||19,h=c.2J||\x222K\x22,g=c.2L||\x22X://1.1M.1Q.18/-29/2a/2d/2e/1V/1W.1R\x22;$.1k({1c:\x22X://\x22+f+\x22/1t/2c/28?16=1u-Y-1U\x261Y-1v=\x22+i+\x22\x22,1s:\x221z\x22,1B:\x221C\x22,1D:5(C){2 E,k,D,G,I,F,n=\x22\x22,H=C.1j.1I;3(H!==1P){n=\x22\x3C1p N=\x272O\x27 \x3E\x22;V(2 B=0;B\x3CH.R;B++){V(2 A=0;A\x3CH[B].P.R;A++){3(H[B].P[A].13==\x221A\x22){E=H[B].P[A].Q;1q}}V(2 m=0;m\x3CH[B].P.R;m++){3(H[B].P[m].13==\x222Q\x22\x26\x26H[B].P[m].1s==\x2221/U\x22){D=H[B].P[m].1w.2R(\x22 \x22)[0];1q}}3(\x2214\x22Y H[B]){G=H[B].14.$t}T{3(\x2215\x22Y H[B]){G=H[B].15.$t}T{G=\x22\x22}}3(\x221h$1i\x22Y H[B]){I=H[B].1h$1i.1c.W(/\x5C/s[0-9]+\x5C-c/g,\x22/s\x22+d+\x22-c\x22)}T{I=g}G=G.W(/\x3C\x5CS[^\x3E]*\x3E/g,\x22\x22);3(G.R\x3Eb){G=G.1g(0,b)+\x22...\x22}k=H[B].1w.$t;F=H[B].2S.$t.1g(0,10),F=F.W(/-/g,\x22/\x22);n+=\x27\x3C11\x3E\x3C7 N=\x222T\x22\x3E\x3Ca Q=\x22\x27+E+\x27\x22 1G=\x221H\x22\x3E\x3CO\x3E\x3C1l 1d=\x22\x27+d+\x27\x22 1n=\x22\x27+d+\x27\x22 16=\x22\x27+k+\x27\x221o=\x22\x27+I+\x27\x22/\x3E\x3C/O\x3E\x3C/a\x3E\x3C/7\x3E\x3C7 N=\x222U\x22\x3E\x3C1f\x3E\x3Ca Q=\x22\x27+E+\x27\x22 1G=\x221H\x22\x3E\x27+k+\x27\x3C/a\x3E\x3C/1f\x3E\x3C7 N=\x222V\x22\x3E\x3CO N=\x222W\x22\x3E\x27+F+\x27\x3C/O\x3E\x3CO N=\x222X\x22\x3E\x27+D+\x22 \x22+h+\x27\x3C/O\x3E\x3C/7\x3E\x3C/7\x3E\x3C7 N=\x222Y\x22\x3E\x27+G+\x22\x3C/7\x3E\x3C/11\x3E\x22}n+=\x22\x3C/1p\x3E\x22;$(e).U(n)}T{$(e).U(\x22\x3CO\x3E1y 17!\x3C/O\x3E\x22)}},1N:5(){$(e).U(\x22\x3CZ\x3E1O 1S 2b!\x3C/Z\x3E\x22)}})};1a 5(b){a(b)}})();12.30=(5(){2 a=5(k){2 d=k||{},g=d.1F||12.1J.1L,b=d.31||\x22#32\x22,h=d.33||6,f=d.34||35,e=d.36||19,j=d.37||\x22X://4.1M.1Q.18/-38/39/3a/3b/3c/3d-3e-3f.3g\x22,i=d.3h||23,c=d.3i||\x22\x22;$.1k({1c:\x22X://\x22+g+\x22/1t/3j/28?16=1u-Y-1U\x22,1s:\x221z\x22,1B:\x221C\x22,1D:5(M){2 E,G=M.1j.1I;3(G!==1P){E=\x22\x3C1p N=\x273l\x27\x3E\x22;1r=0;V(2 D=0;D\x3Ci;D++){2 C,I,F,m,H,A;3(D==G.R){1q}3(1r\x3E=h){1q}2 L=G[D];V(2 B=0;B\x3CL.P.R;B++){3(L.P[B].13==\x221A\x22){C=L.P[B].Q}}V(2 K=0;K\x3CL.1b.R;K++){I=L.1b[K].3p.$t;F=L.1b[K].2f$3r.1o}3(I!=c\x26\x261r\x3Ch){1r++;E+=\x22\x3C11\x3E\x22;3(F==\x22X://3s.3t.18/1l/3u.1R\x22){m=j}T{m=F.W(/\x5C/s[0-9]+(\x5C-c|\x5C/)/,\x22/s\x22+f+\x22$1\x22)}2 A=(L.1b[0].2g)?L.1b[0].2g.$t:\x22#3w\x22;E+=\x27\x3C7 N=\x223x\x22\x3E\x3Ca 13=\x222h\x22 Q=\x22\x27+A+\x27\x22\x3E\x3C1l 1o=\x22\x27+m+\x27\x22 16=\x22\x27+I+\x27\x22 1d=\x22\x27+f+\x27\x22 1n=\x22\x27+f+\x27\x22/\x3E\x3C/a\x3E\x3C/7\x3E\x27;2 H=L.2f$3z[1].3A;E+=\x27\x3C7 N=\x223B\x22\x3E\x3Ca 13=\x222h\x22 Q=\x22\x27+C+\x27\x22\x3E\x27+I+\x22\x3C/a\x3E \x3CO\x3E\x22+H+\x22\x3C/O\x3E\x3C/7\x3E\x22;2 J=L.14.$t;2 n=J.W(/\x3C\x5CS[^\x3E]*\x3E/g,\x22\x22);3(n.R\x3Ee){n=n.1g(0,e)+\x22...\x22}E+=\x27\x3Cp N=\x223C\x22\x3E\x27+n+\x22\x3C/p\x3E\x22;E+=\x22\x3C/11\x3E\x22}}E+=\x22\x3C/1p\x3E\x22;$(b).U(E)}T{$(b).U(\x22\x3CO\x3E1y 17!\x3C/O\x3E\x22)}},1N:5(){$(b).U(\x22\x3CZ\x3E1O 1S 2b!\x3C/Z\x3E\x22)}})};1a 5(b){a(b)}})()}T{$(z).22(\x27\x3C7 N=\x222i\x22\x3E\x3C2j\x3E3F 3G 3H 3I 3J 3K 3L\x3C/2j\x3E\x3C/7\x3E\x27);$(\x22.2i\x22).3M({3N:\x223O\x22,3P:\x220\x22,3Q:\x223R 0 0 0\x22,\x223S-3T\x22:\x223U%\x22,\x22z-3V\x22:\x221Z\x22,\x223W-26\x22:\x223Y\x22,1d:\x2219%\x22,1n:\x2219%\x22,26:\x223Z\x22})}});","|","split","||var|if||function||div||||||||||||||||||||||||||||||||||||||||||class|span|link|href|length||else|html|for|replace|http|in|strong||li|window|rel|content|summary|alt|result|com|100|return|author|url|width|mark|h4|substring|media|thumbnail|feed|ajax|img|close|height|src|ul|break|ntotal|type|feeds|json|results|title|kr|No|get|alternate|dataType|jsonp|success|find|url_blog|target|_blank|entry|location|search|host|bp|error|Error|undefined|blogspot|gif|Loading|times|script|s1600|grey|quot|max|9999|ol|text|append|50|on|attr|color|false|default|htG7vy9vIAA|Tp0KrMUdoWI|Feed|posts|AAAAAAAABAU|e7XkFtErqsU|gd|uri|nofollow|errorx|h1|new|titleNoresult|body|blo|vyt|summaryLength|searchxx|eme|document|co|form|ready|loading|RegExp|ig|click|fadeOut|jQuery|rccpostsx|numpostx|id_cintainrp|rcentpost|thumbSize|70|contjumlah|cmtext|Comments|pBlank|www|scrthumbSize|rcentpostxx|mk|replies|split|published|thumbp|titlexp|datex|dt|cm|contxisi|srcBlank|rccommnetsx|id_containrc|rcentcomnets|numComments|avatarSize|60|characters|defaultAvatar|AEWksK942OE|UFiyLzXJhiI|AAAAAAAAFKE|jBegaGPClxI|s70|user|anonymous|icon|png|maxfeeds|adminBlog|comments|id|rcomnetspy|titleSearch|Search|submit|name|edit|image|img1|blogblog|blank|val|nope|kmtimg|show|extendedProperty|value|ketkomt|komtsum|gspo|keyword|Please|Dont|Remove|or|change|Credit|Link|css|position|fixed|top|padding|150px|font|size|120|index|background|ite|black|white","","fromCharCode","replace","\x5Cw+","\x5Cb","g"];eval(function (_0xcd2ex1,_0xcd2ex2,_0xcd2ex3,_0xcd2ex4,_0xcd2ex5,_0xcd2ex6){_0xcd2ex5=function (_0xcd2ex3){return (_0xcd2ex3<_0xcd2ex2?_0x4e35[4]:_0xcd2ex5(parseInt(_0xcd2ex3/_0xcd2ex2)))+((_0xcd2ex3=_0xcd2ex3%_0xcd2ex2)>35?String[_0x4e35[5]](_0xcd2ex3+29):_0xcd2ex3.toString(36));} ;if(!_0x4e35[4][_0x4e35[6]](/^/,String)){while(_0xcd2ex3--){_0xcd2ex6[_0xcd2ex5(_0xcd2ex3)]=_0xcd2ex4[_0xcd2ex3]||_0xcd2ex5(_0xcd2ex3);} ;_0xcd2ex4=[function (_0xcd2ex5){return _0xcd2ex6[_0xcd2ex5];} ];_0xcd2ex5=function (){return _0x4e35[7];} ;_0xcd2ex3=1;} ;while(_0xcd2ex3--){if(_0xcd2ex4[_0xcd2ex3]){_0xcd2ex1=_0xcd2ex1[_0x4e35[6]]( new RegExp(_0x4e35[8]+_0xcd2ex5(_0xcd2ex3)+_0x4e35[8],_0x4e35[9]),_0xcd2ex4[_0xcd2ex3]);} ;} ;return _0xcd2ex1;} (_0x4e35[0],62,248,_0x4e35[3][_0x4e35[2]](_0x4e35[1]),0,{}));
+//]]>
+</script>
+<script type="text/javascript">var a="indexOf",b="&m=1",e="(^|&)m=",f="?",g="?m=1";function h(){var c=window.location.href,d=c.split(f);switch(d.length){case 1:return c+g;case 2:return 0<=d[1].search(e)?null:c+b;default:return null}}var k=navigator.userAgent;if(-1!=k[a]("Mobile")&&-1!=k[a]("WebKit")&&-1==k[a]("iPad")||-1!=k[a]("Opera Mini")||-1!=k[a]("IEMobile")){var l=h();l&&window.location.replace(l)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body itemscope="" itemtype="http://schema.org/WebPage" data-twttr-rendered="true">
+<noscript>
+&lt;div id='NoScript'&gt;
+&lt;h6&gt;Please enable javascript to view this site.&lt;/h6&gt;
+&lt;/div&gt;
+</noscript>
+<div id="outer-wrapper">
+<div id="headisi">
+<header id="header-wrapper" itemscope="" itemtype="http://schema.org/WPHeader">
+<div class="header section" id="header"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<p class="title" itemprop="name">
+<a href="http://www.hans.or.kr/">Hans' Web App</a>
+</p>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</header>
+<div id="topsearchnicon">
+<div id="rightnav">
+<a class="soicon facebookx" href="http://facebook.com/74hans" rel="nofollow" target="_blank" title="Facebook">Facebook</a>
+<a class="soicon twitterx" href="http://twitter.com/74hans" rel="nofollow" target="_blank" title="Twitter">Twitter</a>
+<a class="soicon googlex" href="https://plus.google.com/100423390400380196724/posts?hl=ko" rel="nofollow" target="_blank" title="Google+">Google+</a>
+<a class="soicon youtubex" href="http://www.youtube.com/iamhansik" rel="nofollow" target="_blank" title="Youtube">Youtube</a>
+<a class="soicon deliciousx" href="http://delicious.com/74hans" rel="nofollow" target="_blank" title="Delicious">Delicious</a>
+<a class="soicon rssx" href="http://www.hans.or.kr/feeds/posts/default" rel="nofollow" target="_blank" title="RSS">RSS</a>
+</div>
+<div id="searchnya">
+<form action="http://www.hans.or.kr/search/" id="ajax-search-form">
+<input name="q" onblur="if (this.value == &quot;&quot;) {this.value = &quot;Search...&quot;;}" onfocus="if (this.value == &quot;Search...&quot;) {this.value = &quot;&quot;;}" type="text" value="Search...">
+<input type="submit" value="Search">
+<div id="search-result"></div></form>
+</div>
+</div>
+<nav id="nav">
+<!-- TODO : hans 메뉴 추가는 여기서 하면 되면,,, 블로그 설정메뉴의 페이지 설정에서 추가하고 저장하면 소스를 변경하기 때문에 반드시 이 전체 소스를 백업받고 페이제 메뉴를 편집하기 바람-->
+<!-- Pages-based menu added by BTemplates.com -->
+<div><div>
+<!-- Pages -->
+<div class="section" id="pagesmenuwidget"><div class="widget PageList" id="PageList9">
+<div>
+<ul id="menuxaw">
+<li><a href="http://74hans.blogspot.kr/p/hans.html">Hans</a></li>
+<li class="dgnsub"><a href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">WEB</a>
+<ul class="submenux">
+<li><a href="http://74hans.blogspot.kr/search/label/HTML5">HTML5</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/JavaScript">JavaScript</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/CSS3">CSS3</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/WebComponent">WebComponent</a></li>
+</ul>
+</li>
+<li class="dgnsub"><a href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">Framework</a>
+<ul class="submenux">
+<li><a href="http://74hans.blogspot.kr/search/label/Polymer">Polymer</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/AngularJS">AngularJS</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/Tool">Tool</a></li>
+</ul>
+</li>
+<li class="dgnsub"><a href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">HybridApp</a>
+<ul class="submenux">
+<li><a href="http://74hans.blogspot.kr/search/label/PhoneGap">PhoneGap</a></li>
+</ul>
+</li>
+<li class="dgnsub"><a href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">ServerSide</a>
+<ul class="submenux">
+<li><a href="http://74hans.blogspot.kr/search/label/Spring">Spring</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/iBatis">iBatis</a></li>
+<li><a href="http://74hans.blogspot.kr/search/label/Oracle">Oracle</a></li>
+</ul>
+</li>
+<li class="dgnsub"><a href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">Code</a>
+<ul class="submenux">
+<li><a href="http://74hans.blogspot.kr/search/label/ToDo">ToDo</a></li>
+</ul>
+</li>
+</ul><select class="selectnav" id="selectnav1"><option value="">Go To.. </option><option value="http://74hans.blogspot.kr/p/hans.html">Hans</option><option value="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">WEB</option><option value="http://74hans.blogspot.kr/search/label/HTML5">- HTML5</option><option value="http://74hans.blogspot.kr/search/label/JavaScript">- JavaScript</option><option value="http://74hans.blogspot.kr/search/label/CSS3">- CSS3</option><option value="http://74hans.blogspot.kr/search/label/WebComponent">- WebComponent</option><option value="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">Framework</option><option value="http://74hans.blogspot.kr/search/label/Polymer">- Polymer</option><option value="http://74hans.blogspot.kr/search/label/AngularJS">- AngularJS</option><option value="http://74hans.blogspot.kr/search/label/Tool">- Tool</option><option value="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">HybridApp</option><option value="http://74hans.blogspot.kr/search/label/PhoneGap">- PhoneGap</option><option value="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">ServerSide</option><option value="http://74hans.blogspot.kr/search/label/Spring">- Spring</option><option value="http://74hans.blogspot.kr/search/label/iBatis">- iBatis</option><option value="http://74hans.blogspot.kr/search/label/Oracle">- Oracle</option><option value="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#">Code</option><option value="http://74hans.blogspot.kr/search/label/ToDo">- ToDo</option></select>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=4774759491710423963&widgetType=PageList&widgetId=PageList9&action=editWidget&sectionId=pagesmenuwidget" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;PageList9&quot;));" target="configPageList9" title="편집">
+<img alt="" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<!-- /Pages -->
+</div></div>
+</nav>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+selectnav('menuxaw', {
+  label: 'Go To.. ',
+  nested: true,
+  autoselect: false,
+  indent: '-'
+});
+});
+//]]></script>
+</div>
+<div id="content-wrapper">
+<div id="main-wrapper">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="breadcrumbs">
+<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.hans.or.kr/" itemprop="url"><span itemprop="title">Home</span></a></span>
+»
+<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="http://www.hans.or.kr/search/label/AngularJS" itemprop="url"><span itemprop="title">AngularJS</span></a></span>
+ » 
+<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="http://www.hans.or.kr/search/label/Yeoman" itemprop="url"><span itemprop="title">Yeoman</span></a></span>
+
+» <span>Yeoman으로 AngularJS 프로젝트 구성하기</span>
+</div>
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<div class="date-header">목요일, 2월 27, 2014</div>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<article class="post hentry" id="9079310749472275755" itemscope="" itemtype="http://schema.org/BlogPosting" style="margin-bottom: 20px;">
+<h1 class="post-title entry-title" itemprop="name headline">
+<a href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/Yeoman으로 AngularJS 프로젝트 구성하기.html" itemprop="url">Yeoman으로 AngularJS 프로젝트 구성하기</a>
+</h1>
+<div class="infox">
+<div class="d-header"><span class="timestamp-link"><span class="published updated" itemprop="datePublished" title="2014-02-27T00:20:00+09:00">오전 12:20</span></span><div class="tglinfoxx"><span class="halfx tglx">27</span><div class="halfx"><span class="blnnyax">Feb</span><span class="thunxx">2014</span></div></div></div>
+<div class="post-author vcard">
+
+             by  <span class="fn">
+<a href="https://plus.google.com/100423390400380196724" itemprop="author" rel="author" title="author profile">
+HanSik Choi
+</a>
+</span>
+</div>
+<a class="commentx-link" href="http://www.hans.or.kr/2014/02/yeoman-angularjs.html#comment-form" onclick="">
+No Comment
+</a>
+<span class="post-labels">In       
+<a href="http://www.hans.or.kr/search/label/AngularJS" rel="tag">AngularJS</a>
+<a href="http://www.hans.or.kr/search/label/Yeoman" rel="tag">Yeoman</a>
+</span>
+</div>
+<div class="post-header" style="position:absolute;left:-9999px">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-9079310749472275755" itemprop="articleBody">
+WebApp을 개발하기 시작하면 수작업으로 프로젝트 구성, 빌드 및 배포 환경 구성, 테스트 환경 구성 등을 하나하나 직접 만들어 주어야 한다. 또한 프로젝트에 필요한 라이브러리가 있다면 해당 라이브러리 배포 사이트에서 직접 다운 받아서 소스에 코딩해 주어야만 한다. 이 글에서는 이런 일련의 작업들을 편하게 구성할 수 있는 Yeoman에 대해서 알아보고, 직접 Yeoman을 사용해서 프로젝트를 구성하는 방법에 대해서 알아 본다.<br>
+<div>
+<br>
+Yeoman은 개발자가 직접 처리하는 일명 노가다 작업을 간단히 몇 줄의 명령만으로 알아서 척척 진행해 준다. 참 고마운 놈이다^^. 폴더를 직접 만들어 주기도 하고, 라이브러리를 웹에서 찾아서 직접 다운로드 해준다. 더불어 소스 코드에도 다운 받은 lib의 정보를 추가해 준다. 즉 Yeoman은 스케폴딩이라는 프로젝트의 뼈대를 알아서 잡아 주는 역할을 한다. 또한 라이브러리의 의존성을 관리 해주고, 테스트를 쉽게 할 수 있도록 지원하며, 빌드를 자동화 시켜 준다.<br>
+<br>
+처음 AngularJS로 프로젝트를 진행할 때 프로젝트 구성 및 폴더 구조를 어떻게 잡아야 할까를 많이 고심하게 되는데, 이 글에서 소개하는 방식으로 설정을 잡고, 설치된 폴더의 구조를 분석 해보면 어떻게 프로젝트 구조를 가져가야 할지 감을 잡을 수 있을 것이다.<br>
+<br>
+위에서 간략하게 설명한 역할을 수행하기 위해서 Yeoman이 스스로 모든 일들을 처리하는 것은 아니다. <a href="http://yeoman.io/" target="_blank">Yeoman</a> 사이트에서 가져온 아래 이미지처럼 3개의 라이브러리가 각각의 역할을 담당하고 있다.<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/yeoman.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/yeoman.PNG" height="224" width="640"></a></div>
+<b>yeoman</b>은 webapp을 만들 때, 뼈대 및 발판 역할을 담당하고, <b>bower</b>은 라이브러리 설치 및 의존성을 관리해 주며, <b>grunt</b>는 미리보기, 테스트, 빌드를 담당해서 전체적으로 프로젝트를 구성하고 빌드하기 까지의 프로젝트 생명주기를 관리한다.<br>
+<br>
+이제 아래 순서에 따라서 AngularJS 프로젝트를 구성하고, 확인해 보도록 하겠다.<br>
+<br>
+<h3>
+<b>1. node.js, git 설치</b></h3>
+yo, bower, grunt를 설치하기 위해서는 node.js를 설치해서 npm(Node Package Manager)이 사용 가능해야 하며, git을 사용하는 경우를 위해서 git도 받아서 설치해 준다. 아래 사이트에서 다운 받아서 기본으로 설치해 주면 된다. 참고로 git은 시스템 환경 설정에서 Path를 잡아 주도록 한다.<br>
+-&nbsp;<a href="http://node.js/">node.js</a>&nbsp;(http://nodejs.org/)<br>
+-&nbsp;<a href="http://git-scm.com/" target="_blank">git</a>&nbsp;(http://git-scm.com/)<br>
+<br></div>
+<div>
+<h3>
+<b>2. Yeoman, Bower, Grunt 설치</b></h3>
+설치는 간단하다 아래의 명령어를 순서대로 실행한다.<br>
+<div class="hans-block">
+npm install -g yo<br>
+npm install -g bower<br>
+npm install -g grunt-cli</div>
+<br>
+<h3>
+<b>3. angular generator 설치</b></h3>
+yeoman을 이용해서 angular 프로젝트 구성을 하려면, angular generator가 먼저 설치되어 있어야 한다. 아래 명령어를 실행한다.<br>
+<div class="hans-block">
+npm install -g generator-angular</div>
+<br>
+<h3>
+<b>4. Project 생성</b></h3>
+- 원하는 위치에 프로젝트 폴더를 만들고, 해당 폴더로 이동한다.<br>
+- 프로젝트명을 아래와 같이 입력한다.<br>
+<div class="hans-block">
+yo angular first &nbsp;: first라는 프로젝트 생성<br>
+&nbsp; &nbsp; &nbsp;_-----_<br>
+&nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; |<br>
+&nbsp; &nbsp; |--(o)--| &nbsp; .--------------------------.<br>
+&nbsp; &nbsp;`---------´ &nbsp;| &nbsp; &nbsp;Welcome to Yeoman, &nbsp; &nbsp;|<br>
+&nbsp; &nbsp; ( _´U`_ ) &nbsp; | &nbsp; ladies and gentlemen! &nbsp;|<br>
+&nbsp; &nbsp; /___A___\ &nbsp; '__________________________'<br>
+&nbsp; &nbsp; &nbsp;| &nbsp;~ &nbsp;|<br>
+&nbsp; &nbsp;__'.___.'__<br>
+&nbsp;´ &nbsp; ` &nbsp;|° ´ Y `<br>
+<br>
+Out of the box I include Bootstrap and some AngularJS recommended modules.<br>
+<br>
+[?] Would you like to use Sass (with Compass)? n<br>
+[?] Would you like to include Twitter Bootstrap? y<br>
+[?] Which modules would you like to include? (Press <space> to select)</space><br>
+&nbsp;⬢ angular-resource.js<br>
+&nbsp;⬢ angular-cookies.js<br>
+&nbsp;⬢ angular-sanitize.js<br>
+&nbsp;⬢ angular-route.js</div>
+<br>
+<h3>
+<b>5. 프로젝트 폴더 확인</b></h3>
+<div class="separator" style="clear: both; text-align: left;">
+- app 폴더 하위에 필요한 파일들을 생성시켜서 프로젝트를 진행하면 된다.</div>
+<div class="separator" style="clear: both; text-align: left;">
+- test 폴더에 테스트할 파일과 설정을 하고 테스트를 진행하면 된다.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/showpaper.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/showpaper.PNG"></a></div>
+<br>
+<h3>
+<b>6. Grunt를 이용해서 확인하기</b></h3>
+<div class="hans-block">
+grunt test : 테스트<br>
+grunt build : 빌드<br>
+grunt serve : 프리뷰</div>
+<br>
+마지막 명령어를 실행해서 아래처럼 화면이 출력되면 최종 설정이 완료된 것이다.<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/1.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/1.PNG" height="640" width="590"></a></div>
+<br>
+이제부터는 이렇게 구성된 프로젝트를 이용해서 controller를 추가하고, directive를 정의하고, view를 추가해 가면서 프로젝트를 풍성하게 만들어 가면 되겠다. 이렇게 프로젝트를 구성해 보았지만 사실 아직 갈 길이 멀고도 멀다. 여기에 간략하게 풀어놓은 각각의 도구들을 잘 활용할 수 있도록 계속 연습하고 학습해서 익혀야 하고, 또한 AngularJS도 자유자재로 다룰 수 있도록 많은 학습이 필요하다.<br>
+<br></div>
+<div>
+<br></div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+작성자:
+<span class="fn">
+<a href="https://plus.google.com/100423390400380196724" rel="author" title="author profile">
+HanSik Choi
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+시간:
+<a class="timestamp-link" href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/Yeoman으로 AngularJS 프로젝트 구성하기.html" rel="bookmark" title="permanent link"><abbr class="updated published" title="2014-02-27T00:20:00+09:00">오전 12:20</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-action">
+<a href="http://www.blogger.com/email-post.g?blogID=4774759491710423963&postID=9079310749472275755" title="이메일 전송">
+<img alt="" class="icon-action" height="13" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_email.gif" width="18">
+</a>
+</span>
+<span class="item-control blog-admin pid-862030494">
+<a href="http://www.blogger.com/post-edit.g?blogID=4774759491710423963&postID=9079310749472275755&from=pencil" title="게시물 수정">
+<img alt="" class="icon-action" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="reaction-buttons">
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+<td class="reactions-label-cell" nowrap="nowrap" valign="top" width="1%">
+<span class="reactions-label">
+반응:</span>&nbsp;</td>
+<td><iframe allowtransparency="true" class="reactions-iframe" frameborder="0" name="reactions" scrolling="no" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/blog-post-reactions.html"></iframe></td>
+</tr></tbody></table>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span class="post-location">
+</span>
+</div>
+</div>
+<div class="ikonz-social"><span>Share:</span>
+<ul class="social-ikonz" id="social-ikonzs">
+<li class="facebookx">
+<a href="http://www.facebook.com/share.php?v=4&src=bm&u=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&t=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" onclick="window.open(this.href,&quot;sharer&quot;,&quot;toolbar=0,status=0,width=626,height=436&quot;); return false;" rel="nofollow" title="Share this on Facebook"><strong>Facebook</strong></a>
+</li>
+<li class="twitterx">
+<a href="http://twitter.com/home?status=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0%20--%20http://www.hans.or.kr/2014/02/yeoman-angularjs.html" rel="nofollow" title="Tweet This!"><strong>Twitter</strong></a>
+</li>
+<li class="googlex">
+<a href="https://plus.google.com/share?url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html" onclick="javascript:window.open(this.href,   &quot;&quot;, &quot;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&quot;);return false;" rel="nofollow" title="Share this on Google+"><strong>Google+</strong></a>
+</li>
+<li class="stumbleuponx">
+<a href="http://www.stumbleupon.com/submit?url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&title=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" rel="nofollow" title="Stumble upon something good? Share it on StumbleUpon"><strong>StumbleUpon</strong></a>
+</li>
+<li class="diggx">
+<a href="http://digg.com/submit?phase=2&url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&title=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" rel="nofollow" title="Digg this!"><strong>Digg</strong></a>
+</li>
+<li class="deliciousx">
+<a href="http://delicious.com/post?url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&title=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" rel="nofollow" title="Share this on del.icio.us"><strong>Delicious</strong></a>
+</li>
+<li class="linkedinx">
+<a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&title=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&summary=&source=" rel="nofollow" title="Share this on LinkedIn"><strong>LinkedIn</strong></a>
+</li>
+<li class="redditx">
+<a href="http://reddit.com/submit?url=http://www.hans.or.kr/2014/02/yeoman-angularjs.html&title=Yeoman%EC%9C%BC%EB%A1%9C%20AngularJS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" rel="nofollow" title="Share this on Reddit"><strong>Reddit</strong></a>
+</li>
+<li class="technoratix">
+<a href="http://technorati.com/faves?add=http://www.hans.or.kr/2014/02/yeoman-angularjs.html" rel="nofollow" title="Share this on Technorati"><strong>Technorati</strong></a>
+</li>
+</ul>
+</div>
+</article>
+<div class="blog-pager" id="blog-pager">
+<div class="pager-isi">
+<a class="blog-pager-newer-link" href="http://www.hans.or.kr/2014/04/tip-webstrom8-angularjs-code-completion.html" id="Blog1_blog-pager-newer-link" title="최근 게시물"><h6>Next</h6><h5>
+[Tip] WebStrom8 에서 AngularJS Code Completion
+</h5><h5></h5></a>
+<a class="blog-pager-older-link" href="http://www.hans.or.kr/2014/01/sublime-text-10.html" id="Blog1_blog-pager-older-link" title="이전 게시물"><h6>Previous</h6><h5>
+[Sublime Text] 유용한 10가지 플러그인
+</h5></a>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {
+    var newerLink = $('a.blog-pager-newer-link').attr('href');
+ $('a.blog-pager-newer-link').load(newerLink + ' .post-title:first', function () {
+        var newerLinkTitle = $('a.blog-pager-newer-link').text();
+  $('a.blog-pager-newer-link').html('<h6>Next</h6><h5>' + newerLinkTitle + '<h5>');
+    });
+    var olderLink = $('a.blog-pager-older-link').attr('href');
+ $('a.blog-pager-older-link').load(olderLink + ' .post-title:first', function () {
+        var olderLinkTitle = $('a.blog-pager-older-link').text();
+  $('a.blog-pager-older-link').html('<h6>Previous</h6><h5>' + olderLinkTitle + '</h5>');
+    });
+});
+//]]>
+</script>
+<div id="related_posts2"></div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>
+0
+개의 댓글:
+        
+</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">댓글 쓰기</h4>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=4774759491710423963&postID=9079310749472275755&blogspotRpcToken=8168513" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="254px" id="comment-editor" name="comment-editor" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/comment-iframe.html" width="100%"></iframe>
+<script type="text/javascript" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/954996138-comment_from_post_iframe.js"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '03861032681739621629');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class="post-feeds">
+<div class="feed-links">
+피드 구독하기:
+<a class="feed-link" href="http://www.hans.or.kr/feeds/9079310749472275755/comments/default" target="_blank" type="application/atom+xml">댓글 (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'ko'};</script>
+</div></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var Namabulan =["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+tanggalx = $('.d-header .published').attr('title').substring(0, 10),
+thun = tanggalx.substring(0, 4),
+blan = tanggalx.substring(5, 7),
+hari = tanggalx.substring(8, 10),
+blnnya = Namabulan[parseInt(blan, 10) - 1],
+rangkax = '<div class="tglinfoxx"><span class="halfx tglx">'+hari+'</span><div class="halfx"><span class="blnnyax">'+blnnya+'</span><span class="thunxx">'+thun+'</span></div></div>';
+$('.infox .d-header').append(rangkax);
+//]]>
+</script>
+<aside id="sidebar-wrapper" itemscope="" itemtype="http://schema.org/WPSideBar">
+<div id="sidebaratas">
+<div class="sidebar section" id="sidebar-atas"><div class="widget HTML" id="HTML1">
+<div class="widget-content">
+<!-- Place this tag where you want the widget to render. -->
+<div id="___person_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 220px; height: 331px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 220px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 331px;" tabindex="0" vspace="0" width="100%" id="I0_1427185715168" name="I0_1427185715168" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/person.html" data-gapiattached="true" title="+Badge"></iframe></div>
+
+<!-- Place this tag after the last widget tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+<table width="80%" border="0">
+  <tbody><tr>
+    <td>
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/follow_button.3afdf1fe9dd484034da3e37c7d9e99ed.en.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 113px; height: 20px;"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </td>
+    <td>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/6Dg4oLkBbYq.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/6Dg4oLkBbYq(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-follow fb_iframe_widget" data-href="https://www.facebook.com/74hans" data-layout="button_count" data-show-faces="true" data-width="300" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=2&amp;href=https%3A%2F%2Fwww.facebook.com%2F74hans&amp;layout=button_count&amp;locale=ko_KR&amp;sdk=joey&amp;show_faces=true&amp;width=300"><span style="vertical-align: bottom; width: 87px; height: 20px;"><iframe name="f225ba107" width="300px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:follow Facebook Social Plugin" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/follow.html" style="border: none; visibility: visible; width: 87px; height: 20px;" class=""></iframe></span></div>    
+    </td>
+  </tr>
+</tbody></table>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=4774759491710423963&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-atas" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML1&quot;));" target="configHTML1" title="편집">
+<img alt="" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div id="sidebartengah">
+<!-- <div id='tab'> <div class='tab-widget-menu clear'> <ul id='tabslect'> <li class='tab1'><a href='#tab1'>Popular</a></li> <li class='tab2'><a href='#tab2'>Comments</a></li> <li class='tab3'><a href='#tab3'>Archive</a></li> </ul> </div> <div id='bungkusside'> <div class='widget1' id='tab1'> <b:section class='sidebar' id='tab1-popular-posts' showaddelement='yes'/> </div> <div class='widget1' id='tab2'> <b:section class='sidebar' id='tab2-recent-commnets' showaddelement='yes'/> </div> <div class='widget1' id='tab3'> <b:section class='sidebar' id='tab3-archive' showaddelement='yes'/> </div> </div> </div> -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){$("#tabslect li:first").addClass("selected");$("#bungkusside > div").hide();$("#bungkusside > div:first").show();$("#tabslect a").click(function(){$("#tabslect li").removeClass("selected");$(this).parent().addClass("selected");var a=$(this).attr("href");$("#bungkusside > div:visible").hide();$(a).fadeToggle(1000);return false})});
+//]]>
+</script>
+</div>
+<div id="sidebarbawah">
+<div class="sidebar section" id="sidebar-bawah"><div class="widget Label" id="Label1">
+<h2>태그</h2>
+<div class="widget-content cloud-label-widget-content">
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/AngularJS">AngularJS</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Bitbucket">Bitbucket</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Code">Code</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Cordova">Cordova</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Gist">Gist</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Git">Git</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Github">Github</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/HybridApp">HybridApp</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/PhoneGap">PhoneGap</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Polymer">Polymer</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/SublimeText">SublimeText</a>
+</span>
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Tool">Tool</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/WebStrom">WebStrom</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.hans.or.kr/search/label/Yeoman">Yeoman</a>
+</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=4774759491710423963&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar-bawah" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" target="configLabel1" title="편집">
+<img alt="" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" id="BlogArchive1">
+<h2>블로그 보관함</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/search?updated-min=2014-01-01T00:00:00%2B09:00&updated-max=2015-01-01T00:00:00%2B09:00&max-results=8">2014</a>
+<span class="post-count" dir="ltr">(8)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_12_01_archive.html">12월</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_08_01_archive.html">8월</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_07_01_archive.html">7월</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_06_01_archive.html">6월</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_04_01_archive.html">4월</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_02_01_archive.html">2월</a>
+<span class="post-count" dir="ltr">(1)</span>
+<ul class="posts">
+<li><a href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/Yeoman으로 AngularJS 프로젝트 구성하기.html">Yeoman으로 AngularJS 프로젝트 구성하기</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2014_01_01_archive.html">1월</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/search?updated-min=2013-01-01T00:00:00%2B09:00&updated-max=2014-01-01T00:00:00%2B09:00&max-results=6">2013</a>
+<span class="post-count" dir="ltr">(6)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://www.hans.or.kr/2013_11_01_archive.html">11월</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=4774759491710423963&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar-bawah" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive1&quot;));" target="configBlogArchive1" title="편집">
+<img alt="" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Stats" id="Stats1">
+<h2>전체 페이지뷰</h2>
+<div class="widget-content">
+<div id="Stats1_content">
+<img alt="Sparkline" height="30" id="Stats1_sparkline" width="75" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/chart">
+<span class="counter-wrapper text-counter-wrapper" id="Stats1_totalCount">116,760</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=4774759491710423963&widgetType=Stats&widgetId=Stats1&action=editWidget&sectionId=sidebar-bawah" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Stats1&quot;));" target="configStats1" title="편집">
+<img alt="" height="18" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div>
+</div></div>
+</div>
+</aside>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear">&nbsp;</div>
+</div>
+<!-- end content-wrapper -->
+<div class="clickfooter"><span>Toggle Footer</span></div>
+</div>
+<!-- end outer-wrapper -->
+<footer id="footer-wrapper" itemscope="" itemtype="http://schema.org/WPFooter">
+<div class="whit">
+<div id="isifooternya">
+<div class="footer-wrap" id="footx1">
+<div class="footer section" id="footer1"></div>
+</div>
+<div class="footer-wrap" id="footx2">
+<div class="footer section" id="footer2"></div>
+</div>
+<div class="footer-wrap" id="footx3">
+<div class="footer section" id="footer3"></div>
+</div></div>
+</div>
+<div class="kreditx">
+Blogger Designed by <a href="http://www.ivythemes.com/">IVYthemes</a> | <a class="mkr" href="http://mkr-site.blogspot.com/">MKR Site</a>
+</div>
+</footer>
+<script type="text/javascript">
+//<![CDATA[
+var _0xb41e=["I 1R(a){(I(e){3 f={Z:2u.1L.1O,S:8,1u:\x222v 1e\x22,1f:\x221P 1e\x22,M:\x22#1U\x22,T:2s,Q:H,X:1r,U:1Q,V:\x22Y://1.1V.1W.1X/-2e/2i/2j/2m/2n/2p.2q\x22};f=e.2r({},f,a);3 c=I(D){3 g=\x22\x22;3 l=1M 1N();3 E=0;3 v;5(f.Q==H){3 p=\x22\x3CJ\x3E\x22+f.1u+\x22\x3C/J\x3E\x22}h{3 p=\x22\x3CJ\x3E\x22+f.1f+\x22\x3C/J\x3E\x22}3 w=D.16.20$2d.$t;3 o=f.S;3 r=w;5(w\x3Cf.S){o=w}5(w\x3Ef.T){r=f.T}3 t=D.16.2k;5(t!==2l){g=\x22\x22+p+\x27\x3C1n 7=\x222o\x22\x3E\x3Ca 11=\x221w\x22 7=\x2215\x22 q=\x22#\x22\x3E\x262t;\x3C/a\x3E\x3Ca 11=\x2219\x22 7=\x221b\x22 q=\x22#\x22\x3E\x261K;\x3C/a\x3E\x3C/1n\x3E\x3C1c 11=\x221d\x22\x3E\x27;5(f.Q){m(i=0;i\x3Co;){v=0;l.W=o;E=1+1j.2z(1j.1S()*(r-1));m(j F l){5(E==l[j]){v=1}}5(v==0\x26\x26E!=0){l[i++]=E}}}h{}5(f.Q){m(n F l){3 A=l[n];3 u=t[A-1];3 s=u.13.$t.14(0,10),s=s.R(/-/g,\x22/\x22),x=u.17$18.$t,z=u.1a.$t,y;5(\x22P$O\x22F u){y=u.P$O.N.R(/\x5C/s[0-9]+\x5C-c/g,\x22/s\x22+f.U+\x22-c\x22)}h{y=f.V}m(k=0;k\x3Cu.G.W;k++){5(u.G[k].1h==\x221i\x22){3 C=u.G[k].q;1k}}g+=\x22\x3CL\x3E\x22;g+=\x27\x3Ca 1l=\x221m\x22 q=\x22\x27+C+\x27\x22\x3E\x3C4 7=\x221o\x22 \x3E\x3C1p 1q=\x22\x27+y+\x27\x22/\x3E\x3C/4\x3E\x27;g+=\x22\x3CK\x3E\x22+z+\x22\x3C/K\x3E\x3C/a\x3E\x22;g+=\x27\x3C4 7=\x221s\x22\x3E\x27+s+\x27\x3C/4\x3E\x3C4 7=\x221t\x22\x3E\x27+x+\x22\x3C/4\x3E\x22;g+=\x22\x3C/L\x3E\x22}}h{m(3 B=0;B\x3Co;B++){3 u=t[B];3 s=u.13.$t.14(0,10),s=s.R(/-/g,\x22/\x22),x=u.17$18.$t,z=u.1a.$t,y;5(\x22P$O\x22F u){y=u.P$O.N.R(/\x5C/s[0-9]+\x5C-c/g,\x22/s\x22+f.U+\x22-c\x22)}h{y=f.V}m(k=0;k\x3Cu.G.W;k++){5(u.G[k].1h==\x221i\x22){3 C=u.G[k].q;1k}}g+=\x22\x3CL\x3E\x22;g+=\x27\x3Ca 1l=\x221m\x22 q=\x22\x27+C+\x27\x22\x3E\x3C4 7=\x221o\x22 \x3E\x3C1p 1q=\x22\x27+y+\x27\x22/\x3E\x3C/4\x3E\x27;g+=\x22\x3CK\x3E\x22+z+\x22\x3C/K\x3E\x3C/a\x3E\x22;g+=\x27\x3C4 7=\x221s\x22\x3E\x27+s+\x27\x3C/4\x3E\x3C4 7=\x221t\x22\x3E\x27+x+\x22\x3C/4\x3E\x22;g+=\x22\x3C/L\x3E\x22}}g+=\x22\x3C/1c\x3E\x22;e(f.M).12(g);e(\x22#1d\x22).1Y({1Z:H,1v:\x2221%\x22,15:\x22#1w\x22,1b:\x22#19\x22,22:{23:\x2224\x22},25:1,26:{1v:27,28:{29:2,2a:6}}})}h{e(f.M).12(\x22\x3C4\x3E2b 2c!\x3C/4\x3E\x22)}};3 d=I(){e(f.M).12(\x22\x3C1x\x3E2f 2g 2h!\x3C/1x\x3E\x22)};3 b=I(){5(f.X==1r){e.1y({N:\x22Y://\x22+f.Z+\x22/1z/1A/1B/\x22,1C:{1D:\x221E-F-1F\x22},1G:\x221H\x22,1I:c,1J:d,1g:H})}h{e.1y({N:\x22Y://\x22+f.Z+\x22/1z/1A/1B/\x22,1C:{2w:f.X,1D:\x221E-F-1F\x22},1G:\x221H\x22,1I:c,1J:d,1g:H})}};e(2x).2y(b)})(1T)};","|","split","|||var|span|if||class||||||||||else|||||for||||href|||||||||||||||in|link|true|function|h3|h5|li|id_containrdp|url|thumbnail|media|randomxactive|replace|numposrdp|maxfeed|thumbSizerdp|rdpBlank|length|tagName|http|url_blog||id|html|published|substring|prev|feed|thr|total|nextx|title|next|ul|rdpostxxx|Post|recentTitle|cache|rel|alternate|Math|break|target|_blank|div|imgthumprdp|img|src|false|dt|jkmt|randomTitle|width|prevx|strong|ajax|feeds|posts|summary|data|alt|json|script|dataType|jsonp|success|error|gt|location|new|Array|host|Recent|60|randompostx|random|jQuery|rdompost|bp|blogspot|com|carouFredSel|responsive|openSearch|100|auto|pauseOnHover|resume|scroll|items|170|visible|min|max|No|result|totalResults|htG7vy9vIAA|Error|Loading|Feed|Tp0KrMUdoWI|AAAAAAAABAU|entry|undefined|e7XkFtErqsU|s1600|navrdp|grey|gif|extend|50|lt|window|Random|category|document|ready|round","","fromCharCode","replace","\x5Cw+","\x5Cb","g"];eval(function (_0x9b7fx1,_0x9b7fx2,_0x9b7fx3,_0x9b7fx4,_0x9b7fx5,_0x9b7fx6){_0x9b7fx5=function (_0x9b7fx3){return (_0x9b7fx3<_0x9b7fx2?_0xb41e[4]:_0x9b7fx5(parseInt(_0x9b7fx3/_0x9b7fx2)))+((_0x9b7fx3=_0x9b7fx3%_0x9b7fx2)>35?String[_0xb41e[5]](_0x9b7fx3+29):_0x9b7fx3.toString(36));} ;if(!_0xb41e[4][_0xb41e[6]](/^/,String)){while(_0x9b7fx3--){_0x9b7fx6[_0x9b7fx5(_0x9b7fx3)]=_0x9b7fx4[_0x9b7fx3]||_0x9b7fx5(_0x9b7fx3);} ;_0x9b7fx4=[function (_0x9b7fx5){return _0x9b7fx6[_0x9b7fx5];} ];_0x9b7fx5=function (){return _0xb41e[7];} ;_0x9b7fx3=1;} ;while(_0x9b7fx3--){if(_0x9b7fx4[_0x9b7fx3]){_0x9b7fx1=_0x9b7fx1[_0xb41e[6]]( new RegExp(_0xb41e[8]+_0x9b7fx5(_0x9b7fx3)+_0xb41e[8],_0xb41e[9]),_0x9b7fx4[_0x9b7fx3]);} ;} ;return _0x9b7fx1;} (_0xb41e[0],62,160,_0xb41e[3][_0xb41e[2]](_0xb41e[1]),0,{}));
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var _0x6642=["C 29(a){(C(e){2 f={14:\x22\x22,V:5,1m:5,16:5,H:\x22\x22,6:13,12:\x22\x22,11:\x22\x22,L:\x22\x22,18:\x222u 1j\x22,1e:\x222r://1.2z.2w.2B/-1V/1Z/24/2q/2s/2t.2v\x22,1l:2A,1o:[\x221H\x22,\x221I\x22,\x221J\x22,\x221K\x22,\x221M\x22,\x221N\x22,\x221O\x22,\x221P\x22,\x221Q\x22,\x221R\x22,\x221S\x22,\x221T\x22],19:\x221W 1j\x22,15:\x22\x22,1r:2h};f=e.2i({},f,a);2 k=0,b=13,g=13;3(!f.H){1n.2y(\x27\x3CA 1b=\x22D-S\x22\x3E\x3C/A\x3E\x27);f.H=\x22#D-S\x22}2 c=C(x,n){k++;3(x.U.W){K(2 o=0;o\x3Cx.U.W.z;o++){2 u=x.U.W[o];2 q=\x22\x22;K(2 m=0;m\x3Cu.17.z;m++){3(u.17[m].1f==\x221X\x22){q=u.17[m].I;23}}2 p=u.27.$t.O(0,10);2 l=p.O(0,4);2 w=p.O(5,7);2 s=p.O(8,10);2 r=f.1o[1g(w,10)-1];2 y=u.1G$2x.$t;2 t=u.X.$t;3(\x221k$1c\x22Y u){2 v=u.1k$1c.Z.T(/\x5C/s[0-9]+\x5C-c/g,\x22/s\x22+f.1l+\x22-c\x22)}J{2 v=f.1e}3(1L.I.1d()!=q.1d()){i(q,t,v,l,s,y,r)}}}3(k\x3E=f.6.z){g.G(\x22B\x22,\x22\x22);e(\x22#D-P-1h\x22,b).1i();3(f.V\x3E0){e(\x22Q:1U(\x22+(f.V-1)+\x22)\x22,g).1i()}}};2 i=C(p,v,w,l,t,x,r){2 q=e(\x22Q\x22,g);K(2 o=0;o\x3Cq.z;o++){2 u=e(\x22a\x22,q.F(o));2 s=j(u);3(u.G(\x22I\x22)==p){h(u,++s);K(2 n=o-1;n\x3E=0;n--){2 m=e(\x22a\x22,q.F(n));3(j(m)\x3Es){3(o-n\x3E1){q.F(n).1Y(q.F(o))}M}}3(o\x3E0){q.F(0).20(q.F(o))}M}}g.21(\x27\x3CQ\x3E\x3Ca B=\x2222\x22 I=\x22\x27+p+\x27\x22 X=\x22\x27+(f.L?f.L.T(\x22\x5Cd\x22,1):\x22\x22)+\x27\x22\x3E\x3CE B=\x2225\x22\x3E\x3C26 1a=\x22\x27+v+\x27\x22 28=\x22\x27+w+\x27\x22/\x3E\x3C/E\x3E\x3C1p\x3E\x27+v+\x27\x3C/1p\x3E\x3C/a\x3E\x3CA B=\x222a\x22\x3E\x3CE B=\x222b\x22\x3E\x27+t+\x22 \x22+r+\x22 \x22+l+\x27\x3C/E\x3E\x3CE B=\x222c\x22\x3E\x3Ca I=\x22\x27+p+\x27#2d-2e\x22 2f=\x222g\x22\x3E\x27+x+\x22\x3C/E\x3E\x3C/A\x3E\x3C/Q\x3E\x22)};2 j=C(l){2 m=1g(l.G(\x221q\x22));M m\x3E0?m:1};2 h=C(l,m){l.G(\x221q\x22,m);3(f.L){l.G(\x22X\x22,f.L.T(\x22\x5Cd\x22,m))}3(f.15){l.G(\x22B\x22,f.15+m)}};2 d=C(){3(f.H!=\x22#D-S\x22){2 l=e(f.H);3(l.z!=1){M}b=e(\x27\x3CA 1b=\x22D-S\x22\x3E\x3C/A\x3E\x27).N(l)}J{b=e(f.H)}3(!f.6){f.6=[];e(\x27a[1f=\x222j\x22]:2k(\x27+f.1m+\x22)\x22).2l(C(){2 n=e.2m(e(2n).2o().T(/\x5Cn/g,\x22\x22));3(e.2p(n,f.6)==-1){f.6[f.6.z]=n}})}3(f.6.z==0\x26\x26!f.19){M}3(f.6.z==0){e(\x22\x3CR\x3E\x22+f.19+\x22\x3C/R\x3E\x22).N(b)}J{3(f.18){e(\x22\x3CR\x3E\x22+f.18+\x22\x3C/R\x3E\x22).N(b)}}3(f.12){e(\x27\x3CA 1b=\x22D-P-1h\x22\x3E\x27+f.12+\x22\x3C/A\x3E\x22).N(b)}g=e(\x22\x3C1t \x22+(f.11?\x27B=\x22\x27+f.11+\x27\x22\x27:\x22\x22)+\x22\x3E\x3C/1t\x3E\x22).N(b);3(f.6.z==0){e.1u({Z:f.14+\x22/1v/P/1w/\x22,1x:{\x221y-1z\x22:f.16,1a:\x221A-Y-1B\x22},1C:c,1D:\x221E\x22,1F:1s})}J{K(2 m=0;m\x3Cf.6.z;m++){e.1u({Z:f.14+\x22/1v/P/1w/\x22,1x:{2C:f.6[m],\x221y-1z\x22:f.16,1a:\x221A-Y-1B\x22},1C:c,1D:\x221E\x22,1F:1s})}}};3(f.1r){e(2D).2E(d)}J{e(1n).2F(d)}})(2G)};","|","split","||var|if|||tags|||||||||||||||||||||||||||||length|div|class|function|related|span|eq|attr|containerSelector|href|else|for|relevantTip|return|appendTo|substring|posts|li|h4|postsx|replace|feed|maxPosts|entry|title|in|url||loadingClass|loadingText|null|blogURL|postScoreClass|maxPostsPerTag|link|relatedTitle|recentTitle|alt|id|thumbnail|toLowerCase|rlpBlank|rel|parseInt|loadingtext|remove|Posts|media|rlt_thumb|maxTags|document|rlt_monthNames|strong|score|onLoad|true|ul|ajax|feeds|summary|data|max|results|json|script|success|dataType|jsonp|cache|thr|Jan|Feb|Mar|Apr|location|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|gt|htG7vy9vIAA|Recent|alternate|after|Tp0KrMUdoWI|before|append|jdlunya|break|AAAAAAAABAU|gmbrrltd|img|published|src|relatedPostsWidget|infonya|dt|jkmt|comment|form|target|_blank|false|extend|tag|lt|each|trim|this|text|inArray|e7XkFtErqsU|http|s1600|grey|Related|gif|blogspot|total|write|bp|70|com|category|window|load|ready|jQuery","","fromCharCode","replace","\x5Cw+","\x5Cb","g"];eval(function (_0x45f0x1,_0x45f0x2,_0x45f0x3,_0x45f0x4,_0x45f0x5,_0x45f0x6){_0x45f0x5=function (_0x45f0x3){return (_0x45f0x3<_0x45f0x2?_0x6642[4]:_0x45f0x5(parseInt(_0x45f0x3/_0x45f0x2)))+((_0x45f0x3=_0x45f0x3%_0x45f0x2)>35?String[_0x6642[5]](_0x45f0x3+29):_0x45f0x3.toString(36));} ;if(!_0x6642[4][_0x6642[6]](/^/,String)){while(_0x45f0x3--){_0x45f0x6[_0x45f0x5(_0x45f0x3)]=_0x45f0x4[_0x45f0x3]||_0x45f0x5(_0x45f0x3);} ;_0x45f0x4=[function (_0x45f0x5){return _0x45f0x6[_0x45f0x5];} ];_0x45f0x5=function (){return _0x6642[7];} ;_0x45f0x3=1;} ;while(_0x45f0x3--){if(_0x45f0x4[_0x45f0x3]){_0x45f0x1=_0x45f0x1[_0x6642[6]]( new RegExp(_0x6642[8]+_0x45f0x5(_0x45f0x3)+_0x6642[8],_0x6642[9]),_0x45f0x4[_0x45f0x3]);} ;} ;return _0x45f0x1;} (_0x6642[0],62,167,_0x6642[3][_0x6642[2]](_0x6642[1]),0,{}));
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){
+relatedPostsWidget({
+related_title: "Related Posts",
+containerSelector: "#related_posts2",
+maxPosts: 8,
+loadingClass: "loadnyaxx",
+rlt_thumb: 120
+});
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {
+searchxx({summaryLength:100, 
+scrthumbSize:50,
+titleSearch:"Search results for keyword",
+titleNoresult: "No result!"
+});
+});
+//]]>
+</script>
+<script type="text/javascript">
+  /* TODO : hans emotion은 지져분해서 막아둔다. 사용하고 싶으면 이거 풀면 된다.
+//<![CDATA[
+window.emoticonx=(function(){var a=function(c){var f=c||{},d=f.emoRange||"#comments p, div.emoWrap",e=f.putEmoAbove||"iframe#comment-editor",b=f.emoMessage||"To insert emoticon you must added at least one space before the code.";$(e).before('<div style="text-align:center" class="emoWrap"> :) :)) ;(( :-) =)) ;( ;-( :d :-d @-) :p :o :&gt;) (o) [-( :-? (p) :-s (m) 8-) :-t :-b  b-( :-# =p~ $-) (b) (f) x-) (k) (h) (c) cheer <br/><b>Click to see the code!</b><br/>'+b+"</div>");var g=function(j,i,h){$(d).each(function(){$(this).html($(this).html().replace(/<br>:/g,"<br> :").replace(/<br>;/g,"<br> ;").replace(/<br>=/g,"<br> =").replace(/<br>\^/g,"<br> ^").replace(j," <img style='max-height:24px' src='"+i+"' class='emo delayLoad' alt='"+h+"' />"))})};g(/\s:\)\)+/g,"http://2.bp.blogspot.com/-7C6oAxa48oU/UTE2V8UYgpI/AAAAAAAAAx8/jBdV8SQDfI0/s000/03.gif",":))");g(/\s;\(\(+/g,"http://3.bp.blogspot.com/-kO4fpLmFhag/UTE2WNTZSYI/AAAAAAAAAyA/ukh77IaHzTw/s000/06.gif",";((");g(/\s:\)+/g,"http://1.bp.blogspot.com/-yuaUprlBYyk/UTE2WmnQ58I/AAAAAAAAAyM/bXTOFGDTJWg/s000/01.gif",":)");g(/\s:-\)+/g,"http://2.bp.blogspot.com/-In-TXobjcxw/UTE2XMqe4YI/AAAAAAAAAyU/knq8n8xCiI4/s000/02.gif",":-)");g(/\s=\)\)+/g,"http://1.bp.blogspot.com/-jeqA6_T242E/UTE2X6AfwxI/AAAAAAAAAyc/J_SpYuPCvBY/s000/03a.gif","=))");g(/\s;\(+/g,"http://3.bp.blogspot.com/-ADSDgU50vzw/UTE2YfBth5I/AAAAAAAAAyk/wmDZHKTjT00/s000/04.gif",";(");g(/\s;-\(+/g,"http://4.bp.blogspot.com/-a1N0b_shzRs/UTE2Y9fTAxI/AAAAAAAAAys/n60DEOgtPPg/s000/05.gif",";-(");g(/\s:d/ig,"http://4.bp.blogspot.com/-MIF8WrhYLxQ/UTE2ZdXv2xI/AAAAAAAAAy0/SP2lEtS29TU/s000/7.gif",":d");g(/\s:-d/ig,"http://3.bp.blogspot.com/-jScQjlbjZO4/UTE2ZkavNrI/AAAAAAAAAy8/GiWlfvvB35E/s000/8.gif",":-d");g(/\s@-\)+/g,"http://2.bp.blogspot.com/-eJwSxJ6m8H4/UTE2aHRTTsI/AAAAAAAAAzE/XdlXdRgT55Q/s000/09.gif","@-)");g(/\s:p/ig,"http://3.bp.blogspot.com/-rHcdqTfMG5w/UTE2asF9sSI/AAAAAAAAAzM/qGeMPxZp1g8/s000/10.gif",":p");g(/\s:o/ig,"http://3.bp.blogspot.com/-_IzzAEyDd74/UTE2a1XLtaI/AAAAAAAAAzU/gIbA73wLArY/s000/11.gif",":o");g(/\s:&gt;\)+/g,"http://2.bp.blogspot.com/-cRdZKUMVnZA/UTE2bGba8uI/AAAAAAAAAzc/sh9ZhgM3Rmw/s000/12.gif",":&gt;)");g(/\s\(o\)+/ig,"http://2.bp.blogspot.com/-ivZETBlpVYc/UTE2bbQyyKI/AAAAAAAAAzk/Rlyb-FijUpo/s000/13.gif","(o)");g(/\s\[-\(+/g,"http://2.bp.blogspot.com/-G8ZyIEKvFWk/UTE2bzMKmuI/AAAAAAAAAzs/O7cqPbin-s0/s000/14.gif","[-(");g(/\s:-\?/g,"http://3.bp.blogspot.com/--HGBfx18M1g/UTE2ccNcmYI/AAAAAAAAAz0/eIGcxfWZKVY/s000/15.gif",":-?");g(/\s\(p\)+/ig,"http://1.bp.blogspot.com/-EiPRIAKnicQ/UTE2c77prJI/AAAAAAAAAz8/omQr15WWveA/s000/16.gif","(p)");g(/\s:-s/ig,"http://1.bp.blogspot.com/-nPBZtcj4YYk/UTE2dDbnb6I/AAAAAAAAA0A/CyTJulHxaMI/s000/17.gif",":-s");g(/\s\(m\)+/ig,"http://4.bp.blogspot.com/-9W7MzbX67lI/UTE2duNojeI/AAAAAAAAA0M/k3TK9IDm-7E/s000/18.gif","(m)");g(/\s8-\)+/ig,"http://3.bp.blogspot.com/-WGtyogVyreI/UTE2d5QBmpI/AAAAAAAAA0U/XBgkgi-YMNg/s000/19.gif","8-)");g(/\s:-t/ig,"http://1.bp.blogspot.com/-QlXier7_pwQ/UTE2eW3KndI/AAAAAAAAA0c/7iqgVL0u30Y/s000/20.gif",":-t");g(/\s:-b/ig,"http://1.bp.blogspot.com/-DFRN1IbV-bI/UTE2etqjPfI/AAAAAAAAA0k/u8v9H8aXb4s/s000/21.gif",":-b");g(/\sb-\(+/ig,"http://1.bp.blogspot.com/-TKrQ8cF_ryk/UTE2ew9f-YI/AAAAAAAAA00/JSVDn8fU7ig/s000/22.gif","b-(");g(/\s:-#/ig,"http://3.bp.blogspot.com/-H6-nk19WkR0/UTE2fSrd9aI/AAAAAAAAA1A/e6YXZS401cU/s000/23.gif",":-#");g(/\s=p~/ig,"http://3.bp.blogspot.com/-mv9fgMHATpw/UTE2f3ggOlI/AAAAAAAAA1I/xz1aWUDoIUM/s000/24.gif","=p~");g(/\s\$-\)+/ig,"http://4.bp.blogspot.com/-x3Dgq_q1kWo/UTE2gLY-cqI/AAAAAAAAA1U/NeTeBXUZ7GQ/s000/25.gif","$-)");g(/\s\(b\)+/ig,"http://1.bp.blogspot.com/-044PFnhQwCU/UTE2grnLRKI/AAAAAAAAA1c/RHWHK9BApdw/s000/26.gif","(b)");g(/\s\(f\)+/ig,"http://2.bp.blogspot.com/-Ih_hV9YByoM/UTE2g5F_hWI/AAAAAAAAA1k/KVOOrMOrCmM/s000/27.gif'","(f)");g(/\sx-\)+/ig,"http://3.bp.blogspot.com/-lW5x82qaSnM/UTE2hVnaA3I/AAAAAAAAA1s/tZ7DrBgID5c/s000/28.gif","x-)");g(/\s\(k\)+/ig,"http://4.bp.blogspot.com/-mY78Ppk9gkY/UTE2hsARirI/AAAAAAAAA10/yn6CiLKtNyw/s000/29.gif","(k)");g(/\s\(h\)+/ig,"http://4.bp.blogspot.com/-PDnc2g1_Vcc/UTE2iLG6t3I/AAAAAAAAA18/i2RwYCHGqZQ/s000/30.gif","(h)");g(/\s\(c\)+/ig,"http://1.bp.blogspot.com/-oGvxxDFyx2o/UTE2iv9GHwI/AAAAAAAAA2E/LUOZ2O807SY/s000/31.gif","(c)");g(/\scheer/ig,"http://3.bp.blogspot.com/-6dut01GNqHs/UTE2i-wMzxI/AAAAAAAAA2M/S-5Wr15n--I/s000/32.gif","cheer");$("div.emoWrap").one("click",function(){if(b){alert(b)}});$(".emo").css("cursor","pointer").live("click",function(h){$(".emoKey").remove();$(this).after('<input class="emoKey" type="text" size="'+this.alt.length+'" value=" '+this.alt+'" />');$(".emoKey").trigger("select");h.stopPropagation()});$(".emoKey").live("click",function(){$(this).focus().select()})};return function(b){a(b)}})();
+//]]>
+*/
+</script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function () {emoticonx()});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", - 1);
+}
+
+jQuery(document).ready(function($) {  
+var getcookie = readCookie('hfooterx');
+    if (getcookie == null) {
+        createCookie('hfooterx', 'off', 0);
+    }
+    if (getcookie == 'off') {
+    }
+
+    jQuery(".clickfooter")
+        .live('click', function() {
+        var test = readCookie('hfooterx');
+        if (test == 'on') {
+            jQuery(".whit").animate({
+                height: 'hide'
+            }, {
+                duration: 'slow'
+            });
+            jQuery(this).addClass("active");
+            createCookie('hfooterx', 'off', 0)
+            return false;
+        }
+
+        if (test == 'off') {
+            jQuery(".whit").animate({
+                height: 'show'
+            }, {
+                duration: 'slow'
+            });
+            jQuery(this).removeClass("active");
+            createCookie('hfooterx', 'on', 0)
+            return false;
+        }
+
+    });
+});
+//]]>
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/2961662405-widgets.js"></script>
+<script type="text/javascript" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '4774759491710423963';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d4774759491710423963','//www.hans.or.kr/2014/02/yeoman-angularjs.html','4774759491710423963');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '4774759491710423963', 'bloggerUrl': 'http://www.blogger.com', 'title': 'Hans\47 Web App', 'pageType': 'item', 'postId': '9079310749472275755', 'url': 'http://www.hans.or.kr/2014/02/yeoman-angularjs.html', 'canonicalUrl': 'http://www.hans.or.kr/2014/02/yeoman-angularjs.html', 'canonicalHomepageUrl': 'http://www.hans.or.kr/', 'homepageUrl': 'http://www.hans.or.kr/', 'blogspotFaviconUrl': 'http://www.hans.or.kr/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Yeoman으로 AngularJS 프로젝트 구성하기', 'pageTitle': 'Hans\47 Web App: Yeoman으로 AngularJS 프로젝트 구성하기', 'metaDescription': '', 'encoding': 'UTF-8', 'locale': 'ko', 'localeUnderscoreDelimited': 'ko', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Hans\46#39; Web App - Atom\42 href\75\42http://www.hans.or.kr/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Hans\46#39; Web App - RSS\42 href\75\42http://www.hans.or.kr/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Hans\46#39; Web App - Atom\42 href\75\42http://www.blogger.com/feeds/4774759491710423963/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Hans\46#39; Web App - Atom\42 href\75\42http://www.hans.or.kr/feeds/9079310749472275755/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageThumbnailUrl': 'http://1.bp.blogspot.com/-3eeWyE6F9rQ/Uw3Rk9DVHbI/AAAAAAAATdM/NKOd1rP9Oz0/s72-c/yeoman.PNG', 'postImageUrl': 'http://1.bp.blogspot.com/-3eeWyE6F9rQ/Uw3Rk9DVHbI/AAAAAAAATdM/NKOd1rP9Oz0/s1600/yeoman.PNG', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,f\75\42chrome\42,g\75\42tick\42,k\75\42jstiming\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){var e\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[e,d];if(void 0\75\75c)try{b.console.timeStamp(\42CSI/\42+a)}catch(h){}};this[g](\42start\42,null,a)}var a;b.performance\46\46(a\75b.performance.timing);var n\75a?new d(a.responseStart):new d;b.jstiming\75{Timer:d,load:n};if(a){var c\75a.navigationStart,h\75a.responseStart;0\74c\46\46h\76\75c\46\46(b[k].srt\75h-c)}if(a){var e\75b[k].load;0\74c\46\46h\76\75c\46\46(e[g](\42_wtsrt\42,void 0,c),e[g](\42wtsrt_\42,\42_wtsrt\42,h),e[g](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,\nb[f]\46\46b[f].csi\46\46(a\75Math.floor(b[f].csi().pageT),e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b[f].csi().startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,e\46\0460\74c\46\46(e[g](\42_tbnd\42,void 0,b.external.startE),e[g](\42tbnd_\42,\42_tbnd\42,c))),a\46\46(b[k].pt\75a)}catch(p){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[k].load[g](\42aft\42)};var l\75!1;function m(){l||(l\75!0,b[k].load[g](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,m,!1):b.attachEvent(\42onscroll\42,m);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/cda3ddef07a85452', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {'sidebartextcolor': '#666666', 'linkcolor': '#5588aa', 'visitedlinkcolor': '#999999', 'textcolor': '#333333', 'headerfont': 'normal normal 78% \47Trebuchet MS\47,Trebuchet,Arial,Verdana,Sans-serif', 'pagetitlefont': 'normal normal 200% Georgia, Serif', 'bgcolor': '#777777', 'descriptioncolor': '#999999', 'titlecolor': '#cc6600', 'bordercolor': '#cccccc', 'postfooterfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'pagetitlecolor': '#666666', 'bodyfont': 'normal normal 15px Verdana, Geneva, sans-serif', 'endSide': 'right', 'startSide': 'left', 'descriptionfont': 'normal normal 78% \47Trebuchet MS\47, Trebuchet, Arial, Verdana, Sans-serif', 'sidebarcolor': '#999999'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList9', 'pagesmenuwidget', null, document.getElementById('PageList9'), {'title': 'Pages - Menu', 'links': [{'href': 'http://www.hans.or.kr/', 'title': 'Home', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/p/hans.html', 'title': 'Hans', 'isCurrentPage': false, 'id': '1806551648444491749'}, {'href': 'http://www.hans.or.kr/search/label/HTML5', 'title': 'HTML5', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/JavaScript', 'title': 'JavaScript', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/CSS3', 'title': 'CSS3', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/AngularJS', 'title': 'AngularJS', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/Android', 'title': 'Android', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/iOS', 'title': 'iOS', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/WindowsMobile', 'title': 'WindowsMobile', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/PhoneGap', 'title': 'PhoneGap', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/Spring', 'title': 'Spring', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/IBatis', 'title': 'IBatis', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/Oracle', 'title': 'Oracle', 'isCurrentPage': false}, {'href': 'http://www.hans.or.kr/search/label/ToDo', 'title': 'ToDo', 'isCurrentPage': false}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3853166324-lbx__ko.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/2392111094-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-atas', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-bawah', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-bawah', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_StatsView', new _WidgetInfo('Stats1', 'sidebar-bawah', null, document.getElementById('Stats1'), {'title': '전체 페이지뷰', 'showGraphicalCounter': false, 'showAnimatedCounter': false, 'showSparkline': true, 'statsUrl': '//www.hans.or.kr/b/stats?style\75BLACK_TRANSPARENT\46timeRange\75ALL_TIME\46token\75G1idTEwBAAA.0dwhSD0D-v3NG2olEuJ9v5752KEecBNAGx_2rkl9fP0.mAWFEcvCCPGUZ45mD8m_xg'}, 'displayModeFull'));
+</script>
+
+<iframe name="oauth2relay248568243" id="oauth2relay248568243" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><link type="text/css" rel="stylesheet" href="./Yeoman으로 AngularJS 프로젝트 구성하기_files/2392111094-lightbox_bundle.css"><script type="text/javascript" src="./Yeoman으로 AngularJS 프로젝트 구성하기_files/3853166324-lbx__ko.js"></script></body></html>

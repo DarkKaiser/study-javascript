@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  div { color:blue; }
+  div#five { color:red; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  
+  <div id="one"></div>
+  <div id="two"></div>
+  <div id="three"></div>
+  <div id="four"></div>
+  <div id="five"></div>
+<script>
+    var arr = [ "one", "two", "three", "four", "five" ];
+    var obj = { one:1, two:2, three:3, four:4, five:5 };
+
+    jQuery.each(arr, function() {
+      $("#" + this).text("Mine is " + this + ".");
+       return (this != "three"); // will stop running after "three"
+   });
+
+    jQuery.each(obj, function(i, val) {
+      $("#" + i).append(document.createTextNode(" - " + val));
+    });
+</script>
+
+</body>
+</html>

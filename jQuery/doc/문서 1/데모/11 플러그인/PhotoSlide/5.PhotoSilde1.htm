@@ -1,0 +1,90 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="Scripts/jquery-1.4.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function($) {
+            //플러그인 제작
+            $.fn.PhotoSlide = function(options) {
+                var settings = $.extend($.fn.PhotoSlide.defaults, options);
+
+                settings.current = 0;
+                settings.photo = $(settings.photo);
+                settings.thumbs = this.filter("img");
+                settings.thumbs.each(function (n) { this.idx = n; });
+
+                //Closure 사용
+                settings.thumbs.click(function() {
+                    var thumbImgSrc = settings.thumbs[this.idx].src;
+                    var PhotoImgSrc = thumbImgSrc.replace("/thumbs/", "/photos/");
+
+                    settings.photo.attr('src', PhotoImgSrc).css("display", "none");
+                    settings.photo.fadeIn("slow");
+                });
+            }
+
+            //기본값 설정
+            $.fn.PhotoSlide.defaults = {
+                photo: "",
+                nextButton: "",
+                prevButton: "",
+                firstButton: "",
+                lastButton: ""
+            }
+        })(jQuery);
+
+        $(document).ready(function() {
+            $("#Thumbs img").PhotoSlide({
+                photo : "#MainPhoto",
+                nextButton : "#next",
+                prevButton : "#prev"
+            });
+
+        });
+
+    </script>
+
+    <style type="text/css">
+        *
+        {
+            font-size: 12px;
+            font-family: Malgun Gothic;
+        }
+        div
+        {
+            padding: 10px;
+            line-height : 1.5em;
+            border: 1px solid silver;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <input id="first" type="button" value="처음" />
+                <input id="prev" type="button" value="이전" />
+                <input id="next" type="button" value="다음" />
+                <input id="last" type="button" value="최종" />
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:middle">
+                <div id="Thumbs" style="width:190px;height:470px; overflow:auto">
+                    <img src="thumbs/hongSeattle31.jpg" />
+                    <img src="thumbs/DevDays2006_1.jpg" />
+                    <img src="thumbs/everland0531_02.jpg" />
+                    <img src="thumbs/hongSeattle11.jpg" />
+                    <img src="thumbs/hongSeattle41.jpg" />
+                    <img src="thumbs/WPF01.jpg" />
+                </div>
+            </td>
+            <td style="vertical-align:middle">
+                <div id="right">
+                    <img id="MainPhoto" src="photos/hongSeattle31.jpg" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

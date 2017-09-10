@@ -1,0 +1,29 @@
+<html>
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript">
+          $(function() {
+              $("#photos img")
+                .attr({
+                    border: "10px",
+                    height : "100"                    
+                })
+                .attr("title", function(i) {
+                     return (i + 1) + "번째 이미지입니다";
+                });
+          });
+    </script>
+</head>
+<body>
+   
+  <div id="photos">
+    <img src="resource/image.gif" />
+    <img src="resource/계단폭포 봄.jpg" />
+    <img src="resource/폭포1.jpg" />
+    <img src="resource/547.jpg" />
+    <img src="resource/ecu2van_4714174.jpg" />
+  </div>
+  
+</body>
+</html>

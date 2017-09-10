@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  var sw='run';
+  var socket = io.connect('http://192.168.0.6:8080');
+ 
+  socket.on('stream', function (data) {
+    document.getElementById('number').innerHTML=data.n;
+  });
+ 
+  function stop_timer() {
+    if(sw=='run') {
+      socket.emit( 'action', {todo: 'stop'} );
+      sw='stop';
+    } else {
+      socket.emit( 'action', {todo: 'run'} );
+    }
+  }
+</script>
+
+<div style="border:1px solid #ccc" id="number">&nbsp;</div>
+<a href="#" onclick="stop_timer();return false;">Action</a>
+
+</body>

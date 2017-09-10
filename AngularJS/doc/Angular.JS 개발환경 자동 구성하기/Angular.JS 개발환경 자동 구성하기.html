@@ -1,0 +1,1153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0030)http://mobicon.tistory.com/274 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="alternate" type="application/rss+xml" title="모바일 컨버전스" href="http://mobicon.tistory.com/rss">
+<link rel="stylesheet" media="screen" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/style.css">
+<link rel="stylesheet" media="print" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/print.css">
+<link rel="shortcut icon" href="http://mobicon.tistory.com/favicon.ico">
+<title>모바일 컨버전스 :: [Yeoman] AngularJS 개발환경 자동 구성하기</title>
+
+<script async="" src="./Angular.JS 개발환경 자동 구성하기_files/analytics.js"></script><script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/jquery.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50240830-1', 'tistory.com');
+  ga('send', 'pageview');
+</script>
+
+<style type="text/css">
+#lightbox {
+	background-color: #eee;
+	padding: 10px;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+}
+#overlay {
+	text-align: left;
+	background-image: url(http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/overlay.png);
+}
+#lightboxCaption {
+	color: #333;
+	background-color: #eee;
+	font-size: 90%;
+	text-align: center;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+}
+* html #overlay {
+	background-color: #000;
+	background-image: url(http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/blank.gif);
+	filter: Alpha(opacity=50);
+}
+
+</style>
+<script src="./Angular.JS 개발환경 자동 구성하기_files/lightbox_plus_ope.js" type="text/javascript"></script>
+<script type="text/javascript">
+function loadlightbox() {
+	if(document.getElementById("lightbox").outerHTML) {}
+	else {
+	document.getElementById("lightbox").outerHTML = "";
+	document.getElementById("overlay").outerHTML = "";
+	}
+}
+addEvent(window,"load",function() {
+	var lightbox = new LightBox({
+		loadingimg:'http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/loading.gif',
+		expandimg:'http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/expand.gif',
+		shrinkimg:'http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/shrink.gif',
+		effectimg:'http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/zzoop.gif',
+		effectpos:{x:-40,y:-20},
+		effectclass:'effectable',
+		closeimg:'http://i1.daumcdn.net/cfs.tistory/resource/460/blog/plugins/lightbox/images/close.gif'
+	});
+});
+</script>
+<link rel="stylesheet" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/shareEntryWithSNS.css">
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shareEntryWithSNS.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/captcha.css">
+		<script type="text/javascript">
+			var needCommentCaptcha = true;
+			var commentCaptchaType = 'bottom';
+		</script>
+<style type="text/css">
+		#daumSearchBox {
+			height: 21px;
+			background-image : url(http://i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+			margin: 5px auto ;
+			padding: 0;
+		}
+		#daumSearchBox input {
+			background: none;
+			margin : 0;
+			padding : 0;
+			border : 0;
+		}
+		#daumSearchBox #daumLogo {
+			width: 34px;
+			height: 21px;
+			float: left;
+			margin-right: 5px;
+			background-image : url(http://i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+		}
+		#daumSearchBox #show_q {
+			background-color: transparent;
+			border: none;
+			font: 12px Gulim, Sans-serif;
+			color: #555;
+			margin-top: 4px;
+			margin-right: 15px;
+			float: left;
+		}
+
+		#daumSearchBox #show_btn {
+			background-image : url(http://i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+			width: 37px;
+			height: 21px;
+			float: left;
+			margin:0;
+			cursor:pointer;
+			text-indent:-1000em;
+		}
+	</style><script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/addDurl.js" charset="utf-8"></script><link href="./Angular.JS 개발환경 자동 구성하기_files/durlBasic.css" rel="stylesheet" type="text/css" id="addCssElmt"><script src="./Angular.JS 개발환경 자동 구성하기_files/durlEventListner.js" type="text/javascript" id="addJsElmt"></script>
+
+<link rel="stylesheet" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/style(1).css">
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/profile.js"></script>
+<script type="text/javascript">var asyncProfileItems = [];</script>
+	<style type="text/css">
+		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
+		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
+		.another_category h4 a { font-weight: bold !important; }
+		.another_category table { table-layout: fixed; border-collapse: collapse; width: 100% !important; margin-top: 10px !important; }
+		* html .another_category table { width: auto !important; }
+		*:first-child+html .another_category table { width: auto !important; }
+		.another_category th, .another_category td { padding: 0 0 4px !important; }
+		.another_category th { text-align: left; font-size: 12px !important; font-weight: normal;  word-break: break-all; overflow: hidden; line-height: 1.5; }
+		.another_category td { text-align: right; width: 80px; font-size: 11px; }
+		.another_category th a { font-weight: normal; text-decoration: none; border: none !important; }
+		.another_category th a.current{ font-weight: bold; text-decoration: none !important; border-bottom: 1px solid !important; }
+		.another_category th span { font-weight: normal; text-decoration: none; font: 10px Tahoma, Sans-serif; border: none !important; }
+
+		.another_category_color_gray, .another_category_color_gray h4 { border-color: #E5E5E5 !important; }
+		.another_category_color_gray * { color: #909090 !important; }
+		.another_category_color_gray th a.current{border-color:#909090 !important;}
+		.another_category_color_gray h4, .another_category_color_gray h4 a { color: #737373 !important; }
+
+
+		.another_category_color_red, .another_category_color_red h4 { border-color: #F6D4D3 !important;  }
+		.another_category_color_red * { color: #E86869 !important; }
+		.another_category_color_red th a.current{border-color:#E86869 !important;}
+		.another_category_color_red h4, .another_category_color_red h4 a { color: #ED0908 !important; }
+
+
+		.another_category_color_green, .another_category_color_green h4 { border-color: #CCE7C8 !important; }
+		.another_category_color_green * { color: #64C05B !important; }
+		.another_category_color_green th a.current{border-color:#64C05B !important;}
+		.another_category_color_green h4, .another_category_color_green h4 a { color: #3EA731 !important; }
+
+
+		.another_category_color_blue, .another_category_color_blue h4 { border-color: #C8DAF2 !important; }
+		.another_category_color_blue * { color: #477FD6 !important; }
+		.another_category_color_blue th a.current{border-color:#477FD6 !important;}
+		.another_category_color_blue h4, .another_category_color_blue h4 a { color: #1960CA !important; }
+
+
+		.another_category_color_violet, .another_category_color_violet h4 { border-color: #E1CEEC !important;  }
+		.another_category_color_violet * { color:#9D64C5 !important; }
+		.another_category_color_violet th a.current{border-color:#9D64C5 !important;}
+		.another_category_color_violet h4, .another_category_color_violet h4 a { color: #7E2CB5 !important; }
+	</style>
+<script type="text/javascript">
+//<![CDATA[
+var servicePath = "";
+var blogURL = "";
+var s_trackbackUrlCopied = "엮인글 주소가 복사되었습니다";
+var s_trackbackUrlCopyFailed = "엮인글 주소를 복사하지 못했습니다";
+var SCRIPT_VERSION = '460';
+//]]>
+</script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/jigu-latest.min.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/T.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/EAF2.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/common.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/gallery.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/flash.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/PHON.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/swfobject.js"></script>
+<link rel="stylesheet" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/dialog.css">
+<link rel="stylesheet" type="text/css" href="./Angular.JS 개발환경 자동 구성하기_files/menubar.css"><style type="text/css">.tt_article_useless_p_margin p {padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important;}</style>
+			<meta property="og:url" content="http://mobicon.tistory.com/274">
+			<meta property="og:site_name" content="모바일 컨버전스">
+			<meta property="og:title" content="[Yeoman] AngularJS 개발환경 자동 구성하기">
+			<meta property="og:description" content="AngularJS 개발시 반복적인 작업을 제거하고 생산성을 높일 수 있는 통합 도구인 Yeoman의 사용법에 대해 알아보고, 처음 개발을 시작할 때 코드의 틀을 잡아 주는 몇가지 Seed 프로젝트를 통하여 어떤 구조로 애플리케이션을 만들어야 하는지 알아두자 1. 필요 요소 기술 - UI : Bootstrap from Twitter 간혹 Foundation을 이용 - Build/Preview : Grunt - Test : 기본은 Karma이고, Mocha를 사용하고 싶다면 Karma-Mocha Karma.."><meta property="og:image" content="http://cfile9.uf.tistory.com/image/153CA448516B88AA2F52A3">
+</head>
+<body id="tt-body-page" style="zoom: 1;">
+<div id="overlay" style="display:none;position:fixed;top:0px;left:0px;z-index:150;width:100%;height:100%;"><img id="loadingImage" src="./Angular.JS 개발환경 자동 구성하기_files/loading.gif" style="position: relative; cursor: pointer;"></div>
+<div id="lightbox" style="display:none;position:absolute;z-index:160;"><img id="lightboxImage" style="cursor: pointer;"><img id="actionImage" src="./Angular.JS 개발환경 자동 구성하기_files/expand.gif" style="display: none; position: absolute; top: 15px; left: 15px; z-index: 170; cursor: pointer;"><img id="closeButton" src="./Angular.JS 개발환경 자동 구성하기_files/close.gif" style="display: inline; position: absolute; right: 10px; top: 10px; z-index: 180; cursor: pointer;"><span id="lightboxCaption" style="display: none; position: absolute; z-index: 180;"></span><img id="effectImage" src="./Angular.JS 개발환경 자동 구성하기_files/zzoop.gif" class="effectable" style="position: absolute; display: none; left: -40px; top: -20px; z-index: 190; cursor: pointer;"></div>
+<div style="margin:0px; padding:0px; border:none; background:none; float:none; clear:none; z-index:0"></div><script src="./Angular.JS 개발환경 자동 구성하기_files/rainbow.js" type="text/javascript"></script>
+
+<div id="header">
+	<div class="floatWrapper">
+		<!-- 블로그제목 -->
+		<h1><a href="http://mobicon.tistory.com/" title="모바일 컨버전스">모바일 컨버전스</a></h1>
+		<!-- 블로그메뉴 -->
+		<div id="blogMenu">
+		<div class="menu-left"></div>
+		<div class="menu-main">
+			<ul>
+				<!-- 블로그 사용 환경 (설치형/티스토리)에 맞게 아래 주석으로 처리된 메뉴를 활성화 시키시기 바랍니다. -->
+				<li class="tab_home"><a href="http://mobicon.tistory.com/" title="Home">Home</a></li>
+				<li class="tab_tag"><a href="http://mobicon.tistory.com/tag" title="Tag">Tag</a></li>
+				<li class="tab_media"><a href="http://mobicon.tistory.com/media" title="MediaLog">MediaLog</a></li>
+				<li class="tab_location"><a href="http://mobicon.tistory.com/location" title="LocationLog">LocationLog</a></li>
+				<!-- <li class="tab_key"><a href="/keylog" title="KeyLog">KeyLog</a></li> -->
+				<li class="tab_guestbook"><a href="http://mobicon.tistory.com/guestbook" title="Guestbook">Guestbook</a></li>
+				<li class="tab_admin"><a href="http://mobicon.tistory.com/admin" title="Admin">Admin</a></li>
+				<li class="tab_write"><a href="http://mobicon.tistory.com/admin/entry/post" title="Write">Write</a></li>
+			</ul>
+		</div>
+		<div class="menu-right"></div>
+		</div><!-- close blogMenu -->
+	</div><!-- close floatWrapper -->
+</div><!-- close header -->
+<div class="bodyInside">
+	
+<script type="text/javascript">
+//<![CDATA[
+	var TOP_SSL_URL = 'https://www.tistory.com';
+
+	function processShortcut(event) {
+			if (isIE)
+		{
+			event = window.event;
+			event.target = event.srcElement;
+		}
+
+		if (event.altKey || event.ctrlKey || event.metaKey)
+			return;
+		switch (event.target.nodeName) {
+			case "INPUT":
+			case "SELECT":
+			case "TEXTAREA":
+				return;
+		}
+		switch (event.keyCode) {
+			case 81: //Q
+
+				window.location = "/admin";
+				break;
+			case 65: //A
+				window.location = "/276";
+				break;
+			case 83: //S
+				window.location = "/273";
+				break;
+			case 90: //Z
+				window.location = "#recentEntries";
+				break;
+			case 88: //X
+				window.location = "#recentComments";
+				break;
+			case 67: //C
+				window.location = "#recentTrackback";
+				break;
+		}
+	}
+	document.onkeydown = processShortcut;
+
+	function addComment(caller, entryId) {
+		var oForm = findFormObject(caller);
+		if (!oForm)
+			return false;
+		var request = new HTTPRequest("POST", oForm.action);
+		request.onSuccess = function () {
+			if(entryId == 0)
+				window.location = blogURL + "/guestbook";
+			else {
+				document.getElementById("entry" + entryId + "Comment").innerHTML = this.getText("/response/commentBlock");
+				if(document.getElementById("recentComments"))
+					document.getElementById("recentComments").innerHTML = this.getText("/response/recentCommentBlock");
+				if(document.getElementById("commentCount" + entryId))
+					document.getElementById("commentCount" + entryId).innerHTML = this.getText("/response/commentView");
+				if(document.getElementById("commentCountOnRecentEntries" + entryId))
+					document.getElementById("commentCountOnRecentEntries" + entryId).innerHTML = "(" + this.getText("/response/commentCount") + ")";
+			}
+			if(typeof window.needCommentCaptcha !== "undefined"){
+				captchaPlugin.init('complete');
+			}
+		}
+		request.onError = function() {
+			var description = this.getText("/response/description");
+			if (description) { alert(description); }
+		}
+		var queryString = "key=tistory";
+		var captchaInput = document.getElementById('inputCaptcha');
+		if (oForm["name"])
+			queryString += "&name=" + encodeURIComponent(oForm["name"].value);
+		if (oForm["password"])
+			queryString += "&password=" + encodeURIComponent(oForm["password"].value);
+		if (oForm["homepage"])
+			queryString += "&homepage=" + encodeURIComponent(oForm["homepage"].value);
+		if (oForm["secret"] && oForm["secret"].checked)
+			queryString += "&secret=1";
+		if (oForm["comment"])
+			queryString += "&comment=" + encodeURIComponent(oForm["comment"].value);
+		if (captchaInput) {
+			if (!captchaInput.value) {
+				alert('그림문자가 입력되지 않았습니다.');
+				return false;
+			}
+			queryString += "&captcha=" + encodeURIComponent(captchaInput.value);
+		}
+		request.send(queryString);
+	}
+	function commentRequireLogin() {
+		if(confirm("'모바일 컨버전스' 블로그에 댓글을 남기시려면 티스토리에 로그인하셔야 합니다. \n 지금 로그인하시겠습니까?")) {
+			window.location = "https://www.tistory.com/login/?requestURI=http%3A%2F%2Fmobicon.tistory.com%2F274";
+		} else {
+			window.focus();
+		}
+	}
+	function commentObserverForAuth(evetObj) {
+		var reex = /name|password|homepage|secret|comment/;
+		if (isIE)
+			var	name = evetObj.srcElement.name
+		else
+			var	name = evetObj.target.name
+		if(reex.test(name) && !(new RegExp("^entry\\d+password$").test(name))) {
+			commentRequireLogin();
+		}
+	}
+
+	STD.addEventListener(document);
+	document.addEventListener("click", commentObserverForAuth, false);
+	var openWindow='';
+	function alignCenter(win,width,height) {
+		if(navigator.userAgent.indexOf("Chrome") == -1)
+			win.moveTo(screen.width/2-width/2,screen.height/2-height/2);
+	}
+
+	function deleteComment(id) {
+		var width = 450;
+		var height = 360;
+				try { openWindow.close(); } catch(e) { }
+				openWindow = window.open("/comment/delete/" + id, "tatter", "width="+width+",height="+height+",location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
+		openWindow.focus();
+		alignCenter(openWindow,width,height);
+	}
+
+	function commentComment(parent, guestbookPage) {
+		var width = 450;
+		var height = 360;
+				try { openWindow.close(); } catch(e) { }
+				openWindow = window.open("/comment/comment/" + parent + (guestbookPage ? "?guestbookPage=" + guestbookPage: ""), "tatter", "width="+width+",height="+height+",location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
+		openWindow.focus();
+		alignCenter(openWindow,width,height);
+	}
+
+	function editEntry(parent,child) {
+		var width =  1169;
+		var height = 600;
+		if(openWindow != '') openWindow.close();
+		openWindow = window.open("/admin/entry/edit/" + parent + "?popupEditor&returnURL=CLOSEME","tatter", "width="+1169+",height="+600+",location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0");
+		openWindow.focus();
+		alignCenter(openWindow,width,height);
+	}
+
+	function guestbookComment(parent) {
+		var width = 450;
+		var height = 360;
+				try { openWindow.close(); } catch(e) { }
+				openWindow = window.open("/comment/comment/" + parent, "tatter", "width="+width+",height="+height+",location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
+		openWindow.focus();
+		alignCenter(openWindow,width,height);
+	}
+
+	function sendTrackback(id) {
+		var width = 700;
+		var height = 500;
+				try { openWindow.close(); } catch(e) { }
+				openWindow = window.open("/trackback/send/" + id, "tatter", "width=580,height=400,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0");
+				openWindow.focus();
+		alignCenter(openWindow,width,height);
+	}
+
+	function deleteTrackback(id,entryId) {
+		if (confirm("트랙백을 삭제하기 위해서는 로그인이 필요합니다.\n로그인 하시겠습니까?\t")) {
+			window.location = "https://www.tistory.com/login/";
+			return false;
+		} else {
+			return false;
+		}
+	}
+
+	function reloadEntry(id) {
+		var password = document.getElementById("entry" + id + "password");
+		if (!password)
+			return;
+		document.cookie = "GUEST_PASSWORD=" + encodeURIComponent(password.value) + ";path=";
+
+		window.location.href = window.location.href;
+	}
+	loadedComments = new Array();
+	loadedTrackbacks = new Array();
+	function viewTrigger(id, category, categoryId) {
+		var request = new HTTPRequest("GET", "/"+category+"/view/" + id);
+		var target = document.getElementById('entry'+id+(category == 'comment' ? 'Comment' : 'Trackback'));
+		if(target == null)
+			return false;
+		request.onSuccess = function() {
+			target.innerHTML = this.getText("/response/result");
+			target.style.display = 'block';
+			highlight();
+			category == 'comment' ? loadedComments[id] = true : loadedTrackbacks[id] = true;
+			if(categoryId > -1)
+				location = location.toString();
+			if(category == 'trackback') {
+				var holder = document.getElementById('TrackbackCopyHolder' + id);
+				if(holder) {
+					holder.innerHTML = AC_FL_RunContentNotWriteGetString(
+						'src','http://s1.daumcdn.net/cfs.tistory/resource/460/blog/script/copyTrackback',
+						'Flashvars','url=http://mobicon.tistory.com/trackback/' + id + '&mode=whiteButton',
+						'width','29',
+						'height','18',
+						'id', 'TrackbackCopyButton' + id,
+						'wmode','transparent',
+						'allowScriptAccess','always',
+						'type','application/x-shockwave-flash',
+						'pluginspage','http://www.macromedia.com/go/getflashplayer'
+					);
+				}
+			}
+			if(typeof window.needCommentCaptcha !== "undefined"){
+				captchaPlugin.init();
+			}
+		}
+		request.onError = function() {
+			alert('실패 했습니다');
+		}
+		request.send();
+	}
+	function highlight() {
+		var hash = new RegExp("^#(comment\\d+)").exec(window.location.hash);
+		if(hash && (el = document.getElementById(hash[1])))
+			highlightElement(hash[1], 0, el.style.backgroundColor);
+	}
+	function highlightElement(id, amount, origColor) {
+		var el = document.getElementById(id);
+		if (!el) {
+			return;
+		}
+		el.style.backgroundColor = amount % 2 ? "#FFFF44" : origColor;
+		if (++amount < 7) {
+			setTimeout("highlightElement('" + id + "', " + amount + ", '" + origColor + "')", 200);
+		}
+	}
+	function toggleLayerForEntry(id, category, categoryId, mode) {
+		if((category == 'comment' ? loadedComments[id] : loadedTrackbacks[id])) {
+			try {
+				var obj = document.getElementById('entry'+id+(category == 'comment' ? 'Comment' : 'Trackback'));
+				if(mode == undefined)
+					obj.style.display = (obj.style.display == "none") ? "block" : "none";
+				else
+					obj.style.display = (mode == 'show') ? "block" : "none";
+			} catch (e) {
+
+			}
+			return true;
+		} else {
+			if(categoryId) {
+				viewTrigger(id,category, categoryId);
+			} else {
+				viewTrigger(id,category, -1);
+			}
+		}
+	}
+	function ObserverForAnchor(evetObj) {
+		var lo = location.toString();
+		var queryString = lo.substr(lo.lastIndexOf('/')+1);
+		if(queryString.indexOf('#')>-1) {
+			var qsElements = queryString.split('#');
+			if(qsElements[1].indexOf('comment')>-1) {
+				var category = 'comment';
+			} else if(qsElements[1].indexOf('trackback')>-1) {
+				var category = 'trackback';
+			}
+			if(category) {
+				entryid = qsElements[0];
+				categoryId = qsElements[1].substr(category.length);
+				toggleLayerForEntry(entryid,category,categoryId, 'show');
+			}
+		}
+	}
+
+	STD.addEventListener(window);
+	window.addEventListener("load", ObserverForAnchor, false);
+//]]>
+</script>
+<div style="margin:0px; padding:0px; border:none; background:none; float:none; clear:none; z-index:0"></div>
+
+		<div id="body" class="floatWrapper">
+			<div id="content">
+	<!-- 태그 -->
+				
+	<!-- 지역로그 -->
+				
+
+				
+	<!-- 본문검색리스트 -->
+				
+	<!-- 댓글검색리스트 -->
+				
+	<!-- 공지사항글 -->
+				
+	<!-- 보호글 -->
+				
+	<!-- 포스트의 본문 시작 -->
+				
+					<div class="content-title">
+						<div class="date">2013/04/15 11:44</div>
+						<!-- 포스트관리 -->
+						
+					</div>
+					<div class="content-bg">
+						<div class="entry">
+							<div class="titleWrap">
+								<h2><a href="./Angular.JS 개발환경 자동 구성하기_files/Angular.JS 개발환경 자동 구성하기.html">[Yeoman] AngularJS 개발환경 자동 구성하기</a></h2>
+								<div class="category"><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/Yeoman">Frontend Test, Tools/Yeoman</a></div>
+							</div><!-- close titleWrap -->
+		<!-- 포스트 본문 내용 -->
+							<div class="article">
+								<div class="tt_article_useless_p_margin"><p>AngularJS 개발시 반복적인 작업을 제거하고&nbsp;생산성을 높일 수 있는 통합 도구인 Yeoman의 사용법에 대해 알아보고, 처음 개발을 시작할 때 코드의 틀을 잡아 주는 몇가지 Seed 프로젝트를 통하여 어떤 구조로 애플리케이션을 만들어야 하는지 알아두자</p>
+<p><br></p>
+<p><br></p>
+<p><span style="font-size: 11pt;"><b><span style="font-size: 14pt;">1.&nbsp;필요 요소 기술</span></b></span></p>
+<p>&nbsp; - <span style="color: rgb(9, 0, 255);">UI</span> : <a href="http://twitter.github.io/bootstrap/" target="_blank" class="tx-link">Bootstrap</a>&nbsp;from Twitter &nbsp;간혹&nbsp;<a href="http://foundation.zurb.com/" target="_blank" class="tx-link">Foundation</a>을 이용</p>
+<p>&nbsp; - <span style="color: rgb(9, 0, 255);">Build/Preview</span> : <a href="http://gruntjs.com/" target="_blank" class="tx-link" style="">Grunt</a></p>
+<p>&nbsp; - <span style="color: rgb(9, 0, 255);">Test</span> : 기본은 <a href="http://karma-runner.github.io/" target="_blank" class="tx-link">Karma</a>이고, Mocha를 사용하고 싶다면&nbsp;<a href="http://karma-runner.github.io/0.8/index.html" target="_blank" class="tx-link">Karma</a>-<a href="http://visionmedia.github.io/mocha/" target="_blank" class="tx-link">Mocha</a> Karma구동을 위한 <a href="https://github.com/karma-runner/karma-mocha" target="_blank" class="tx-link">Mocha adapter</a> 존재</p>
+<p>&nbsp; - <span style="color: rgb(9, 0, 255);">Package Management</span> : <a href="https://github.com/twitter/bower" target="_blank" class="tx-link">Bower</a> from Twitter</p>
+<p>이들의 통합적으로 사용하기 위한 툴로 <a href="http://yeoman.io/" target="_blank" class="tx-link">yeoman</a> 을 설치하면 된다. 간단한 명령으로 AngularJS 관련 코드를 자동 생성하여 준다</p>
+<p><br></p>
+<p><br></p>
+<p><b><span style="font-size: 14pt;">2.&nbsp;</span><a href="http://yeoman.io/gettingstarted.html" target="_blank" class="tx-link"><span style="font-size: 14pt;">Yeoman startup</span></a></b></p>
+<p style="text-align: left; clear: none; float: none;">&nbsp;&nbsp;<span class="imageblock" style="display:inline-block;width:640px;;height:auto"><span dir="http://cfile9.uf.tistory.com/original/153CA448516B88AA2F52A3" rel="lightbox" target="_blank"><img src="./Angular.JS 개발환경 자동 구성하기_files/153CA448516B88AA2F52A3" style="cursor: pointer;" height="226" width="640"></span></span></p><div class="txc-textbox" style="border: 1px solid rgb(203, 203, 203); background-color: rgb(255, 255, 255); padding: 10px;"><p style="clear: none; float: none;"><span style="color: rgb(9, 0, 255);">yo</span> - the scaffolding tool from Yeoman</p>
+<p style="clear: none; float: none;"><span style="color: rgb(9, 0, 255);">bower</span> - the package management tool &nbsp;</p>
+<p style="clear: none; float: none;">&nbsp; + component.json :&nbsp;의존관계 설정</p>
+<p style="clear: none; float: none;">&nbsp; + .bowerrc :&nbsp;컴포넌트 설치 위치정보</p>
+<p style="text-align: left; clear: none; float: none;"><span style="color: rgb(9, 0, 255);">grunt</span> - the build tool&nbsp;</p>
+<p style="text-align: left; clear: none; float: none;">&nbsp; +&nbsp;Gruntfile.js : ant와 같은 수행 Task 정의</p>
+<p style="text-align: left; clear: none; float: none;">&nbsp; + package.json :&nbsp;Node.js위에 구동되므로 package.json에 Grunt contributor 라이브러리 정의</p>
+<p style="text-align: left; clear: none; float: none;"><span style="color: rgb(9, 0, 255);">karma</span> - grunt test 시에 수행&nbsp;</p>
+<p style="text-align: left; clear: none; float: none;">&nbsp; + karma.conf.js : 로컬 테스트 환경</p>
+<p style="text-align: left; clear: none; float: none;">&nbsp; + karma-e2e.conf.js : Real Browser 테스트 환경 즉, end-to-end (Client&lt;-&gt;Server) 테스트 수행. 사용 port 8080</p></div><p><br><span id="callbacknestmobicontistorycom2748241" style="width:1px; height:1px; float:right"><embed allowscriptaccess="always" id="bootstrappermobicontistorycom2748241" src="http://mobicon.tistory.com/plugin/CallBack_bootstrapperSrc?nil_profile=tistory&amp;nil_type=copied_post" width="1" height="1" wmode="transparent" type="application/x-shockwave-flash" enablecontextmenu="false" flashvars="&amp;callbackId=mobicontistorycom2748241&amp;host=http://mobicon.tistory.com&amp;embedCodeSrc=http%3A%2F%2Fmobicon.tistory.com%2Fplugin%2FCallBack_bootstrapper%3F%26src%3Dhttp%3A%2F%2Fs1.daumcdn.net%2Fcfs.tistory%2Fresource%2F460%2Fblog%2Fplugins%2FCallBack%2Fcallback%26id%3D274%26callbackId%3Dmobicontistorycom2748241%26destDocId%3Dcallbacknestmobicontistorycom2748241%26host%3Dhttp%3A%2F%2Fmobicon.tistory.com%26float%3Dleft" swliveconnect="true"></span></p>
+<p>&nbsp; - Yeoman command for AngularJS</p><div class="txc-textbox" style="border: 1px solid rgb(203, 203, 203); background-color: rgb(255, 255, 255); padding: 10px;"><p>// 설치 : grunt-cli, bower가 같이 설치된다&nbsp;</p>
+<p><span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);">npm install -g yo</span></p>
+<p><br></p>
+<p>// Yeoman을 위한 generator 설치 for AngularJS &amp; Karam</p>
+<p>// 하기 에러 내역 참조하여 generator-angular의 script-base.js 파일 수정</p>
+<p><span style="color: rgb(9, 0, 255);">// Gene</span><span style="color: rgb(9, 0, 255);">rator는 Yeoman에서 생성하는 boilerplate 나 scaffolding 코드를 만들어주는</span></p>
+<p><span style="color: rgb(9, 0, 255);">// Yeoman의 플러그인이라 생각하면 된다. 이미 만들어지 Generator 목록이 존재한다</span></p>
+<p><span style="color: rgb(9, 0, 255);">// &gt;&nbsp;</span><a href="https://github.com/yeoman" target="_blank" class="tx-link"><span style="color: rgb(9, 0, 255);">https://github.com/yeoman</span></a><span style="color: rgb(9, 0, 255);"> (generator-* 목록들</span><span style="color: rgb(9, 0, 255);">)</span></p>
+<p><span style="color: rgb(9, 0, 255);">// &gt;&nbsp;<a href="http://mobicon.tistory.com/282" target="_blank" class="tx-link"><span style="color: rgb(9, 0, 255);">Generator 만들기 참조</span></a></span></p>
+<p><span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);">npm install -g generator-webapp&nbsp;generator-angular generator-karma</span></p>
+<p><br></p>
+<p>// 명령어 (프로젝트 디렉토리에서 수행)</p>
+<p><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);">yo angular</span>&nbsp;또는 yo angular:app 애플리케이션 생성</p>
+<p><span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);">yo angular:controller myControllerName</span><span style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);"> </span>컨트롤러 생성</span></span></p>
+<p><span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);">yo angular:directive myDirectiveName</span><span style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);"> </span>디렉티브 생성</span></span></p>
+<p><span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);">yo angular:filter myFilterName</span><span style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);"> </span>필터 생성</span></span></p>
+<p><font color="#000000"><span style="color: rgb(255, 0, 0);">yo angular:service myServiceName</span> 서비스 생성</font></p></div><p><br></p>
+<p>&nbsp; - <span style="color: rgb(255, 0, 0);"><b>yo angular:* 사용시 에러 발생 해결방법</b></span></p><div class="txc-textbox" style="border: 1px solid rgb(254, 137, 67); background-color: rgb(254, 222, 199); padding: 10px;"><p>예) yo angular:controller Test 수행시 하기와 같은 에러 발생</p>
+<p></p>
+<p>~/angularjs/sd_01&gt; <span style="color: rgb(9, 0, 255);">yo angular:controller Test</span></p>
+<p><br></p>
+<p>path.js:360</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; throw new TypeError('Arguments to path.join must be strings');</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^</p>
+<p>TypeError: Arguments to path.join must be strings</p>
+<p>&nbsp; &nbsp; at path.js:360:15</p>
+<p>&nbsp; &nbsp; at Array.filter (native)</p>
+<p>&nbsp; &nbsp; at Object.exports.join (path.js:358:36)</p>
+<p>&nbsp; &nbsp; at Generator (/usr/local/lib/node_modules/generator-angular/script-base.js:38:29)</p>
+<p>&nbsp; &nbsp; at new Generator (/usr/local/lib/node_modules/generator-angular/controller/index.js:10:14)</p>
+<p><br></p>
+<p><b><span style="font-size: 11pt;">==&gt; 해결하기&nbsp;</span></b></p>
+<p>1)&nbsp;<span style="font-size: 9pt; line-height: 1.5;">/usr/local/lib/node_modules/generator-angular/script-base.js 의&nbsp;38 번째 줄 내용을 하기와 같이 수정함</span></p>
+<p></p>
+<p>&nbsp;37 &nbsp; &nbsp; if (!this.options.coffee &amp;&amp;</p>
+<p>&nbsp;38 &nbsp; &nbsp; &nbsp; <span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><b>//</b></span>this.expandFiles(path.join(<span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><b>this.appPath,</b></span> '/scripts/**/*.coffee'), {}).length &gt; 0) { &nbsp;<span style="color: rgb(0, 85, 255);">// 주석처리</span>&nbsp;</p>
+<p>&nbsp;39 &nbsp; &nbsp; &nbsp; this.expandFiles(path.join(<span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);"><b>process.cwd(),</b></span> '/scripts/**/*.coffee'), {}).length &gt; 0) { <span style="color: rgb(0, 85, 255);">&nbsp;// process.cwd() 로 바꿈</span></p>
+<p>&nbsp;40 &nbsp; &nbsp; &nbsp; this.options.coffee = true;</p>
+<p>&nbsp;41 &nbsp; &nbsp; }</p>
+<p><br></p>
+<p>2) 재수행 : 친절하게도 TestCase까지 자동 생성해 준다&nbsp;</p>
+<p>&nbsp; &nbsp;~/angularjs/sd_01&gt; <span style="color: rgb(9, 0, 255);">yo angular:controller Test</span></p>
+<p>&nbsp; &nbsp;create app/scripts/controllers/Test.js</p>
+<p>&nbsp; &nbsp;create test/spec/controllers/Test.js</p>
+<p></p>
+<p></p></div><p><br></p>
+<p>&nbsp; -&nbsp;Yeoman command for Bower : 의존관계 라이브러리에 대한 관리 담당&nbsp;</p><div class="txc-textbox" style="border: 1px solid rgb(203, 203, 203); background-color: rgb(255, 255, 255); padding: 10px;"><p>// 명령어</p>
+<p><span style="color: rgb(255, 0, 0);">bower search &lt;dep&gt;</span> - search for a dependency in the Bower registry</p>
+<p><span style="color: rgb(255, 0, 0);">bower install &lt;dep&gt;..&lt;depN&gt;</span> - install one or more dependencies</p>
+<p><span style="color: rgb(255, 0, 0);">bower list</span> - list out the dependencies you have installed for a project</p>
+<p><span style="color: rgb(255, 0, 0);">bower update &lt;dep&gt;</span> - update a dependency to the latest version available<br></p>
+<p><br></p>
+<p>// 설치하기&nbsp;</p>
+<p>// .bowerrc 에 설정된 디렉토리로 다운로드된 라이브러리가 설치된다</p>
+<p></p>
+<p>$ <span style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);">bower install angular-ui</span></p>
+<p>bower cloning git://github.com/angular-ui/angular-ui.git</p>
+<p>bower cached git://github.com/angular-ui/angular-ui.git</p>
+<p>bower fetching angular-ui</p>
+<p>bower checking out angular-ui#v0.4.0</p>
+<p>bower copying /Users/nulpulum/.bower/cache/angular-ui/bd4cf7fc7bfe2a2118a7705a22201834</p>
+<p>bower installing angular-ui#0.4.0</p>
+<p><br></p>
+<p>$ <span style="color: rgb(9, 0, 255);">cd app/components/</span></p>
+<p>$ ls</p>
+<p>angular<span class="Apple-tab-span" style="white-space:pre">			</span>angular-scenario<span class="Apple-tab-span" style="white-space:pre">	</span>es5-shim<span class="Apple-tab-span" style="white-space:pre">		</span>json3</p>
+<p>angular-mocks<span class="Apple-tab-span" style="white-space:pre">		</span><span style="color: rgb(9, 0, 255);">angular-ui</span><span class="Apple-tab-span" style="white-space:pre">		</span>jquery</p>
+<p><br></p>
+<p>$ cd ../..</p>
+<p>$ cat <span style="color: rgb(255, 0, 0);">.bowerrc</span></p>
+<p>{</p>
+<p>&nbsp; &nbsp; "directory": "<span style="color: rgb(9, 0, 255);">app/components</span>"</p>
+<p>}</p>
+<p></p></div><p><br></p>
+<p>&nbsp; -&nbsp;Yeoman command for Grunt : 프러덕션 빌드, 미리보기, 테스팅&nbsp;</p>
+<p>&nbsp; &nbsp; + grunt는 task에 대한 여러 target들이 존재하는 구조이다.&nbsp;</p>
+<p>&nbsp; &nbsp; + 명령을 grunt &lt;task&gt; 로 주면 task밑의 모든 target이 순서대로 수행된다</p>
+<p>&nbsp; &nbsp; + 명령을 grunt &lt;task&gt;:&lt;target&gt; 을 지정하여 특정 target만 수행할 수도 있다</p>
+<p>&nbsp; &nbsp; + task와 관련한 여러가지 Plugins 이 이미 만들어져 있고 직접 만들 수도 있다 (<a href="https://github.com/gruntjs/grunt-contrib" target="_blank" class="tx-link">기존 Plugins 목록</a>)</p><div class="txc-textbox" style="border: 1px solid rgb(203, 203, 203); background-color: rgb(255, 255, 255); padding: 10px;"><p><span style="color: rgb(0, 0, 0);">// 명령어</span></p>
+<p><span style="color: rgb(255, 0, 0);">grunt test</span>&nbsp;&nbsp;- 테스트하기.&nbsp;run the unit tests for an app &nbsp;</p>
+<p><span style="color: rgb(255, 0, 0);">grunt server</span>&nbsp;- 브라우져에서 보기. 변경사항 실시간 반영됨.&nbsp;preview an app you have generated (with Livereload)</p>
+<p><span style="color: rgb(255, 0, 0);">grunt</span> - 배포본 빌드하기. &nbsp;build an optimized, production-ready version of your app &nbsp;(warning 무시&nbsp;옵션 <span style="color: rgb(255, 0, 0);">--force</span> 사용가능)</p>
+<p><br></p>
+<p>// 브라우져 미리보기 in app root folder</p>
+<p>grunt server<br></p>
+<p>// warning -jslint 같은- 무시하고 계속 build하기</p>
+<p>grunt &nbsp;--force&nbsp;</p></div><p><br></p>
+<p><br></p>
+<p><b><span style="font-size: 14pt;">3.&nbsp;기본 코드 생성</span></b></p>
+<p>&nbsp; - <a href="https://github.com/blai/grunt-express" target="_blank" class="tx-link">Grunt-Express</a> : Grunt와 Express 연동하기</p>
+<p>&nbsp; -&nbsp;<a href="https://github.com/hmalphettes/yeoman-angular-express-example" target="_blank" class="tx-link">Yeoman-Angular-Express</a>&nbsp;: Yeoman을 이용하여 Angular project 생성한 후 Express와 통합하는 예제</p>
+<p>&nbsp; - <a href="https://github.com/btford/angular-socket-io-seed" target="_blank" class="tx-link">Angular-Socket.io-Seed</a> : Angular와 Socket.io를 접목 시키고자 할때 사용 (<a href="http://www.html5rocks.com/en/tutorials/frameworks/angular-websockets/" target="_blank" class="tx-link">포스팅</a>)</p>
+<p><br></p>
+<p><br></p>
+<p><b><span style="font-size: 14pt;">4. Addy Osmani 님이&nbsp;이야기 하는 Automation Front-end workflow</span></b></p>
+<div><iframe class="speakerdeck-iframe" frameborder="0" src="./Angular.JS 개발환경 자동 구성하기_files/f1dbf1e0220a0131d6a8721ad3458357.html" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; margin: 0px; padding: 0px; border-radius: 5px; width: 710px; height: 594.500000000001px; background: transparent;"></iframe></div>
+<p><br></p>
+<p><br></p>
+<p>결론적으로 Yeoman을 사용하여 기반 코드를 생성하고 빌드/테스팅 자동화를 한다. 그리고 필요한 코드들은 Seed 프로젝트를 참조하여 자기것으로 만들면 되겠다</p>
+<iframe width="560" height="315" src="./Angular.JS 개발환경 자동 구성하기_files/XOmwZopzcTA.html" frameborder="0" allowfullscreen=""></iframe>
+<p><br></p>
+<p><br></p>
+<p><b><span style="font-size: 11pt;">&lt;참조&gt;</span></b></p>
+<p>&nbsp; - 원문 : <a href="http://dailyjs.com/2013/04/11/angularjs-1/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+dailyjs+(DailyJS)" target="_blank" class="tx-link">Google, Twitter and AngularJS</a></p>
+<p>&nbsp; - <a href="http://dailyjs.com/tags.html#backgoog" target="_blank" class="tx-link">보다 많은 AngularJS와 BackboneJS에 대한 기사 in DailyJS</a></p>
+<p>&nbsp; - <a href="https://github.com/blai/grunt-express-example" target="_blank" class="tx-link">Grunt를 위한 express 플러그인 테스트</a></p><div class="entry-ccl" style="clear: both; text-align: right; margin-bottom: 10px">
+	<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" style="text-decoration: none">
+	<img id="ccl-icon-274-0" class="entry-ccl-by" src="./Angular.JS 개발환경 자동 구성하기_files/ccl_black01.png" onmouseover="tistoryCcl.show(this, 1)" onmouseout="tistoryCcl.hide()" alt="저작자 표시">
+	<img id="ccl-icon-274-1" class="entry-ccl-nc" src="./Angular.JS 개발환경 자동 구성하기_files/ccl_black02.png" onmouseover="tistoryCcl.show(this, 1)" onmouseout="tistoryCcl.hide()" alt="비영리">
+	<img id="ccl-icon-274-2" class="entry-ccl-nd" src="./Angular.JS 개발환경 자동 구성하기_files/ccl_black03.png" onmouseover="tistoryCcl.show(this, 1)" onmouseout="tistoryCcl.hide()" alt="변경 금지">
+	<!--
+	<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.0/kr/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/">
+			<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+			<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+			<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+			<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+			<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+		</License>
+	</rdf:RDF>
+	-->
+	</a>
+</div>
+<script type="text/javascript">
+if(/MSIE [0-6]\./.test(navigator.userAgent)){for(var i=0;i<3;i++){var el=document.getElementById('ccl-icon-274-'+i);el.style.filter='progid:DXImageTransform.Microsoft.AlphaImageLoader(src="'+el.src+'",sizingMethod="image")';el.src='http://i1.daumcdn.net/cfs.tistory/resource/460/static/admin/form/s.gif';}}
+</script>
+<div class="tt-plugin tt-share-entry-with-sns tt-sns-icon-alignment-right tt-sns-icon-size-small">
+	<div class="tt-sns-wrap" id="ttSnsWrap-274">
+		<ul class="tt-sns-service-default">
+			<li class="tt-sns-service-kakaostory"><a href="javascript:;" onclick="ShareEntryWithSNS.share(&#39;kakaostory&#39;, &#39;274&#39;, &#39;%5BYeoman%5D%20AngularJS%20%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%20%EC%9E%90%EB%8F%99%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&#39;);">카카오스토리</a></li>
+			<li class="tt-sns-service-twitter"><a href="javascript:;" onclick="ShareEntryWithSNS.share(&#39;twitter&#39;, &#39;274&#39;, &#39;%5BYeoman%5D%20AngularJS%20%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%20%EC%9E%90%EB%8F%99%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&#39;);">트위터</a></li>
+			<li class="tt-sns-service-facebook"><a href="javascript:;" onclick="ShareEntryWithSNS.share(&#39;facebook&#39;, &#39;274&#39;, &#39;%5BYeoman%5D%20AngularJS%20%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%20%EC%9E%90%EB%8F%99%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0&#39;);">페이스북</a></li>
+		</ul>
+	</div>
+	<div class="tt-sns-clear"></div>
+</div>
+<div style="text-align:right; padding-top:10px;clear:both">
+<iframe src="./Angular.JS 개발환경 자동 구성하기_files/like(1).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:106px; height:30px;" allowtransparency="true"></iframe>
+</div>
+<div class="another_category another_category_color_gray">
+<h4>'<a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools">Frontend Test, Tools</a>&nbsp;&gt;&nbsp;<a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/Yeoman">Yeoman</a>' 카테고리의 다른 글</h4>
+<table>
+<tbody><tr>
+<th>
+<a href="http://mobicon.tistory.com/282">[Yeoman] 자신만의 Generator 만들기 - 1</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2013/04/25</td>
+</tr>
+<tr>
+<th>
+<a href="http://mobicon.tistory.com/279">[Yeoman] generator-angular 와 Express.js 연동하기</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2013/04/22</td>
+</tr>
+<tr>
+<th>
+<a href="./Angular.JS 개발환경 자동 구성하기_files/Angular.JS 개발환경 자동 구성하기.html" class="current">[Yeoman] AngularJS 개발환경 자동 구성하기</a>&nbsp;&nbsp;<span>(3)</span>
+</th>
+<td>
+2013/04/15</td>
+</tr>
+</tbody></table></div></div>
+							</div><!-- close article -->
+							<div class="clear"></div>
+							<div class="author">
+								<span class="text">Posted by</span>
+								peter yun 윤영식
+							</div>
+		<!-- 태그트레일 -->
+							
+								<div class="tagTrail"><span class="hide">TAG</span><a href="http://mobicon.tistory.com/tag/Angular.js" rel="tag">Angular.js</a>,
+<a href="http://mobicon.tistory.com/tag/Bower" rel="tag">Bower</a>,
+<a href="http://mobicon.tistory.com/tag/Grunt.js" rel="tag">Grunt.js</a>,
+<a href="http://mobicon.tistory.com/tag/Karma" rel="tag">Karma</a>,
+<a href="http://mobicon.tistory.com/tag/yeoman" rel="tag">yeoman</a></div>
+							
+							<div class="actionTrail">
+								<div class="wrapper">
+									<!--a href="#tb" onclick="toggleLayerForEntry(274, 'trackback'); return false" title="trackback" class="tb"><span id="trackbackCount274">trackback <span class="cnt">0</span></span></a-->
+									<a href="http://mobicon.tistory.com/274#rp" onclick="toggleLayerForEntry(&#39;274&#39;, &#39;comment&#39;); return false" title="comment" class="rp"><span id="commentCount274">comment <span class="cnt">3</span></span></a>
+								</div>
+							</div>
+		<!-- 트랙백 -->
+							<!--s_tb>
+								<div class="trackback">
+									<h3><span class="hide">트랙백 주소 - </span></h3>
+									
+								</div><!-- close trackback -->
+							
+							<div id="entry274Comment" style="display:none"></div>
+						</div><!-- close entry -->
+					</div><!-- close content-bg -->
+					<div class="content-btm"></div>
+				
+		<!-- 페이지 -->
+				
+					<div id="paging">
+						<a href="http://mobicon.tistory.com/276" class="" id="prevPage" title="이전">&nbsp;<span class="hide">이전</span></a><span class="numbox"><a href="http://mobicon.tistory.com/458" class="num"><span>1</span></a> <span class="interword">...</span> <a href="http://mobicon.tistory.com/279" class="num"><span>160</span></a><a href="http://mobicon.tistory.com/278" class="num"><span>161</span></a><a href="http://mobicon.tistory.com/277" class="num"><span>162</span></a><a href="http://mobicon.tistory.com/276" class="num"><span>163</span></a><a class="num"><span class="selected">164</span></a><a href="http://mobicon.tistory.com/273" class="num"><span>165</span></a><a href="http://mobicon.tistory.com/272" class="num"><span>166</span></a><a href="http://mobicon.tistory.com/271" class="num"><span>167</span></a><a href="http://mobicon.tistory.com/270" class="num"><span>168</span></a> <span class="interword">...</span> <a href="http://mobicon.tistory.com/1" class="num"><span>392</span></a></span><a href="http://mobicon.tistory.com/273" class="" id="nextPage" title="다음">&nbsp;<span class="hide">다음</span></a>
+					</div>
+				
+				<div id="footer">
+					<div class="row-one floatWrapper">
+				<!-- 푸터메뉴 -->
+						<div id="footMenu">
+							<!-- 블로그 사용 환경 (설치형/티스토리)에 맞게 아래 주석으로 처리된 메뉴를 활성화 시키시기 바랍니다. -->
+							<a href="http://mobicon.tistory.com/" title="home">home</a>
+							<a href="http://mobicon.tistory.com/tag" title="tag">tag</a>
+							<a href="http://mobicon.tistory.com/media" title="media">media</a>
+							<a href="http://mobicon.tistory.com/location" title="location">location</a>
+							<!-- <a href="/keylog" title="key">key</a> -->
+							<a href="http://mobicon.tistory.com/guestbook" title="guest">guest</a>
+							<a href="http://mobicon.tistory.com/admin" title="admin">admin</a>
+							<a href="http://mobicon.tistory.com/admin/entry/post" title="write">write</a>
+						</div>
+				<!-- 카운터 모듈 -->
+						<div id="counter">
+							<ul>
+								<li class="total">Total 535,013</li>
+								<li class="today">Today 573</li>
+								<li class="yesterday">Yesterday 1,255</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row-two floatWrapper">
+				<!-- 배너 모듈 - 티스토리 -->
+						<a id="adTistory" href="http://www.tistory.com/join" title="티스토리 가입하기">가입하기</a>
+				<!-- RSS 링크 -->
+						<a id="btnRSS" href="http://mobicon.tistory.com/rss" onclick="window.open(this.href); return false" title="모바일 컨버전스 구독하기">&nbsp;<span class="hide">RSS FEED</span></a>
+				<!-- 카피라이트 -->
+						<div id="copyright">
+							<a href="http://mobicon.tistory.com/">윤영식</a> blog is powered by <a href="http://daum.net/" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> / designed by <a href="http://www.tistory.com/" title="Tistory 바로가기">Tistory</a>
+						</div>
+					</div>
+				</div><!-- close footer -->
+			</div><!-- close content -->
+			<hr>
+			<div id="sidebar">
+				
+	<!-- 블로그 설명 모듈 -->
+					<div class="user-top"></div>
+					<div class="user-bg">
+						<div class="user floatWrapper">
+							<div id="blogImage"><img src="./Angular.JS 개발환경 자동 구성하기_files/212FBB4A53DE430408CC95" alt="블로그 이미지"></div>
+							<div class="blogText">
+								<div id="blogDesc">WebApp Front-end Architect, Full Stacker, Agile Adept, KnowHow Dispenser and Bike Rider</div>
+								<div id="userID">윤영식</div>
+							</div>
+						</div><!-- close user -->
+					</div><!-- close user-bg -->
+					<div class="user-btm"></div>
+					
+			          <!-- 블로그 타이틀 모듈 -->
+		                 <!--a href="http://smartdashboard.tistory.com">[Project-01] Smart Dashboard</a-->
+				<div class="module module_plugin"><div style="overflow:hidden; width:100%; text-align:center"><img src="./Angular.JS 개발환경 자동 구성하기_files/count.php" alt="Statistics Graph" title="Blog Visitors"></div></div>
+	<!-- 검색 모듈 -->
+						<div id="searchBox">
+							
+								<input type="text" name="search" value="" onkeypress="if (event.keyCode == 13) { try{window.location.href=&#39;/search/&#39; + looseURIEncode(document.getElementsByName(&#39;search&#39;)[0].value);document.getElementsByName(&#39;search&#39;)[0].value = &#39;&#39;; return false;}catch(e){} }" class="text">
+								<input value="검색" type="button" onclick="try{window.location.href=&#39;/search/&#39; + looseURIEncode(document.getElementsByName(&#39;search&#39;)[0].value);document.getElementsByName(&#39;search&#39;)[0].value = &#39;&#39;; return false;}catch(e){}" class="submit">
+							
+						</div>
+					
+	<!-- 카테고리 모듈 -->
+					<div class="category-top"></div>
+					<div class="category-bg">
+						<div id="category">
+							<h3 class="hide">카테고리</h3>
+							<ul><li><a href="http://mobicon.tistory.com/category">모바일 컨버전스 <span class="c_cnt">(392)</span> <img src="./Angular.JS 개발환경 자동 구성하기_files/new_ico_1.gif" alt="N" style="vertical-align:middle;padding-left:2px;"></a><ul><li><a href="http://mobicon.tistory.com/category/AngularJS">AngularJS <span class="c_cnt">(38)</span></a><ul><li><a href="http://mobicon.tistory.com/category/AngularJS/Concept">Concept <span class="c_cnt">(15)</span></a></li><li><a href="http://mobicon.tistory.com/category/AngularJS/Exploring%20v1.3">Exploring v1.3 <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/AngularJS/Directive%20Driven">Directive Driven <span class="c_cnt">(4)</span></a></li><li><a href="http://mobicon.tistory.com/category/AngularJS/Start%20MEAN%20Stack">Start MEAN Stack <span class="c_cnt">(14)</span></a></li><li><a href="http://mobicon.tistory.com/category/AngularJS/Prototyping">Prototyping <span class="c_cnt">(4)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/AngularJS%20SPA%20Book">AngularJS SPA Book <span class="c_cnt">(1)</span></a><ul><li><a href="http://mobicon.tistory.com/category/AngularJS%20SPA%20Book/Checkout%20Contents">Checkout Contents <span class="c_cnt">(0)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/AngularDart">AngularDart <span class="c_cnt">(3)</span></a><ul><li><a href="http://mobicon.tistory.com/category/AngularDart/Concept">Concept <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/AngularDart/Dart">Dart <span class="c_cnt">(2)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Web%20Components">Web Components <span class="c_cnt">(3)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Web%20Components/Concept">Concept <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/Web%20Components/Polymer">Polymer <span class="c_cnt">(2)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Meteor">Meteor <span class="c_cnt">(3)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Meteor/Prototyping">Prototyping <span class="c_cnt">(3)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Backbone.js">Backbone.js <span class="c_cnt">(14)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Backbone.js/Prototyping">Prototyping <span class="c_cnt">(6)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Mobile%20App">Mobile App <span class="c_cnt">(2)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Mobile%20App/Ionic%20for%20Hybrid">Ionic for Hybrid <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Mobile%20App/Swift%20for%20iOS">Swift for iOS <span class="c_cnt">(2)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools">Frontend Test, Tools <span class="c_cnt">(6)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/Unit%20Test">Unit Test <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/E2E%20Test">E2E Test <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/Yeoman">Yeoman <span class="c_cnt">(3)</span></a></li><li><a href="http://mobicon.tistory.com/category/Frontend%20Test,%20Tools/Grunt,%20Gulp">Grunt, Gulp <span class="c_cnt">(3)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/HTML5,%20CSS3">HTML5, CSS3 <span class="c_cnt">(17)</span></a><ul><li><a href="http://mobicon.tistory.com/category/HTML5,%20CSS3/CSS">CSS <span class="c_cnt">(8)</span></a></li><li><a href="http://mobicon.tistory.com/category/HTML5,%20CSS3/jQuery">jQuery <span class="c_cnt">(7)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/NodeJS">NodeJS <span class="c_cnt">(31)</span></a><ul><li><a href="http://mobicon.tistory.com/category/NodeJS/Concept">Concept <span class="c_cnt">(17)</span></a></li><li><a href="http://mobicon.tistory.com/category/NodeJS/Prototyping">Prototyping <span class="c_cnt">(4)</span></a></li><li><a href="http://mobicon.tistory.com/category/NodeJS/Modules">Modules <span class="c_cnt">(6)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Golang">Golang <span class="c_cnt">(0)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Golang/Concept">Concept <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Golang/Prototyping">Prototyping <span class="c_cnt">(0)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/MongoDB">MongoDB <span class="c_cnt">(21)</span></a><ul><li><a href="http://mobicon.tistory.com/category/MongoDB/Concept">Concept <span class="c_cnt">(5)</span></a></li><li><a href="http://mobicon.tistory.com/category/MongoDB/Prototyping">Prototyping <span class="c_cnt">(10)</span></a></li><li><a href="http://mobicon.tistory.com/category/MongoDB/MapReduce">MapReduce <span class="c_cnt">(4)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Basic%20Languages">Basic Languages <span class="c_cnt">(37)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Basic%20Languages/JavaScript">JavaScript <span class="c_cnt">(20)</span></a></li><li><a href="http://mobicon.tistory.com/category/Basic%20Languages/CoffeeScript">CoffeeScript <span class="c_cnt">(8)</span></a></li><li><a href="http://mobicon.tistory.com/category/Basic%20Languages/Java">Java <span class="c_cnt">(7)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/---------------------">--------------------- <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Data%20Visualization,%20D3.js">Data Visualization, D3.js <span class="c_cnt">(6)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Data%20Visualization,%20D3.js/Concept">Concept <span class="c_cnt">(3)</span></a></li><li><a href="http://mobicon.tistory.com/category/Data%20Visualization,%20D3.js/Prototyping">Prototyping <span class="c_cnt">(3)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Growth%20Hacker">Growth Hacker <span class="c_cnt">(11)</span> <img src="./Angular.JS 개발환경 자동 구성하기_files/new_ico_1.gif" alt="N" style="vertical-align:middle;padding-left:2px;"></a><ul><li><a href="http://mobicon.tistory.com/category/Growth%20Hacker/Machine%20Learning">Machine Learning <span class="c_cnt">(10)</span> <img src="./Angular.JS 개발환경 자동 구성하기_files/new_ico_1.gif" alt="N" style="vertical-align:middle;padding-left:2px;"></a></li><li><a href="http://mobicon.tistory.com/category/Growth%20Hacker/Python">Python <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Growth%20Hacker/R">R <span class="c_cnt">(1)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Hadoop">Hadoop <span class="c_cnt">(4)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Hadoop/Concept">Concept <span class="c_cnt">(4)</span></a></li><li><a href="http://mobicon.tistory.com/category/Hadoop/Ecosystem">Ecosystem <span class="c_cnt">(0)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/ElasticSearch">ElasticSearch <span class="c_cnt">(1)</span></a><ul><li><a href="http://mobicon.tistory.com/category/ElasticSearch/Concept">Concept <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/ElasticSearch/Ecosystem">Ecosystem <span class="c_cnt">(0)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/---------------------">--------------------- <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary">My Project Diary <span class="c_cnt">(38)</span></a><ul><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/Bagle">Bagle <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/Jandi">Jandi <span class="c_cnt">(2)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/BI%20Dashboard">BI Dashboard <span class="c_cnt">(9)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/Smart%20Visualization">Smart Visualization <span class="c_cnt">(5)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/BroadLeaf%20eCommerce">BroadLeaf eCommerce <span class="c_cnt">(4)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/Liferay%20Portal">Liferay Portal <span class="c_cnt">(10)</span></a></li><li><a href="http://mobicon.tistory.com/category/My%20Project%20Diary/PlayHub">PlayHub <span class="c_cnt">(7)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Computer%20Engineering">Computer Engineering <span class="c_cnt">(2)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Computer%20Engineering/Want%20to%20Know%20Terms">Want to Know Terms <span class="c_cnt">(2)</span></a></li><li><a href="http://mobicon.tistory.com/category/Computer%20Engineering/Algorithm%20%26%20DS">Algorithm &amp; DS <span class="c_cnt">(0)</span></a></li><li><a href="http://mobicon.tistory.com/category/Computer%20Engineering/Mathematics">Mathematics <span class="c_cnt">(0)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Lean%20Agile%20Culture">Lean Agile Culture <span class="c_cnt">(22)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Lean%20Agile%20Culture/Lean%20Startup">Lean Startup <span class="c_cnt">(8)</span></a></li><li><a href="http://mobicon.tistory.com/category/Lean%20Agile%20Culture/Architecturing">Architecturing <span class="c_cnt">(7)</span></a></li></ul></li><li class="selected"><a href="http://mobicon.tistory.com/category/Git,%20GitHub">Git, GitHub <span class="c_cnt">(41)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Git,%20GitHub/Git%20Lec01">Git Lec01 <span class="c_cnt">(8)</span></a></li><li><a href="http://mobicon.tistory.com/category/Git,%20GitHub/Git%20Lec02">Git Lec02 <span class="c_cnt">(14)</span></a></li><li><a href="http://mobicon.tistory.com/category/Git,%20GitHub/GitHub">GitHub <span class="c_cnt">(5)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Testing,%20TDD">Testing, TDD <span class="c_cnt">(21)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Testing,%20TDD/Test%20First">Test First <span class="c_cnt">(10)</span></a></li><li><a href="http://mobicon.tistory.com/category/Testing,%20TDD/Tools,%20FitNesse">Tools, FitNesse <span class="c_cnt">(9)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Dev%20Environment">Dev Environment <span class="c_cnt">(22)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Dev%20Environment/Vagrant,%20Docker">Vagrant, Docker <span class="c_cnt">(1)</span></a></li><li><a href="http://mobicon.tistory.com/category/Dev%20Environment/Mac,%20Dev%20Tools">Mac, Dev Tools <span class="c_cnt">(5)</span></a></li><li><a href="http://mobicon.tistory.com/category/Dev%20Environment/JetBrains,%20Eclipse">JetBrains, Eclipse <span class="c_cnt">(6)</span></a></li><li><a href="http://mobicon.tistory.com/category/Dev%20Environment/Sublime%20Text">Sublime Text <span class="c_cnt">(9)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Continuous%20Integration">Continuous Integration <span class="c_cnt">(4)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Continuous%20Integration/Jenkins,%20Travis">Jenkins, Travis <span class="c_cnt">(3)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud">Middleware, Cloud <span class="c_cnt">(36)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud/WAS">WAS <span class="c_cnt">(16)</span></a></li><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud/OSGi">OSGi <span class="c_cnt">(9)</span></a></li><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud/DBMS">DBMS <span class="c_cnt">(2)</span></a></li><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud/Linux">Linux <span class="c_cnt">(6)</span></a></li><li><a href="http://mobicon.tistory.com/category/Middleware,%20Cloud/Cloud">Cloud <span class="c_cnt">(3)</span></a></li></ul></li><li><a href="http://mobicon.tistory.com/category/Protocols">Protocols <span class="c_cnt">(5)</span></a><ul><li><a href="http://mobicon.tistory.com/category/Protocols/OAuth">OAuth <span class="c_cnt">(2)</span></a></li><li><a href="http://mobicon.tistory.com/category/Protocols/MQTT">MQTT <span class="c_cnt">(2)</span></a></li></ul></li></ul></li></ul>
+						</div>
+					</div><!-- close category-bg -->
+					<div class="category-btm"></div>
+					
+	<!-- 공지사항 모듈 -->
+						
+						<div class="side-top"></div>
+							<div class="side-bg">
+							<div id="notice">
+								<h3 class="img">공지사항</h3>
+								<ul>
+									
+								</ul>
+							</div><!-- close notice -->
+							</div><!-- close side-bg -->
+						<div class="side-btm"></div>
+						
+					
+	<!-- 태그목록 모듈 -->
+					<div class="side-top"></div>
+						<div class="side-bg">
+						<div id="tagbox">
+							<h3 class="img">태그목록</h3>
+							<ul>
+								
+									<li><a href="http://mobicon.tistory.com/tag/D3.js" class="cloud4"> D3.js</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/liferay" class="cloud4"> liferay</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/TDD" class="cloud4"> TDD</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/yeoman" class="cloud4"> yeoman</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/AngularJS" class="cloud3"> AngularJS</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Enterprise%20Portal" class="cloud4"> Enterprise Portal</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Github" class="cloud4"> Github</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/GIT" class="cloud4"> GIT</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/PlayHub" class="cloud4"> PlayHub</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Angular.js" class="cloud1"> Angular.js</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/MongoDB" class="cloud3"> MongoDB</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/JavaScript" class="cloud3"> JavaScript</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/portal" class="cloud4"> portal</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Jboss" class="cloud4"> Jboss</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/BI%20Dashboard" class="cloud4"> BI Dashboard</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Express.js" class="cloud4"> Express.js</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Karma" class="cloud4"> Karma</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/directive" class="cloud4"> directive</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/OSGi" class="cloud4"> OSGi</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/CoffeeScript" class="cloud4"> CoffeeScript</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/MEAN%20Stack" class="cloud4"> MEAN Stack</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/machine%20learning" class="cloud4"> machine learning</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/SPA" class="cloud4"> SPA</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Pro%20Git" class="cloud4"> Pro Git</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/design%20pattern" class="cloud4"> design pattern</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Backbone.js" class="cloud4"> Backbone.js</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/node.js" class="cloud3"> node.js</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/Twitter%20bootstrap" class="cloud4"> Twitter bootstrap</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/AMD" class="cloud4"> AMD</a></li>
+								
+									<li><a href="http://mobicon.tistory.com/tag/MOCHA" class="cloud4"> MOCHA</a></li>
+								
+							</ul>
+						</div><!-- close tagbox -->
+						</div><!-- close side-bg -->
+					<div class="side-btm"></div>
+					
+	<!-- 최근 포스트 모듈 -->
+					<div class="side-top"></div>
+						<div class="side-bg">
+						<div id="recentPost">
+							<h3 class="img">최근에 올라온 글 </h3>
+							<ul>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/458">[ML] 11주차 - 독립...</a>
+										<span class="cnt"><span id="commentCountOnRecentEntries458"></span></span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/457">[ML] 10주차 - 고급...</a>
+										<span class="cnt"><span id="commentCountOnRecentEntries457"></span></span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/456">[ML] 9주차 - 가격...</a>
+										<span class="cnt"><span id="commentCountOnRecentEntries456"></span></span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/455">[ML] 8주차 - 7장 의...</a>
+										<span class="cnt"><span id="commentCountOnRecentEntries455"></span></span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/454">[ML] 7주차 - 6장 문...</a>
+										<span class="cnt"><span id="commentCountOnRecentEntries454"></span></span>
+									</li>
+								
+							</ul>
+						</div>
+					</div><!-- close side-bg -->
+					<div class="side-btm"></div>
+					
+	<!-- 최근 댓글 모듈 -->
+					<div class="side-top"></div>
+						<div class="side-bg">
+						<div id="recentComment">
+							<h3 class="img">최근에 달린 댓글</h3>
+							<ul id="recentComments">
+								
+									<li>
+										<a href="http://mobicon.tistory.com/274#comment12120723">불가능 하다기...</a>
+										<span class="info">
+											<span class="name">peter yun 윤영식</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/341#comment12120715">네 도움되았다...</a>
+										<span class="info">
+											<span class="name">peter yun 윤영식</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/281#comment12120713">도움이 되었다...</a>
+										<span class="info">
+											<span class="name">peter yun 윤영식</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/341#comment12104932">글과 설명 잘...</a>
+										<span class="info">
+											<span class="name">키다리공대생</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/281#comment12104230">글을 쭉 읽어봤...</a>
+										<span class="info">
+											<span class="name">restforest</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+							</ul>
+						</div>
+						</div><!-- close side-bg -->
+					<div class="side-btm"></div>
+					
+	<!-- 최근 트랙백 모듈 -->
+					<div class="side-top"></div>
+						<div class="side-bg">
+						<div id="recentTrackback">
+							<h3 class="img">최근에 받은 트랙백</h3>
+							<ul>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/291#trackback16353635">[모던웹] meteor.</a>
+										<span class="info">
+											<span class="name">홍종표</span>
+											<span class="date">2014</span>
+										</span>
+									</li>
+								
+									<li>
+										<a href="http://mobicon.tistory.com/85#trackback16162246">오픈 베타 서비...</a>
+										<span class="info">
+											<span class="name">baas.io</span>
+											<span class="date">2013</span>
+										</span>
+									</li>
+								
+							</ul>
+						</div>
+						</div><!-- close side-bg -->
+					<div class="side-btm"></div>
+					
+	<!-- 링크 모듈 -->
+					<div class="side-top"></div>
+						<div class="side-bg">
+						<div id="link">
+							<h3 class="img">링크</h3>
+							<ul>
+								
+									<li>
+										<a href="http://yjseo.tistory.com/" onclick="window.open(this.href); return false">하늘이너무맑다.</a>
+									</li>
+								
+							</ul>
+						</div>
+						</div><!-- close side-bg -->
+					<div class="side-btm"></div>
+					<div class="module module_plugin"><div style="text-align:center;">
+<iframe src="./Angular.JS 개발환경 자동 구성하기_files/activity.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:210px; height:300px;" allowtransparency="true"></iframe>
+</div>
+</div>
+			</div><!-- close sidebar -->
+		</div><!-- close body -->
+	
+</div><!-- close bodyInside -->
+
+<link type="text/css" rel="stylesheet" href="./Angular.JS 개발환경 자동 구성하기_files/shCore.css">
+<link type="text/css" rel="stylesheet" href="./Angular.JS 개발환경 자동 구성하기_files/shThemeDefault.css">
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shCore.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shAutoloader.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushAppleScript.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushAS3.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushBash.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushCss.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushDiff.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushGroovy.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushJava.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushPython.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushRuby.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushSass.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushScala.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushSql.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shBrushXml.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shLegacy.js"></script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/shDowon03.js"></script>
+<script id="DragSearchJs" type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/searchDragSelection.js" charset="euc-kr"></script>
+<script type="text/javascript">if (asyncProfileItems) {tistoryProfile.getSidebarInfo(asyncProfileItems);}</script>
+<script charset="utf-8" type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/td.min.js"></script>
+
+<script type="text/javascript">
+//<!--<![CDATA
+	var __pageTracker = {};
+	if (typeof __Tiara != "undefined" && typeof __Tiara.__getTracker != "undefined") {
+		__pageTracker = __Tiara.__getTracker();
+	} else {
+		__pageTracker.__trackPageview = function() {};
+		__pageTracker.__addParam = function() {};
+		__pageTracker.__setTitle = function() {};
+	}
+
+	__pageTracker.__setTitle("모바일 컨버전스 :: [Yeoman] AngularJS 개발환경 자동 구성하기");
+	__pageTracker.__addParam("svcdomain","user.tistory.com");
+	__pageTracker.__addParam("category","");
+	__pageTracker.__addParam("articleno","274");
+	__pageTracker.__addParam("plink","http://mobicon.tistory.com/274");
+	__pageTracker.__addParam("date","2013-04-15 11:44:15");
+	__pageTracker.__addParam("author","mobicon");
+	__pageTracker.__addParam("length ","15304");
+	__pageTracker.__addParam("isauthor","N");
+	__pageTracker.__addParam("ishidden","1");
+	__pageTracker.__addParam("comments","3");
+	__pageTracker.__addParam("param1","0");
+	__pageTracker.__addParam("param2","e");
+	__pageTracker.__addParam("param3","");
+	
+
+	window.setTimeout("try { __pageTracker.__trackPageview('http://mobicon.tistory.com/274'); } catch(e) {}", 1);
+//]]>-->
+</script>
+
+<script type="text/javascript">
+var roosevelt_params = {
+	retargeting_id: "prnpub",
+	tag_label: "daum.tistory"
+};
+</script>
+<script type="text/javascript" src="./Angular.JS 개발환경 자동 구성하기_files/roosevelt.js"></script><div id="tistorytoolbarid" style="position:absolute;height:20px;top:4px;right:0px;background-color:transparent;background-image:none;z-index:11;">
+	<div class="tistorytoolbar tt_menubar_login">
+		<div class="tt_menubar_white">
+			<div id="ttMenubarInnerWrap" class="tt_menubar_inner">
+				<div class="tt_menubar_bg_toolbar"></div>
+				<h2 style="display:none;">티스토리 툴바</h2>
+				<div class="tt_menubar_mainmenu"><a class="tt_menubar_link_tit tt_menubar_link_tit_daum tt_menubar_link_tit_eng" href="http://www.daum.net/?nil_ref=tistory" target="_blank">Daum</a></div>
+				<div class="tt_menubar_bg_bar"></div>
+				<div class="tt_menubar_mainmenu"><a class="tt_menubar_link_tit tt_menubar_link_tit_eng" href="http://www.tistory.com/">Tistory</a></div>
+				<div class="tt_menubar_bg_bar"></div>
+				<div class="tt_menubar_logout"><a class="tt_menubar_link_tit" href="https://www.tistory.com/login">로그인</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./Angular.JS 개발환경 자동 구성하기_files/20150202.js"></script>
+		<script type="text/javascript">
+			try {
+				extras["sv"] = "PqbpGeb4S1dvOxKs";
+				extras["ci"] = "1031211";
+				extras["mi"] = "274";
+				ja.pageview();
+
+				if (typeof jQuery === "function") {
+					jQuery("[class]:not(:has(*))").click(function(event) {
+						try {
+							var className = event.target.className || "";
+							className = className.replace(new RegExp("\s+.*$"), "");
+							if (className) {
+								ja.event("click", className)
+							}
+						} catch(e) { }
+					});
+				}
+			} catch(e) { }
+		</script>
+	
+<div id="snapLayer" class="hidden"><div></div></div></body></html>

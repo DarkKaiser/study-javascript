@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+  <title></title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("div:eq(1)")
+        .siblings().css("border", "3px solid blue")
+        .end()
+        .next().text("third")
+        .end()
+        .nextAll().css("background", "yellow");
+                
+      $("div").find("p").css("color", "blue")
+        .add("span").css("border", "1px solid red");
+    });
+  </script>
+  <style>
+    * { font-size:12px; font-family:µ¸¿ò; }
+    div { width:60px; height:60px; margin:10px; float:left; 
+          border:1px solid silver; padding: 5px }
+  </style>
+</head>
+<body>
+  <div>A <p>p a</p> </div>
+  <div>B <p>p b</p></div>
+  <div>C <p>p c</p></div>
+  <div>D <br /><span>span d</span></div>
+  <div>E <br /><span>span e</span></div>
+</body>
+</html>
